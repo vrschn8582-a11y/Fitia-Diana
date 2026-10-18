@@ -655,11 +655,12 @@ dialog.intro[open] { animation: intro-in 0.5s var(--ease); }
 .nav-profile span { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--laterite); }
 .nav-profile button { justify-self: start; padding: 0.3rem 0; min-height: 2.25rem; font: inherit; font-size: 0.95rem; color: var(--ink); background: none; border: 0; cursor: pointer; text-align: left; text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 0.25em; }
 html:not(.js) .nav-profile, html:not(.js) dialog.intro, html:not(.js) .prof-pill { display: none !important; }
-/* Sur ordinateur, le profil est rappelé dans la barre du haut (le menu de gauche reste compact) */
-.prof-pill { display: none; align-items: center; gap: 0.45rem; min-height: 2.75rem; padding: 0 1rem; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--ink); font: inherit; font-size: 0.85rem; cursor: pointer; transition: border-color 0.25s var(--ease); }
+/* Profil rappelé en haut à droite, sur tous les écrans : un toucher rouvre le choix du profil */
+.prof-pill { display: inline-flex; align-items: center; gap: 0.45rem; min-height: 2.75rem; padding: 0 1rem; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--ink); font: inherit; font-size: 0.85rem; cursor: pointer; transition: border-color 0.25s var(--ease); }
 .prof-pill:hover { border-color: var(--forest); }
 .prof-pill svg { width: 1.1rem; height: 1.1rem; fill: none; stroke: var(--forest); stroke-width: 1.5; stroke-linejoin: round; }
-@media (min-width: 960px) { .prof-pill { display: inline-flex; } .sidebar .nav-profile { display: none; } }
+@media (min-width: 960px) { .sidebar .nav-profile { display: none; } }
+@media (max-width: 460px) { .prof-pill { width: 2.75rem; padding: 0; justify-content: center; flex: none; } .prof-pill span { display: none; } .top-tools { gap: 0.4rem; } }
 /* Le profil choisi à l'entrée remplace le filtre de « Vos préparatifs » */
 .js #p-preparatifs .filters.seg { display: none; }
 .install-ios { display: block; font-size: 0.95rem; line-height: 1.45; }
@@ -954,8 +955,8 @@ html:not(.js) .toc-nojs { display: grid; gap: 0.75rem; padding: 1.25rem 0 0.5rem
           <div data-i18n="vols.f4"><dt>Décalage horaire</dt><dd>+1 h par rapport à Paris et Madrid en avril.</dd></div>
         </dl>
         <div class="clock">
-          <div><span data-i18n="clock.tnr">À Tananarive</span><b class="mono" id="clock-tnr">01:50</b></div>
-          <div><span data-i18n="clock.par">À Paris</span><b class="mono" id="clock-par">00:50</b></div>
+          <div><span data-i18n="clock.tnr">À Tananarive</span><b class="mono" id="clock-tnr">01:54</b></div>
+          <div><span data-i18n="clock.par">À Paris</span><b class="mono" id="clock-par">00:54</b></div>
           <p id="clock-diff">Aujourd’hui, Madagascar a 1 h d’avance sur Paris. En avril, l’écart sera de 1 h.</p>
         </div>
       </div>
