@@ -1,0 +1,2117 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mariage à Tananarive</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Toutes les informations pratiques pour nos invités : vols, visa, hébergement, programme du jour J et semaine de découverte de Madagascar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Jost:wght@400;500;600&amp;family=Pinyon+Script&amp;display=swap">
+<style>
+/* Chaque rubrique tient sur un écran : en-têtes resserrés, sous-onglets pour les contenus longs.
+   Style « Couture classique » aux couleurs du moodboard de Fitia et Diana : ivoire, pêche,
+   corail, rose poudré, vert sauge et doré. Double filet doré autour de l'accueil,
+   écriture calligraphiée réservée aux prénoms.
+   Layout : colonne de navigation fixe sur grand écran, barre d'onglets en bas sur mobile ;
+   une seule rubrique affichée à la fois, liseré lamba en signature discrète. */
+:root {
+  --paper: #F7F3EE;        /* ivoire */
+  --surface: #FFFCF8;
+  --ink: #3A2A24;          /* cacao, pour le texte */
+  --muted: #6E5C53;
+  --line: #E6D9C8;         /* champagne */
+  --forest: #B4462E;       /* couleur principale : corail profond, lisible sur l'ivoire */
+  --forest-soft: #F6E1E0;  /* rose poudré */
+  --laterite: #A8432C;     /* corail foncé, pour les petits textes */
+  --laterite-soft: #FBE7DC; /* pêche pâle */
+  --gold: #D4AF37;         /* doré, décoratif */
+  --sage: #A8B69A;         /* vert sauge, décoratif */
+  --names: #C2523A;        /* corail des prénoms */
+  --blush: #FBEDE6;        /* lavis pêche de l'accueil */
+  --flower-opacity: 1;     /* aquarelles du faire-part */
+  --on-forest: #FFFCF8;
+  --focus: #A8432C;
+  --shadow: rgba(58, 42, 36, 0.4);
+
+  --font-display: "Cormorant Garamond", Garamond, Georgia, "Times New Roman", serif;
+  --font-body: "Jost", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "Jost", "Segoe UI", system-ui, sans-serif;
+  --font-script: "Pinyon Script", "Snell Roundhand", "Apple Chancery", cursive;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  --step--1: 0.875rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.25rem;
+  --step-2: 1.6rem;
+  --step-3: clamp(1.9rem, 1.4rem + 2vw, 2.6rem);
+  --step-4: clamp(3.4rem, 2.4rem + 5vw, 6rem);
+
+  --radius: 2px;
+  --sidebar: 17.5rem;
+  --bar-h: 4.25rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+--paper: #1C1512; --surface: #251C18; --ink: #F3E8E0; --muted: #C2B2A6; --line: #3D302A;
+    --forest: #F2A170; --forest-soft: #33241F; --laterite: #F4A38F; --laterite-soft: #3A2620;
+    --gold: #D9B85A; --sage: #9DAE8E; --names: #F4A38F; --blush: #2B201C; --flower-opacity: 0.5;
+    --on-forest: #1C1512; --focus: #F4A38F; --shadow: rgba(0, 0, 0, 0.8);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+--paper: #1C1512; --surface: #251C18; --ink: #F3E8E0; --muted: #C2B2A6; --line: #3D302A;
+    --forest: #F2A170; --forest-soft: #33241F; --laterite: #F4A38F; --laterite-soft: #3A2620;
+    --gold: #D9B85A; --sage: #9DAE8E; --names: #F4A38F; --blush: #2B201C; --flower-opacity: 0.5;
+    --on-forest: #1C1512; --focus: #F4A38F; --shadow: rgba(0, 0, 0, 0.8);
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.65;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 30; background: var(--paper);
+}
+h1, h2, h3 { font-family: var(--font-display); font-weight: 500; line-height: 1.12; text-wrap: balance; margin: 0; }
+h2 { font-size: var(--step-3); }
+h3 { font-size: 1.45rem; font-weight: 600; line-height: 1.2; }
+p { margin: 0; }
+a { color: var(--forest); text-underline-offset: 0.18em; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 2px; }
+.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.eyebrow {
+  font-family: var(--font-body); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.26em;
+  text-transform: uppercase; color: var(--laterite);
+}
+.lead { font-family: var(--font-display); font-size: 1.15rem; line-height: 1.35; color: var(--muted); max-width: 40rem; }
+.prose { max-width: 40rem; display: grid; gap: 0.9rem; }
+.todo {
+  text-decoration: underline dotted var(--laterite); text-decoration-thickness: 2px;
+  text-underline-offset: 0.25em; cursor: help;
+}
+.chip {
+  display: inline-flex; align-items: center; gap: 0.35rem; font-size: var(--step--1);
+  padding: 0.15rem 0.6rem; border-radius: 999px; background: var(--laterite-soft); color: var(--laterite);
+  font-weight: 700; white-space: nowrap;
+}
+.chip.ok { background: var(--forest-soft); color: var(--ink); }
+.skip {
+  position: absolute; left: 1rem; top: -4rem; z-index: 50; background: var(--forest); color: var(--on-forest);
+  padding: 0.6rem 1rem; border-radius: var(--radius); font-weight: 700;
+}
+.skip:focus { top: calc(env(safe-area-inset-top, 0px) + 0.5rem); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Bandeau lamba : rayures inspirées des étoffes tissées des hautes terres */
+.lamba {
+  height: 0.4rem;
+  background: repeating-linear-gradient(90deg,
+    var(--forest) 0 1.6rem, var(--gold) 1.6rem 1.85rem, var(--sage) 1.85rem 2.6rem,
+    var(--paper) 2.6rem 2.75rem, var(--laterite) 2.75rem 3rem, var(--gold) 3rem 3.25rem,
+    var(--sage) 3.25rem 3.6rem, var(--paper) 3.6rem 3.75rem);
+}
+
+/* ---------- Structure ---------- */
+.app { min-height: 100%; }
+.topbar {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding-block: 0.6rem;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  background: var(--paper); border-bottom: 1px solid transparent;
+  transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+  view-transition-name: topbar;
+}
+.topbar.scrolled { border-bottom-color: var(--line); box-shadow: 0 10px 24px -20px var(--shadow); }
+.brand {
+  display: flex; align-items: center; gap: 0.65rem; min-width: 0;
+  font-family: var(--font-display); font-size: var(--step-1); text-decoration: none; color: var(--ink);
+}
+.brand-name { font-family: var(--font-body); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-block: 0.2rem; }
+.monogram {
+  flex: none; display: grid; place-items: center; width: 2.4rem; height: 2.4rem; border-radius: 50%;
+  border: 1px solid var(--gold); box-shadow: inset 0 0 0 3px var(--paper), inset 0 0 0 4px var(--gold);
+  font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: 1rem; letter-spacing: -0.02em; color: var(--forest);
+}
+@media (max-width: 460px) { .brand-name { display: none; } }
+.top-tools { display: flex; align-items: center; gap: 0.75rem; }
+.textsize, .langs { display: flex; align-items: center; gap: 0.25rem; }
+.topbar .textsize { display: none; }
+.langs button { font-size: var(--step--1); letter-spacing: 0.06em; }
+.menu-tools { display: grid; gap: 1rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+.menu-tools > div { display: grid; gap: 0.5rem; }
+.menu-tools p { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.textsize button, .langs button {
+  font: inherit; font-weight: 700; min-width: 2.75rem; min-height: 2.75rem; border-radius: 999px;
+  border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer;
+  transition: background 0.25s var(--ease), color 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+.textsize button:hover, .langs button:hover { border-color: var(--forest); }
+.textsize button[aria-pressed="true"], .langs button[aria-pressed="true"] { background: var(--forest); color: var(--on-forest); border-color: var(--forest); }
+.textsize button:nth-of-type(1) { font-size: 0.85rem; }
+.textsize button:nth-of-type(3) { font-size: 1.2rem; }
+
+/* Navigation : losange doré devant la rubrique en cours */
+.sidebar { display: none; }
+.navgroup { display: grid; gap: 0.1rem; }
+.navgroup-title { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--laterite); padding: 0 0.75rem 0.35rem 1.4rem; }
+.navlink {
+  position: relative; display: flex; align-items: center; min-height: 2.75rem;
+  padding: 0.4rem 0.75rem 0.4rem 1.4rem; color: var(--muted); text-decoration: none;
+  transition: color 0.25s var(--ease);
+}
+.navlink::before {
+  content: ""; position: absolute; left: 0.4rem; top: 50%; width: 0.42rem; height: 0.42rem; background: var(--gold);
+  transform: translateY(-50%) rotate(45deg) scale(0); transition: transform 0.35s var(--ease);
+}
+.navlink:hover { color: var(--ink); }
+.navlink:hover::before { transform: translateY(-50%) rotate(45deg) scale(0.55); }
+.navlink[aria-current="page"] { color: var(--forest); font-weight: 700; }
+.navlink[aria-current="page"]::before { transform: translateY(-50%) rotate(45deg) scale(1); }
+
+main {
+  padding-block: 0.9rem calc(var(--bar-h) + env(safe-area-inset-bottom, 0px) + 0.75rem);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  view-transition-name: page;
+}
+.page { display: grid; gap: 0.9rem; align-content: start; max-width: 62rem; margin-inline: auto; }
+.js .page { display: none; }
+.js .page.is-active { display: grid; animation: rise 0.45s var(--ease); }
+.vt .page.is-active { animation: none; }
+@keyframes rise { from { transform: translateY(10px); } to { transform: none; } }
+.page-head { display: grid; gap: 0.3rem; justify-items: center; text-align: center; }
+.page-head h2 { font-size: clamp(1.7rem, 1.35rem + 1.4vw, 2.3rem); }
+.page-head .lead { margin-inline: auto; }
+.page-head h2:focus, .hero-names:focus { outline: none; }
+/* Ornement : filet, losange, filet */
+.page-head::after {
+  content: "◆"; width: 9rem; margin-top: 0.15rem; text-align: center; font-size: 0.55rem; line-height: 1; color: var(--gold);
+  background: linear-gradient(var(--gold), var(--gold)) left center / calc(50% - 0.7rem) 1px no-repeat,
+              linear-gradient(var(--gold), var(--gold)) right center / calc(50% - 0.7rem) 1px no-repeat;
+}
+
+/* Transitions entre rubriques (View Transitions), dans le sens de la lecture */
+::view-transition-old(page) { animation: vt-out 0.28s var(--ease) both; }
+::view-transition-new(page) { animation: vt-in 0.5s var(--ease) both; }
+html[data-dir="back"]::view-transition-old(page) { animation-name: vt-out-back; }
+html[data-dir="back"]::view-transition-new(page) { animation-name: vt-in-back; }
+::view-transition-group(page) { animation-duration: 0.5s; animation-timing-function: var(--ease); }
+@keyframes vt-out { to { opacity: 0; transform: translateX(-28px); } }
+@keyframes vt-in { from { opacity: 0; transform: translateX(36px); } }
+@keyframes vt-out-back { to { opacity: 0; transform: translateX(28px); } }
+@keyframes vt-in-back { from { opacity: 0; transform: translateX(-36px); } }
+
+/* Précédent / suivant, comme les pages d'un livret */
+.pager { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1rem; margin-top: 0.1rem; border-top: 1px solid var(--line); }
+.pager a { display: grid; gap: 0.25rem; align-content: start; padding-block: 0.55rem 0.1rem; min-height: 2.75rem; text-decoration: none; color: var(--ink); }
+.pager a span { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--laterite); }
+.pager a b { font-family: var(--font-display); font-weight: 500; font-size: 1.15rem; line-height: 1.25; transition: color 0.25s var(--ease), transform 0.35s var(--ease); }
+.pager a:hover b { color: var(--forest); }
+.pager .prev:hover b { transform: translateX(-4px); }
+.pager .next { grid-column: 2; text-align: right; }
+.pager .next:hover b { transform: translateX(4px); }
+
+.bottombar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  padding-left: env(safe-area-inset-left, 0px); padding-right: env(safe-area-inset-right, 0px);
+  background: var(--surface); background: color-mix(in srgb, var(--surface) 86%, transparent);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2); backdrop-filter: blur(14px) saturate(1.2);
+  border-top: 1px solid var(--line);
+  view-transition-name: bottombar;
+}
+.bottombar a, .bottombar button {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.2rem;
+  min-height: var(--bar-h); font: inherit; font-size: 0.74rem; letter-spacing: 0.02em; color: var(--muted); text-decoration: none;
+  background: none; border: 0; cursor: pointer; transition: color 0.3s var(--ease);
+}
+.bottombar svg { width: 1.45rem; height: 1.45rem; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.35s var(--ease); }
+.bottombar [aria-current="page"], .bottombar .is-here { color: var(--forest); font-weight: 700; }
+.bottombar [aria-current="page"] svg, .bottombar .is-here svg { transform: translateY(-1px); }
+.bb-ind {
+  position: absolute; top: -1px; left: env(safe-area-inset-left, 0px); height: 2px; pointer-events: none;
+  width: calc((100% - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px)) / 4);
+  display: flex; justify-content: center; transition: transform 0.5s var(--ease);
+}
+.bb-ind.off { opacity: 0; }
+.bb-ind::before { content: ""; width: 2.25rem; height: 2px; border-radius: 2px; background: var(--gold); }
+
+/* Menu plein écran, à la manière d'un faire-part */
+/* Menu en panneau latéral gauche (essai) */
+dialog.menu {
+  border: 0; border-right: 1px solid var(--gold); padding: 0; margin: 0; inset: 0 auto 0 0;
+  width: min(21rem, 88vw); max-width: none; height: 100%; max-height: none; overflow-y: auto;
+  background: var(--paper); color: var(--ink); box-shadow: 18px 0 40px -24px var(--shadow);
+}
+dialog.menu[open] { animation: drawer-in 0.38s var(--ease); }
+@keyframes drawer-in { from { transform: translateX(-100%); } }
+dialog.menu[open] .navgroup { animation: menu-item 0.55s var(--ease) both; }
+dialog.menu[open] .navgroup:nth-child(2) { animation-delay: 0.07s; }
+dialog.menu[open] .navgroup:nth-child(3) { animation-delay: 0.14s; }
+@keyframes menu-in { from { opacity: 0; transform: translateY(14px); } }
+@keyframes menu-item { from { opacity: 0; transform: translateY(12px); } }
+dialog.menu::backdrop { background: rgba(30, 20, 16, 0.38); -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px); }
+.menu-inner {
+  display: grid; gap: 1.5rem;
+  padding-block: calc(env(safe-area-inset-top, 0px) + 1rem) calc(env(safe-area-inset-bottom, 0px) + 2rem);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.menu-head { display: flex; align-items: center; gap: 0.75rem; }
+.menu-head h2 { flex: 1; font-size: var(--step-2); }
+.menu .navgroup { gap: 0; }
+.menu .navgroup-title { padding-bottom: 0.25rem; }
+.menu .navlink { font-family: var(--font-display); font-weight: 500; font-size: 1.4rem; color: var(--ink); min-height: 2.75rem; padding-block: 0.15rem; }
+.menu .navlink[aria-current="page"] { color: var(--laterite); font-weight: 500; font-style: italic; }
+.icon-btn {
+  flex: none; display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 50%;
+  border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer;
+  transition: border-color 0.25s var(--ease), transform 0.35s var(--ease);
+}
+.icon-btn:hover { border-color: var(--forest); transform: rotate(90deg); }
+.brand-wrap { display: flex; align-items: center; gap: 0.6rem; min-width: 0; }
+.nav-toggle:hover { transform: none; }
+.icon-btn svg { width: 1.1rem; height: 1.1rem; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; fill: none; }
+/* Plein écran : dans l'en-tête à partir de 600 px, sinon dans le menu */
+.topbar .fs-btn { display: none; }
+@media (min-width: 600px) { .topbar .fs-btn { display: grid; } }
+.fs-btn:hover { transform: none; }
+[data-fs] .ico-on, [data-fs][aria-pressed="true"] .ico-off { display: none; }
+[data-fs][aria-pressed="true"] .ico-on { display: inline; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  font: inherit; font-weight: 700; min-height: 2.75rem; padding: 0.5rem 1.1rem; border-radius: var(--radius);
+  border: 2px solid var(--forest); background: var(--forest); color: var(--on-forest); cursor: pointer; text-decoration: none;
+}
+.btn { transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), background 0.3s var(--ease); }
+.btn:hover { transform: translateY(-1px); box-shadow: 0 10px 22px -14px var(--shadow); }
+.btn { font-family: var(--font-body); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.85rem 1.6rem; border-width: 1px; }
+.btn.ghost { background: transparent; color: var(--forest); }
+a { transition: color 0.25s var(--ease); }
+html { scroll-behavior: smooth; font-size: calc(100% * var(--user-size, 1)); background: var(--paper); }
+/* Balayage entre rubriques : le site gère seul le glissement horizontal (pas de « page précédente » du navigateur en plus) */
+html, body { overscroll-behavior-x: none; }
+html { touch-action: pan-y pinch-zoom; }
+/* Grands écrans (plein écran 1920 × 1080 et plus) : tout le site s'agrandit en proportion */
+@media (min-width: 1800px) and (min-height: 1000px) { html { font-size: calc(118.75% * var(--user-size, 1)); } }
+@media (min-width: 2400px) and (min-height: 1300px) { html { font-size: calc(150% * var(--user-size, 1)); } }
+
+@media (min-width: 960px) {
+  .app { display: grid; grid-template-columns: var(--sidebar) minmax(0, 1fr); transition: grid-template-columns 0.4s var(--ease); }
+  .nav-collapsed .app { grid-template-columns: 0 minmax(0, 1fr); }
+  .nav-collapsed .sidebar { visibility: hidden; padding-inline: 0; border-right-color: transparent; }
+  .sidebar { transition: visibility 0.4s, padding 0.4s var(--ease); }
+
+  .topbar { grid-column: 1 / -1; }
+  .topbar .textsize { display: flex; }
+  .sidebar {
+    display: grid; align-content: start; gap: 0.9rem; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 4rem);
+    height: calc(100vh - 4rem); overflow-y: auto; padding: 1rem 1rem 1rem max(16px, env(safe-area-inset-left, 0px));
+    border-right: 1px solid var(--line);
+  }
+  .bottombar { display: none; }
+  main { padding-block: 1.25rem; }
+  .sidebar .navlink { min-height: 2.2rem; padding-block: 0.15rem; }
+  .sidebar .navgroup-title { padding-bottom: 0.15rem; }
+}
+
+/* ---------- Composants ---------- */
+.notice {
+  display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.9rem 1rem; border-radius: var(--radius);
+  background: var(--laterite-soft); color: var(--ink); font-size: var(--step--1);
+}
+.notice strong { color: var(--laterite); }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.1rem; display: grid; gap: 0.55rem; align-content: start; min-width: 0; }
+.grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
+.grid.swipe { grid-template-columns: repeat(auto-fit, minmax(min(100%, 12.5rem), 1fr)); }
+.grid > * { min-width: 0; }
+.facts { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.facts div { display: grid; grid-template-columns: minmax(8rem, 13rem) minmax(0, 1fr); gap: 0.15rem 1rem; padding: 0.55rem 0; border-bottom: 1px solid var(--line); line-height: 1.45; }
+.facts dt { color: var(--muted); }
+.facts dd { margin: 0; }
+@media (max-width: 520px) { .facts div { grid-template-columns: 1fr; gap: 0.1rem; } .facts dt { font-size: 0.85rem; } }
+.section { display: grid; gap: 1rem; }
+.section > h3 { font-size: var(--step-2); }
+
+/* Accueil */
+/* L'accueil comme un faire-part : double filet doré, composition centrée, tient sur un écran */
+.hero {
+  --breath: clamp(0.9rem, 3.6vh, 2.25rem);   /* respiration entre les trois temps du faire-part */
+  position: relative; isolation: isolate; overflow: hidden;
+  display: grid; align-content: center; justify-items: center; text-align: center;
+  min-height: calc(100svh - var(--hero-offset, 0px));
+  padding: clamp(1.5rem, 5vh, 3.5rem) clamp(1.25rem, 5vw, 3.5rem);
+  background: linear-gradient(180deg, var(--surface) 0%, var(--blush) 100%); border: 1px solid var(--gold); outline: 1px solid var(--gold); outline-offset: -8px;
+}
+.hero-names { margin-top: 0.5rem; font-family: var(--font-script); font-weight: 400; color: var(--names); font-size: min(clamp(3rem, 2.2rem + 4vw, 5.5rem), 10.5vh); line-height: 1.15; padding-block: 0.05em; }
+.hero-names .amp { font-size: 0.7em; color: var(--gold); }
+.orn {
+  width: 9rem; height: 0.7rem; position: relative;
+  background: linear-gradient(var(--gold), var(--gold)) left center / calc(50% - 0.7rem) 1px no-repeat,
+              linear-gradient(var(--gold), var(--gold)) right center / calc(50% - 0.7rem) 1px no-repeat;
+}
+.orn::after { content: ""; position: absolute; left: 50%; top: 50%; width: 0.45rem; height: 0.45rem; border: 1px solid var(--gold); transform: translate(-50%, -50%) rotate(45deg); }
+.orn.heart { width: 6rem; }
+.orn.heart::after { content: "♥"; border: 0; width: auto; height: auto; font-size: 0.75rem; line-height: 1; color: var(--names); transform: translate(-50%, -55%); }
+.hero > .orn { margin-top: 0.6rem; }
+.hero-meta { margin-top: calc(var(--breath) * 0.7); display: grid; gap: 0.15rem; justify-items: center; font-family: var(--font-display); font-size: 1.3rem; line-height: 1.35; color: var(--muted); }
+.hero-meta > span:first-child { font-style: italic; font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.3rem); line-height: 1.2; color: var(--ink); }
+.hero-meta > span:last-child { font-family: var(--font-body); font-size: clamp(1rem, 0.9rem + 0.4vw, 1.2rem); font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); margin-top: 0.7rem; }
+.tagline { margin-top: 0.7rem; font-family: var(--font-display); font-style: italic; font-size: 1.1rem; line-height: 1.35; color: var(--laterite); text-wrap: balance; }
+.hero-verse { margin: var(--breath) 0 0; display: grid; justify-items: center; gap: 0.45rem; max-width: 30rem; }
+.hero-verse blockquote { margin: 0; font-family: var(--font-display); font-size: 1.05rem; line-height: 1.4; text-wrap: balance; }
+.hero-verse .script { font-family: var(--font-script); color: var(--names); font-size: 1.35em; line-height: 1; }
+.hero-verse figcaption { font-family: var(--font-display); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; }
+.hero-ctas { margin-top: var(--breath); display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; }
+.hero .btn { min-height: 2.5rem; padding: 0.5rem 1rem; font-size: 0.72rem; letter-spacing: 0.18em; }
+/* Hauteur occupée autour du faire-part (en-tête, marges, liens de page, barre du bas), mesurée sur téléphone et ordinateur */
+:root { --hero-offset: calc(13.5rem + 1px); }
+@media (min-width: 601px) and (max-width: 959px) { :root { --hero-offset: calc(14.6rem + 1px); } }
+@media (min-width: 960px) { :root { --hero-offset: calc(11.15rem + 1px); } }
+/* Ordinateurs portables : fenêtre de navigateur peu haute */
+@media (min-width: 960px) and (max-height: 719px) {
+  .sidebar { gap: 0.5rem; padding-block: 0.6rem; }
+  .sidebar .navlink { min-height: 1.95rem; padding-block: 0.1rem; line-height: 1.3; }
+  .page-head .eyebrow, .page-head::after { display: none; }
+  main { padding-block: 0.75rem; }
+  .page { gap: 0.6rem; }
+  :root { --hero-offset: calc(9.85rem + 1px); }
+}
+/* Fenêtres intermédiaires (tablette, navigateur réduit) : cartes à faire défiler, en-têtes resserrés */
+@media (min-width: 601px) and (max-width: 959px) {
+  .grid.swipe {
+    grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 44%;
+    overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; padding-bottom: 0.4rem;
+  }
+  .grid.swipe > * { scroll-snap-align: start; }
+}
+@media (min-width: 601px) and (max-width: 959px) and (max-height: 920px) {
+  .page { gap: 0.65rem; }
+  .page-head .eyebrow, .page-head::after { display: none; }
+  .panel { padding: 0.85rem 1rem; gap: 0.45rem; }
+  .steps li, .timeline li { padding-block: 0.4rem; }
+}
+@media (min-width: 601px) and (max-width: 959px) and (max-height: 700px) {
+  .page-head h2 { font-size: 1.7rem; }
+  #clock-diff { display: none; }
+  .page-head .lead { font-size: 1rem; }
+  .pager a { padding-block: 0.35rem 0; gap: 0; }
+  .pager a span { display: none; }
+  .pager .prev b::before { content: "← " / ""; }
+  .pager .next b::after { content: " →" / ""; }
+  :root { --hero-offset: calc(13.5rem + 1px); }
+}
+@media (min-width: 960px) and (max-width: 1199px) and (max-height: 800px) { .page-head .eyebrow { display: none; } .grid.swipe .panel { padding: 1rem 1.1rem; } .grid.swipe .panel p { font-size: 0.95rem; line-height: 1.55; } }
+@media (max-width: 600px) {
+  .hero { --breath: clamp(0.8rem, 3vh, 1.75rem); }
+  .hero-meta > span:last-child { letter-spacing: 0.16em; text-wrap: balance; }
+}
+@media (max-height: 800px) {
+  .tagline { display: none; }
+  .hero { padding-block: clamp(1.25rem, 4vh, 2rem); }
+  .hero-names { font-size: min(clamp(2.8rem, 2.2rem + 4vw, 5rem), 9vh); }
+}
+/* Aquarelles extraites du faire-part, en arrière-plan des textes */
+.fleur { position: absolute; z-index: -1; height: auto; pointer-events: none; opacity: var(--flower-opacity); }
+.fleur-haut { top: -0.75rem; right: -1.25rem; width: clamp(6.5rem, 27vw, 15rem); }
+.fleur-bas { bottom: -0.5rem; left: -0.5rem; width: clamp(5.5rem, 20vw, 10rem); transform: scaleY(-1); }
+
+/* Couleurs du thème pour les tenues */
+.palette { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.9rem 0.5rem; }
+.palette li { width: 4.6rem; display: grid; justify-items: center; gap: 0.35rem; text-align: center; font-size: 0.78rem; letter-spacing: 0.04em; }
+.palette i { width: 2.6rem; height: 2.6rem; border-radius: 50%; border: 1px solid var(--line); box-shadow: inset 0 0 0 3px var(--surface); }
+.gift-quote { font-family: var(--font-display); font-style: italic; font-size: 1.3rem; }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: step; }
+.steps li {
+  counter-increment: step; display: grid; grid-template-columns: 2.4rem minmax(0, 1fr); gap: 0.05rem 0.8rem;
+  padding: 0.5rem 0; border-bottom: 1px solid var(--line); line-height: 1.45;
+}
+.steps li::before {
+  content: counter(step); grid-row: span 2; display: grid; place-items: center; width: 2rem; height: 2rem;
+  border-radius: 50%; border: 1px solid var(--gold); color: var(--laterite); font-family: var(--font-display); font-size: 1.1rem; font-weight: 500;
+}
+.steps .when { font-family: var(--font-mono); font-size: 0.78rem; color: var(--laterite); }
+.clock { display: flex; flex-wrap: wrap; align-items: end; gap: 0.3rem 1.5rem; }
+.clock p { flex-basis: 100%; color: var(--muted); font-size: 0.9rem; }
+.clock div { display: grid; }
+.clock b { font-family: var(--font-display); font-size: var(--step-2); font-weight: 500; font-variant-numeric: lining-nums tabular-nums; }
+
+/* Lexique */
+
+/* Timeline */
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; }
+.timeline li { display: grid; grid-template-columns: 3.4rem minmax(0, 1fr); gap: 0.8rem; padding: 0.5rem 0; border-bottom: 1px solid var(--line); }
+.timeline h3 { font-size: 1.25rem; }
+.timeline time, .timeline .day { font-family: var(--font-mono); font-weight: 500; color: var(--laterite); font-variant-numeric: tabular-nums; }
+.timeline p { color: var(--muted); font-size: 0.95rem; line-height: 1.4; }
+
+/* Météo */
+.temps { display: grid; gap: 0.15rem; }
+.temp-row { display: grid; grid-template-columns: minmax(7rem, 11rem) minmax(0, 1fr); gap: 1rem; align-items: center; min-height: 1.9rem; line-height: 1.2; }
+.temp-row .label small { display: block; color: var(--muted); font-size: 0.8rem; }
+.track { position: relative; height: 1.9rem; border-left: 1px solid var(--line); background:
+  repeating-linear-gradient(90deg, transparent 0 calc(20% - 1px), var(--line) calc(20% - 1px) 20%); }
+.range { position: absolute; top: 0.45rem; height: 1rem; border-radius: 999px;
+  background: linear-gradient(90deg, var(--forest), var(--laterite)); }
+.range span { position: absolute; top: 50%; transform: translateY(-50%); font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink); white-space: nowrap; }
+.range .lo { right: calc(100% + 0.35rem); }
+.range .hi { left: calc(100% + 0.35rem); }
+.axis { display: grid; grid-template-columns: minmax(7rem, 11rem) minmax(0, 1fr); gap: 1rem; }
+.axis div { position: relative; height: 1.2rem; font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); }
+.axis div span { position: absolute; transform: translateX(-50%); }
+
+/* Valise */
+.packing { display: grid; gap: 0.8rem; }
+.packing fieldset { border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.1rem; margin: 0; background: var(--surface); min-width: 0; }
+.packing legend { font-weight: 700; padding: 0 0.35rem; }
+.check { display: flex; gap: 0.7rem; align-items: flex-start; padding: 0.3rem 0; line-height: 1.4; cursor: pointer; }
+.check input { width: 1.3rem; height: 1.3rem; margin-top: 0.15rem; accent-color: var(--forest); flex: none; }
+.check small { display: block; color: var(--muted); }
+.progress { display: grid; gap: 0.4rem; }
+.progress-bar { height: 0.6rem; border-radius: 999px; background: var(--line); overflow: hidden; }
+.progress-bar i { display: block; height: 100%; width: 0; background: var(--forest); transition: width 0.3s; }
+
+/* Formulaires */
+.field { display: grid; gap: 0.2rem; align-content: start; }
+.field label, .field legend { font-weight: 700; }
+.field small { color: var(--muted); }
+input[type="text"], input[type="number"], input[type="email"], textarea {
+  font: inherit; color: var(--ink); background: var(--surface); border: 1.5px solid var(--muted);
+  border-radius: var(--radius); padding: 0.6rem 0.75rem; min-height: 2.75rem; width: 100%;
+}
+textarea { min-height: 3.2rem; resize: vertical; }
+fieldset.field { border: 0; padding: 0; margin: 0; }
+.radios { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+.radios label { font-weight: 400; display: flex; gap: 0.5rem; align-items: center; min-height: 2.75rem; }
+.radios input { width: 1.2rem; height: 1.2rem; accent-color: var(--forest); }
+.status { font-weight: 700; color: var(--forest); }
+.form-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); column-gap: 1.25rem; row-gap: 0.6rem; }
+.form-grid .wide { grid-column: 1 / -1; }
+.form-end { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem; }
+.field small { font-size: 0.82rem; line-height: 1.35; }
+.converter { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); align-items: end; }
+
+/* Adresses */
+.filters { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.filters button {
+  font: inherit; min-height: 2.75rem; padding: 0.4rem 1rem; border-radius: 999px; cursor: pointer;
+  border: 1.5px solid var(--line); background: var(--surface); color: var(--ink);
+}
+.filters button[aria-pressed="true"] { background: var(--forest); border-color: var(--forest); color: var(--on-forest); font-weight: 700; }
+.carousel { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 0.5rem; }
+.car-list {
+  list-style: none; margin: 0; padding: 0 0 0.5rem; display: grid; grid-auto-flow: column; grid-auto-columns: min(82%, 17rem); gap: 1rem;
+  overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: thin;
+}
+.car-list > li { scroll-snap-align: start; }
+/* Cartes du vodiondry : explications puis anecdotes « Le saviez-vous ? » */
+.stories { grid-auto-columns: min(86%, 19rem); }
+.story h3 { font-size: 1.25rem; }
+.story p:not(.eyebrow) { font-size: 0.95rem; line-height: 1.5; }
+.story.anec { border-top: 3px solid var(--gold); }
+/* Cartes d'expressions malgaches */
+.car-list.phrasecards { grid-auto-columns: min(86%, 22rem); }
+.phrases { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.4rem; }
+.phrases li { display: grid; gap: 0.05rem; line-height: 1.35; }
+.phrases .mg { font-family: var(--font-display); font-weight: 500; font-style: italic; font-size: 1.2rem; color: var(--forest); }
+.phrases .tr { font-size: 0.92rem; }
+.phrases .say { font-size: 0.78rem; color: var(--muted); white-space: nowrap; }
+.swipe-hint { display: none; }
+@media (max-width: 600px) { .swipe-hint { display: block; text-align: right; font-style: italic; } }
+.car-prev:hover, .car-next:hover { transform: none; }
+.car-prev:disabled, .car-next:disabled { opacity: 0.35; cursor: default; }
+@media (max-width: 600px) { .carousel { grid-template-columns: minmax(0, 1fr); } .car-prev, .car-next { display: none; } }
+.place { display: grid; gap: 0.5rem; align-content: start; padding: 1.1rem; border-top: 3px solid var(--sage); background: var(--surface); border-radius: 0 0 var(--radius) var(--radius); }
+.place .where { font-family: var(--font-mono); font-size: var(--step--1); color: var(--muted); }
+.place .tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.place.resto { border-top-color: var(--gold); }
+.place-link { font-size: 0.9rem; font-weight: 500; }
+/* Applications de VTC : liens de téléchargement */
+[data-i18n^="vtc."]:not(p) { display: grid; gap: 0.35rem; }
+.stores { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.stores .btn { min-height: 2.5rem; padding: 0.45rem 0.9rem; font-size: 0.7rem; letter-spacing: 0.14em; }
+.place.insolite { border-top-color: var(--laterite); }
+.place.insta { border-top-color: var(--gold); background: linear-gradient(180deg, var(--surface) 0%, var(--blush) 100%); outline: 1px solid var(--gold); outline-offset: -1px; }
+.place.insta .eyebrow { font-size: 0.68rem; letter-spacing: 0.18em; }
+.place.insta h3 { display: flex; align-items: center; gap: 0.5rem; font-size: 1.25rem; }
+.place.insta .where { display: block; font-size: 0.8rem; }
+.place.insta .ig { flex: none; width: 1.5rem; height: 1.5rem; fill: none; stroke: var(--names); stroke-width: 1.8; }
+.place.insta .ig .dot { fill: var(--names); stroke: none; }
+.place.insta .btn { justify-self: start; min-height: 2.5rem; padding: 0.5rem 1rem; font-size: 0.7rem; letter-spacing: 0.16em; }
+
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; min-width: 34rem; }
+th, td { text-align: left; padding: 0.55rem 0.75rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-family: var(--font-mono); font-size: var(--step--1); font-weight: 500; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* Sous-onglets : un seul bloc visible à la fois pour que la rubrique tienne sur un écran */
+.subtabs {
+  display: flex; gap: 0.15rem; max-width: 100%; margin-inline: auto; overflow-x: auto; scrollbar-width: none;
+  justify-content: safe center; border-bottom: 1px solid var(--line);
+}
+.subtabs::-webkit-scrollbar { display: none; }
+.subtabs [role="tab"] {
+  flex: none; min-height: 2.75rem; padding: 0.6rem 0.8rem 0.5rem; margin-bottom: -1px; cursor: pointer;
+  font: inherit; font-size: 0.74rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--muted); background: none; border: 0; border-bottom: 2px solid transparent;
+  transition: color 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+.subtabs [role="tab"]:hover { color: var(--ink); }
+.subtabs [role="tab"][aria-selected="true"] { color: var(--forest); border-bottom-color: var(--forest); }
+.subpanel { display: grid; gap: 0.8rem; align-content: start; animation: rise 0.35s var(--ease); }
+.note { color: var(--muted); font-size: 0.92rem; }
+
+/* Téléphones : en-têtes allégés, cartes à faire défiler, convertisseur sur deux colonnes */
+@media (max-width: 600px) {
+  :root { --step-0: 1rem; }
+  body { line-height: 1.5; }
+  .prose { gap: 0.55rem; }
+  .tab-echo { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .timeline li { grid-template-columns: 3rem minmax(0, 1fr); gap: 0.6rem; }
+  .timeline h3 { font-size: 1.12rem; }
+  .timeline li { padding-block: 0.3rem; }
+  .timeline p { line-height: 1.35; }
+  .steps li { line-height: 1.4; }
+  .filters.seg { display: grid; grid-template-columns: 1fr 1fr; }
+  .filters.seg button { padding: 0.35rem 0.6rem; font-size: 0.9rem; line-height: 1.25; }
+  #clock-diff { display: none; }
+  .palette { gap: 0.5rem 0.25rem; }
+  .palette li { width: 3.9rem; font-size: 0.7rem; }
+  .palette i { width: 2.2rem; height: 2.2rem; }
+  .page { gap: 0.65rem; }
+  .page-head .eyebrow, .page-head::after { display: none; }
+  .page-head h2 { font-size: 1.6rem; }
+  .page-head .lead { font-size: 1rem; }
+  .panel { padding: 0.8rem 0.9rem; gap: 0.45rem; }
+  .steps li, .timeline li { padding-block: 0.4rem; }
+  .pager a { padding-block: 0.35rem 0; gap: 0; }
+  .pager a span { display: none; }
+  .pager a b { font-size: 1.05rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .pager .prev b::before { content: "← " / ""; }
+  .pager .next b::after { content: " →" / ""; }
+  .grid.swipe {
+    grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 86%;
+    overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; padding-bottom: 0.4rem;
+  }
+  .grid.swipe > * { scroll-snap-align: start; }
+  .converter { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .converter .field:last-child { grid-column: 1 / -1; }
+  .clock b { font-size: 1.35rem; }
+  .subtabs [role="tab"] { padding-inline: 0.6rem; letter-spacing: 0.1em; }
+}
+.menu-note { font-size: 0.85rem; color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* Avant que le script ait choisi les onglets : un seul sous-onglet visible, sans clignotement */
+.js:not(.ready) .subpanel ~ .subpanel, .js:not(.ready) .steps[data-for="local"] { display: none; }
+/* Sans JavaScript (aperçu de pièce jointe, lecteur hors ligne) : tout le site se lit d'un seul tenant */
+html:not(.js) .subtabs, html:not(.js) .bottombar, html:not(.js) .langs, html:not(.js) .textsize, html:not(.js) .nav-toggle,
+html:not(.js) [data-fs], html:not(.js) .car-prev, html:not(.js) .car-next, html:not(.js) .filters, html:not(.js) .clock,
+html:not(.js) .pager, html:not(.js) #sp-tr-4, html:not(.js) .swipe-hint, html:not(.js) [data-goto] { display: none !important; }
+html:not(.js) main { padding-bottom: 2.5rem; }
+html:not(.js) .page { scroll-margin-top: 4.5rem; }
+html:not(.js) .page + .page { margin-top: 2.5rem; padding-top: 2.5rem; border-top: 1px solid var(--gold); }
+html:not(.js) .subpanel[data-title]::before, html:not(.js) .steps[data-title]::before {
+  content: attr(data-title); display: block; padding-top: 0.75rem; border-top: 1px solid var(--line);
+  font-family: var(--font-body); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--laterite);
+}
+.toc-nojs { display: none; }
+html:not(.js) .toc-nojs { display: grid; gap: 0.75rem; padding: 1.25rem 0 0.5rem; }
+.toc-nojs h2 { font-size: var(--step-2); text-align: center; }
+.toc-nojs .navgroup-title { padding-left: 0; }
+.toc-nojs .navlink { min-height: 2.5rem; padding-left: 0; color: var(--ink); }
+.toc-nojs .navlink::before { display: none; }
+@media (min-width: 601px) { html:not(.js) .toc-nojs { grid-template-columns: repeat(3, minmax(0, 1fr)); } .toc-nojs h2 { grid-column: 1 / -1; } }
+@media (min-width: 960px) { html:not(.js) .toc-nojs { display: none; } }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<div class="app" lang="fr" id="app">
+  <a class="skip" href="#contenu" data-i18n="skip">Aller au contenu</a>
+
+  <header class="topbar">
+    <div class="brand-wrap">
+    <button type="button" class="icon-btn nav-toggle" id="menu-open" aria-controls="sidebar" aria-expanded="true" aria-label="Replier le menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+    <a class="brand" href="#p-accueil"><span class="monogram" aria-hidden="true">F&amp;D</span><span class="brand-name">Fitia &amp; Diana</span></a>
+    </div>
+    <div class="top-tools">
+      <div class="langs" role="group" aria-label="Langue · Fiteny · Idioma">
+        <button type="button" data-lang="fr" lang="fr" aria-label="Français" aria-pressed="true">FR</button>
+        <button type="button" data-lang="mg" lang="mg" aria-label="Malagasy" aria-pressed="false">MG</button>
+        <button type="button" data-lang="es" lang="es" aria-label="Español" aria-pressed="false">ES</button>
+      </div>
+      <div class="textsize" role="group" aria-label="Taille du texte" data-i18n-aria="ts.group">
+        <button type="button" data-size="100" aria-pressed="true" aria-label="Texte normal" data-i18n-aria="ts.n">A</button>
+        <button type="button" data-size="115" aria-pressed="false" aria-label="Texte grand" data-i18n-aria="ts.l">A</button>
+        <button type="button" data-size="130" aria-pressed="false" aria-label="Texte très grand" data-i18n-aria="ts.xl">A</button>
+      </div>
+      <button type="button" class="icon-btn fs-btn" data-fs="" aria-pressed="false" aria-label="Plein écran" hidden=""><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ico-off" d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"></path><path class="ico-on" d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"></path></svg></button>
+    </div>
+  </header>
+
+  <nav class="sidebar" aria-label="Rubriques" data-i18n-aria="nav.aria" id="sidebar"><div class="navgroup"><p class="navgroup-title">Le mariage</p><a class="navlink" href="#p-accueil" data-nav="accueil">Accueil</a><a class="navlink" href="#p-ceremonie" data-nav="ceremonie">La cérémonie</a><a class="navlink" href="#p-jourj" data-nav="jourj">Programme du jour J</a><a class="navlink" href="#p-rsvp" data-nav="rsvp">Répondre à l’invitation</a></div><div class="navgroup"><p class="navgroup-title">Venir</p><a class="navlink" href="#p-preparatifs" data-nav="preparatifs">Vos préparatifs</a><a class="navlink" href="#p-vols" data-nav="vols">Billet d’avion</a><a class="navlink" href="#p-formalites" data-nav="formalites">Formalités</a><a class="navlink" href="#p-meteo" data-nav="meteo">Météo</a><a class="navlink" href="#p-valise" data-nav="valise">Valise</a></div><div class="navgroup"><p class="navgroup-title">Sur place</p><a class="navlink" href="#p-hebergement" data-nav="hebergement">Hébergement</a><a class="navlink" href="#p-transport" data-nav="transport">Se déplacer à Tana</a><a class="navlink" href="#p-semaine" data-nav="semaine">Semaine de découverte</a><a class="navlink" href="#p-adresses" data-nav="adresses">Bonnes adresses</a></div></nav>
+
+  <main id="contenu" tabindex="-1">
+
+    <!-- ===== ACCUEIL : le faire-part, sur un seul écran ===== -->
+    <section class="page is-active" id="p-accueil" data-page="" aria-labelledby="t-accueil">
+      <div class="hero">
+        <img class="fleur fleur-haut" src="assets/bouquet.webp" alt="" width="560" height="753" decoding="async">
+        <img class="fleur fleur-bas" src="assets/coin-fleuri.webp" alt="" width="340" height="336" decoding="async">
+        <p class="eyebrow" data-i18n="welcome"><span lang="mg">Tonga soa</span> · Bienvenue</p>
+        <h1 class="hero-names" id="t-accueil" tabindex="-1">Fitia <span class="amp">&amp;</span> Diana</h1>
+        <div class="orn" aria-hidden="true"></div>
+        <div class="hero-meta">
+          <span data-i18n="hero.type"><span lang="mg">Vodiondry</span></span>
+          <span data-i18n="date">Dimanche 25 avril 2027</span>
+        </div>
+        <p class="tagline" data-i18n="tagline">Tradition · Élégance · Convivialité</p>
+        <figure class="hero-verse">
+          <blockquote><p data-i18n="verse.text">« <span class="script">Revêtez-vous de l'amour,</span> qui est le lien de la perfection. »</p></blockquote>
+          <div class="orn heart" aria-hidden="true"></div>
+          <figcaption data-i18n="verse.ref">Colossiens 3.14</figcaption>
+        </figure>
+        <div class="hero-ctas">
+          <a class="btn" href="#p-rsvp" data-i18n="rsvp.cta">Répondre à l'invitation</a>
+          <a class="btn ghost" href="#p-preparatifs" data-i18n="steps.cta">Vos préparatifs</a>
+        </div>
+      </div>
+    <nav class="pager" aria-label="Rubrique précédente et suivante"><a class="next" href="#p-ceremonie"><span>Suivant<i aria-hidden="true"> →</i></span><b>La cérémonie</b></a></nav><nav class="toc-nojs" aria-label="Sommaire"><h2>Sommaire</h2><div class="navgroup"><p class="navgroup-title">Le mariage</p><a class="navlink" href="#p-accueil">Accueil</a><a class="navlink" href="#p-ceremonie">La cérémonie</a><a class="navlink" href="#p-jourj">Programme du jour J</a><a class="navlink" href="#p-rsvp">Répondre à l’invitation</a></div><div class="navgroup"><p class="navgroup-title">Venir</p><a class="navlink" href="#p-preparatifs">Vos préparatifs</a><a class="navlink" href="#p-vols">Billet d’avion</a><a class="navlink" href="#p-formalites">Formalités</a><a class="navlink" href="#p-meteo">Météo</a><a class="navlink" href="#p-valise">Valise</a></div><div class="navgroup"><p class="navgroup-title">Sur place</p><a class="navlink" href="#p-hebergement">Hébergement</a><a class="navlink" href="#p-transport">Se déplacer à Tana</a><a class="navlink" href="#p-semaine">Semaine de découverte</a><a class="navlink" href="#p-adresses">Bonnes adresses</a></div></nav></section>
+
+    <!-- ===== CÉRÉMONIE ===== -->
+    <section class="page" id="p-ceremonie" data-page="" aria-labelledby="t-ceremonie">
+      <div class="page-head">
+        <p class="eyebrow" data-i18n="grp.mariage">Le mariage</p>
+        <h2 id="t-ceremonie" tabindex="-1" data-i18n="cer.title">La cérémonie</h2>
+      </div>
+      <div class="subtabs" role="tablist" aria-labelledby="t-ceremonie">
+        <button type="button" role="tab" id="tab-cer-1" aria-controls="sp-cer-1" aria-selected="true" data-i18n="cer.lieu" tabindex="0">Lieu</button>
+        <button type="button" role="tab" id="tab-cer-2" aria-controls="sp-cer-2" aria-selected="false" data-i18n="iti.title" tabindex="-1">Itinéraire</button>
+        <button type="button" role="tab" id="tab-cer-3" aria-controls="sp-cer-3" aria-selected="false" data-i18n="cer.tenue" tabindex="-1">Tenue</button>
+        <button type="button" role="tab" id="tab-cer-5" aria-controls="sp-cer-5" aria-selected="false" lang="mg" tabindex="-1">Vodiondry</button>
+        <button type="button" role="tab" id="tab-cer-6" aria-controls="sp-cer-6" aria-selected="false" data-i18n="tab.mots" data-hide-in="mg" tabindex="-1">Mots malgaches</button>
+      </div>
+      <div class="subpanel" role="tabpanel" id="sp-cer-1" aria-labelledby="tab-cer-1" data-title="Lieu">
+        <div class="panel">
+          <h3>Villa ny Natiora</h3>
+          <p>By-pass Alasora, Antananarivo</p>
+          <p data-i18n="cer.site">Maison familiale entourée de grands espaces extérieurs, à 200 m de la route principale du By-pass. Parking sur place.</p>
+          <p data-i18n="cer.time">Prévoyez de 30 minutes à 1 h 30 de trajet depuis le centre selon la circulation.</p>
+          <div><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=-18.9501111%2C47.5553611" target="_blank" rel="noopener" data-i18n="cer.maps">Ouvrir dans Google Maps</a></div>
+        </div>
+      </div>
+      <div class="subpanel" role="tabpanel" id="sp-cer-2" aria-labelledby="tab-cer-2" data-title="Itinéraire">
+        <ol class="steps">
+          <li data-i18n="iti.1"><span class="when">By-pass</span><span>Au carrefour avec la route d'Alasora (Orion Hotel et Domaine Alasora d'un côté, Gastro Pizza Alasora de l'autre), prenez la route d'Alasora vers le sud, direction Alasora.</span></li>
+          <li data-i18n="iti.2"><span class="when">Route d'Alasora</span><span>Passez la Pharmacie Amboaroy et DTE System, puis tournez à droite à hauteur de School Smart, qui est sur votre gauche.</span></li>
+          <li data-i18n="iti.3"><span class="when">Arrivée</span><span>La villa est sur votre droite, juste après Raitra Kidz ; l'église Fiangonana Apokalypsy Alasora Libanona est sur votre gauche. Parking sur place.</span></li>
+        </ol>
+        <p class="note" data-i18n="iti.note">D'après le plan du faire-part.</p>
+      </div>
+      <div class="subpanel" role="tabpanel" id="sp-cer-3" aria-labelledby="tab-cer-3" data-title="Tenue">
+        <div class="panel">
+          <h3 class="tab-echo" data-i18n="cer.dress.title">Code vestimentaire</h3>
+          <p data-i18n="cer.dress">Pour s'accorder au thème de la cérémonie, traditionnel et élégant, nous vous invitons à choisir une tenue ou des accessoires dans les couleurs ci-dessous.</p>
+          <ul class="palette" aria-label="Couleurs du thème" data-i18n-aria="pal.aria">
+            <li><i style="background:#F7C8B2"></i><span data-i18n="pal.1">Pêche</span></li>
+            <li><i style="background:#F2A170"></i><span data-i18n="pal.2">Abricot</span></li>
+            <li><i style="background:#F47D6B"></i><span data-i18n="pal.3">Corail</span></li>
+            <li><i style="background:#F1D3D5"></i><span data-i18n="pal.4">Rose poudré</span></li>
+            <li><i style="background:#A8B69A"></i><span data-i18n="pal.5">Vert sauge</span></li>
+            <li><i style="background:#BFD9F2"></i><span data-i18n="pal.6">Bleu pastel</span></li>
+            <li><i style="background:#F9E7A0"></i><span data-i18n="pal.7">Jaune pastel</span></li>
+          </ul>
+          <p data-i18n="cer.cold">Les soirées sont fraîches en altitude : prévoyez une veste ou un châle.</p>
+        </div>
+      </div>
+      <div class="subpanel" role="tabpanel" id="sp-cer-5" aria-labelledby="tab-cer-5" data-title="Vodiondry">
+        <h3 class="tab-echo" data-i18n="vod.title">Comprendre le <span lang="mg">vodiondry</span></h3>
+        <p class="note swipe-hint" data-i18n="vod.hint">Glissez pour découvrir les anecdotes →</p>
+        <div class="carousel">
+          <button type="button" class="icon-btn car-prev" aria-label="Carte précédente" data-i18n-aria="car.p" disabled=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></button>
+          <ul class="car-list stories" tabindex="0" aria-labelledby="tab-cer-5">
+            <li class="panel story"><h3 data-i18n="vod.t1">La demande en mariage</h3><p data-i18n="vod.1">Le <span lang="mg">vodiondry</span> est la demande en mariage traditionnelle des hautes terres. La famille du marié se présente à la famille de la mariée pour demander officiellement sa main. Le nom désigne, à l'origine, le morceau de mouton offert aux parents de la mariée ; aujourd'hui, ce présent est symbolique.</p></li>
+            <li class="panel story"><h3 data-i18n="vod.t2">Le <span lang="mg">kabary</span></h3><p data-i18n="vod.2">Les deux familles s'expriment par le <span lang="mg">kabary</span>, un art oratoire fait de proverbes et d'images. Chaque famille a son orateur. Écoutez, applaudissez quand l'assemblée applaudit, et laissez la parole aux aînés : ils occupent une place d'honneur.</p></li>
+            <li class="panel story anec"><p class="eyebrow" data-i18n="anec.k">Le saviez-vous ?</p><h3 data-i18n="anec.1t">Le dos du mouton</h3><p data-i18n="anec.1"><span lang="mg">Vodiondry</span> signifie littéralement « croupe du mouton » : <span lang="mg">vody</span>, la croupe, et <span lang="mg">ondry</span>, le mouton. Ce morceau de choix était offert aux parents de la mariée ; une enveloppe symbolique l'a remplacé.</p></li>
+            <li class="panel story anec"><p class="eyebrow" data-i18n="anec.k">Le saviez-vous ?</p><h3 data-i18n="anec.2t">Le morceau d'honneur</h3><p data-i18n="anec.2">Ce n'est pas un hasard : à table, le croupion du poulet, le <span lang="mg">vodiakoho</span>, revient traditionnellement au père ou à l'aîné. Offrir le « <span lang="mg">vody</span> », c'est rendre hommage.</p></li>
+            <li class="panel story anec"><p class="eyebrow" data-i18n="anec.k">Le saviez-vous ?</p><h3 data-i18n="anec.3t">Commencer par s'excuser</h3><p data-i18n="anec.3">Un <span lang="mg">kabary</span> s'ouvre par la <span lang="mg">fialan-tsiny</span> : l'orateur s'excuse par avance de ses maladresses et salue chacun selon son rang. Plus il se montre humble, plus il est admiré.</p></li>
+            <li class="panel story anec"><p class="eyebrow" data-i18n="anec.k">Le saviez-vous ?</p><h3 data-i18n="anec.4t">Une joute courtoise</h3><p data-i18n="anec.4">L'orateur de la famille de la mariée peut faire mine d'hésiter ou poser des questions ; celui du marié répond par des proverbes et des images. Le public apprécie les belles répliques.</p></li>
+            <li class="panel story anec"><p class="eyebrow" data-i18n="anec.k">Le saviez-vous ?</p><h3 data-i18n="anec.5t">Souffler l'eau</h3><p data-i18n="anec.5">La bénédiction des aînés s'appelle <span lang="mg">tso-drano</span>. Le mot évoque l'eau que l'on soufflait autrefois sur les mariés pour leur porter bonheur.</p></li>
+          </ul>
+          <button type="button" class="icon-btn car-next" aria-label="Carte suivante" data-i18n-aria="car.n" disabled=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg></button>
+        </div>
+        <p class="note todo" title="À compléter avec le déroulé réel" data-i18n="vod.3">Les étapes propres à nos familles seront détaillées ici.</p>
+      </div>
+      <div class="subpanel" role="tabpanel" id="sp-cer-6" aria-labelledby="tab-cer-6" data-title="Mots malgaches">
+        <p class="note" data-i18n="lex.note">En malgache, la voyelle finale se prononce à peine. Les prononciations sont approximatives.</p>
+        <p class="note swipe-hint" data-i18n="ph.hint">Glissez pour voir toutes les expressions →</p>
+        <div class="carousel">
+          <button type="button" class="icon-btn car-prev" aria-label="Carte précédente" data-i18n-aria="car.p" disabled=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></button>
+          <ul class="car-list phrasecards" tabindex="0" aria-labelledby="tab-cer-6">
+            <li class="panel phrasebook"><h3 data-i18n="phg.1">Saluer</h3><ul class="phrases"><li><span class="mg" lang="mg">Salama</span><span class="tr"><span data-i18n="ph.1.1">Salut</span> <span class="say" data-i18n="ph.1.1s">« sa-lam »</span></span></li><li><span class="mg" lang="mg">Manao ahoana</span><span class="tr"><span data-i18n="ph.1.2">Bonjour</span> <span class="say" data-i18n="ph.1.2s">« ma-naou a-oun »</span></span></li><li><span class="mg" lang="mg" data-i18n="ph.1.3m">Manao ahoana ianao ?</span><span class="tr"><span data-i18n="ph.1.3">Comment allez-vous ?</span> <span class="say" data-i18n="ph.1.3s">« ma-naou a-oun i-a-naou »</span></span></li><li><span class="mg" lang="mg">Tsara be, misaotra</span><span class="tr"><span data-i18n="ph.1.4">Très bien, merci</span> <span class="say" data-i18n="ph.1.4s">« tsar bé, mi-sôtch »</span></span></li></ul></li>
+            <li class="panel phrasebook"><h3 data-i18n="phg.2">Se présenter</h3><ul class="phrases"><li><span class="mg" lang="mg">Ny anarako dia…</span><span class="tr"><span data-i18n="ph.2.1">Je m’appelle…</span> <span class="say" data-i18n="ph.2.1s">« ni a-na-rou di »</span></span></li><li><span class="mg" lang="mg" data-i18n="ph.2.2m">Iza no anaranao ?</span><span class="tr"><span data-i18n="ph.2.2">Comment vous appelez-vous ?</span> <span class="say" data-i18n="ph.2.2s">« i-za nou a-na-ra-naou »</span></span></li><li><span class="mg" lang="mg" data-i18n="ph.2.3m">Avy any Frantsa aho</span><span class="tr"><span data-i18n="ph.2.3">Je viens de France</span> <span class="say" data-i18n="ph.2.3s">« a-vi a-ni frantch a-ou »</span></span></li><li><span class="mg" lang="mg">Faly mahafantatra anao</span><span class="tr"><span data-i18n="ph.2.4">Enchanté·e</span> <span class="say" data-i18n="ph.2.4s">« fa-li ma-fan-tatch a-naou »</span></span></li></ul></li>
+            <li class="panel phrasebook"><h3 data-i18n="phg.3">Politesse</h3><ul class="phrases"><li><span class="mg" lang="mg">Misaotra betsaka</span><span class="tr"><span data-i18n="ph.3.1">Merci beaucoup</span> <span class="say" data-i18n="ph.3.1s">« mi-sôtch bé-tsak »</span></span></li><li><span class="mg" lang="mg">Azafady</span><span class="tr"><span data-i18n="ph.3.2">S’il vous plaît, pardon</span> <span class="say" data-i18n="ph.3.2s">« a-za-fad »</span></span></li><li><span class="mg" lang="mg">Tsy misy fisaorana</span><span class="tr"><span data-i18n="ph.3.3">De rien</span> <span class="say" data-i18n="ph.3.3s">« tsi mis fi-saou-ran »</span></span></li><li><span class="mg" lang="mg">Eny · Tsia</span><span class="tr"><span data-i18n="ph.3.4">Oui · Non</span> <span class="say" data-i18n="ph.3.4s">« é-ni · tsi »</span></span></li></ul></li>
+            <li class="panel phrasebook"><h3 data-i18n="phg.4">À la fête</h3><ul class="phrases"><li><span class="mg" lang="mg">Tonga soa</span><span class="tr"><span data-i18n="ph.4.1">Bienvenue</span> <span class="say" data-i18n="ph.4.1s">« toung soua »</span></span></li><li><span class="mg" lang="mg" data-i18n="ph.4.2m">Arahabaina !</span><span class="tr"><span data-i18n="ph.4.2">Félicitations !</span> <span class="say" data-i18n="ph.4.2s">« a-ra-a-bain »</span></span></li><li><span class="mg" lang="mg">Mirary soa ho anareo</span><span class="tr"><span data-i18n="ph.4.3">Tous nos vœux de bonheur</span> <span class="say" data-i18n="ph.4.3s">« mi-rar sou ou a-na-ré »</span></span></li><li><span class="mg" lang="mg" data-i18n="ph.4.4m">Mazotoa homana !</span><span class="tr"><span data-i18n="ph.4.4">Bon appétit !</span> <span class="say" data-i18n="ph.4.4s">« ma-zou-tou ou-man »</span></span></li></ul></li>
+            <li class="panel phrasebook"><h3 data-i18n="phg.5">Utile</h3><ul class="phrases"><li><span class="mg" lang="mg">Tsy mahay teny malagasy aho</span><span class="tr"><span data-i18n="ph.5.1">Je ne parle pas malgache</span> <span class="say" data-i18n="ph.5.1s">« tsi ma-haï té-ni ma-la-gas a-ou »</span></span></li><li><span class="mg" lang="mg" data-i18n="ph.5.2m">Tsara be !</span><span class="tr"><span data-i18n="ph.5.2">C’est magnifique !</span> <span class="say" data-i18n="ph.5.2s">« tsar bé »</span></span></li><li><span class="mg" lang="mg">Veloma</span><span class="tr"><span data-i18n="ph.5.3">Au revoir</span> <span class="say" data-i18n="ph.5.3s">« vé-loum »</span></span></li></ul></li>
+          </ul>
+          <button type="button" class="icon-btn car-next" aria-label="Carte suivante" data-i18n-aria="car.n" disabled=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg></button>
+        </div>
+      </div>
+    <nav class="pager" aria-label="Rubrique précédente et suivante"><a class="prev" href="#p-accueil"><span><i aria-hidden="true">← </i>Précédent</span><b>Accueil</b></a><a class="next" href="#p-jourj"><span>Suivant<i aria-hidden="true"> →</i></span><b>Programme du jour J</b></a></nav></section>
+
+    <!-- ===== JOUR J ===== -->
+    <section class="page" id="p-jourj" data-page="" aria-labelledby="t-jourj">
+      <div class="page-head">
+        <p class="eyebrow" data-i18n="grp.mariage">Le mariage</p>
+        <h2 id="t-jourj" tabindex="-1" data-i18n="jj.title">Programme du jour J</h2>
+        <p class="lead" data-i18n="jj.lead">Dimanche 25 avril 2027, à la Villa ny Natiora.</p>
+      </div>
+      <ol class="timeline">
+        <li><time>10:30</time><div data-i18n="jj.1"><h3>Arrivée des invités</h3><p>Animation musicale : <span lang="mg">Mpitsoka mozika</span>.</p></div></li>
+        <li><time>11:30</time><div data-i18n="jj.2"><h3>Début de la cérémonie traditionnelle</h3><p>Le <span lang="mg">vodiondry</span>, en plein air, autour d'un podium fleuri.</p></div></li>
+        <li><time>13:30</time><div data-i18n="jj.3"><h3>Cocktail</h3><p>Photos des fiancés et photos avec les invités, au son d'un saxophoniste.</p></div></li>
+        <li><time>14:30</time><div data-i18n="jj.4"><h3>Ouverture du déjeuner</h3><p>Sous la tente, avec un artiste, un orchestre et un DJ.</p></div></li>
+        <li><time>18:00</time><div data-i18n="jj.5"><h3>Le gâteau</h3><p>Puis la fête continue avec le DJ.</p></div></li>
+        <li><time>22:00</time><div data-i18n="jj.6"><h3>Fin officielle de la réception</h3></div></li>
+      </ol>
+    <nav class="pager" aria-label="Rubrique précédente et suivante"><a class="prev" href="#p-ceremonie"><span><i aria-hidden="true">← </i>Précédent</span><b>La cérémonie</b></a><a class="next" href="#p-rsvp"><span>Suivant<i aria-hidden="true"> →</i></span><b>Répondre à l’invitation</b></a></nav></section>
+
+    <!-- ===== RSVP ===== -->
+    <section class="page" id="p-rsvp" data-page="" aria-labelledby="t-rsvp">
+      <div class="page-head">
+        <p class="eyebrow" data-i18n="grp.mariage">Le mariage</p>
+        <h2 id="t-rsvp" tabindex="-1" data-i18n="rsvp.cta">Répondre à l'invitation</h2>
+        <p class="lead" data-i18n="rsvp.lead">Merci de répondre avant le 25 février 2027.</p>
+      </div>
+      <div class="subtabs" role="tablist" aria-labelledby="t-rsvp">
+        <button type="button" role="tab" id="tab-rsvp-1" aria-controls="sp-rsvp-1" aria-selected="true" data-i18n="tab.repondre" tabindex="0">Votre réponse</button>
+        <button type="button" role="tab" id="tab-rsvp-2" aria-controls="sp-rsvp-2" aria-selected="false" data-i18n="tab.details" tabindex="-1">Détails</button>
+        <button type="button" role="tab" id="tab-rsvp-3" aria-controls="sp-rsvp-3" aria-selected="false" data-i18n="gift.eyebrow" tabindex="-1">Votre présent</button>
+      </div>
+      <form id="rsvp-form" novalidate="">
+        <div class="subpanel" role="tabpanel" id="sp-rsvp-1" aria-labelledby="tab-rsvp-1" data-title="Votre réponse">
+          <div class="panel form-grid">
+            <div class="field"><label for="r-nom" data-i18n="rsvp.nom">Vos nom et prénom</label><input type="text" id="r-nom" name="nom" autocomplete="name" required=""></div>
+            <div class="field"><label for="r-nb" data-i18n="rsvp.nb">Nombre de personnes, vous compris</label><input type="number" id="r-nb" name="nb" min="1" max="6" value="1" inputmode="numeric"></div>
+            <fieldset class="field">
+              <legend data-i18n="rsvp.presence">Serez-vous présent·e ?</legend>
+              <div class="radios">
+                <label><input type="radio" name="presence" id="r-oui" value="oui" checked=""> <span data-i18n="rsvp.oui">Oui, avec joie</span></label>
+                <label><input type="radio" name="presence" id="r-non" value="non"> <span data-i18n="rsvp.non">Non, à regret</span></label>
+              </div>
+            </fieldset>
+            <label class="check"><input type="checkbox" id="r-semaine" name="semaine"> <span data-i18n="rsvp.semaine">Je participe aussi à la semaine de découverte</span></label>
+            <div class="wide form-end"><button type="button" class="btn" data-goto="tab-rsvp-2" data-i18n="rsvp.next">Continuer</button></div>
+          </div>
+        </div>
+        <div class="subpanel" role="tabpanel" id="sp-rsvp-2" aria-labelledby="tab-rsvp-2" data-title="Détails">
+          <div class="panel form-grid">
+            <div class="field"><label for="r-regime" data-i18n="rsvp.regime">Régime ou allergies alimentaires</label><input type="text" id="r-regime" name="regime" aria-describedby="r-regime-help"><small id="r-regime-help" data-i18n="rsvp.regime.help">Végétarien, sans porc, allergie… Laissez vide si rien à signaler.</small></div>
+            <div class="field"><label for="r-msg" data-i18n="rsvp.msg">Un mot pour les mariés</label><textarea id="r-msg" name="message" rows="2"></textarea></div>
+            <div class="wide form-end"><button class="btn" type="submit" data-i18n="rsvp.send">Envoyer ma réponse</button><p class="status" id="rsvp-status" role="status" aria-live="polite"></p></div>
+          </div>
+        </div>
+      </form>
+      <div class="subpanel" role="tabpanel" id="sp-rsvp-3" aria-labelledby="tab-rsvp-3" data-title="Votre présent">
+        <div class="panel">
+          <p class="gift-quote" lang="mg">« Sitrakay raha tso-drano ara pomba Malagasy no atolotrareo. »</p>
+          <p class="todo" title="Explication à préciser pour les invités venant d'Europe" data-i18n="gift.text" data-hide-in="mg">Les mariés seront touchés de recevoir votre <span lang="mg">tso-drano</span>, selon la coutume malgache.</p>
+        </div>
+      </div>
+    <nav class="pager" aria-label="Rubrique précédente et suivante"><a class="prev" href="#p-jourj"><span><i aria-hidden="true">← </i>Précédent</span><b>Programme du jour J</b></a><a class="next" href="#p-preparatifs"><span>Suivant<i aria-hidden="true"> →</i></span><b>Vos préparatifs</b></a></nav></section>
+
+    <!-- ===== PRÉPARATIFS ===== -->
+    <section class="page" id="p-preparatifs" data-page="" aria-labelledby="t-preparatifs">
+      <div class="page-head">
+        <p class="eyebrow" data-i18n="grp.venir">Venir</p>
+        <h2 id="t-preparatifs" tabindex="-1" data-i18n="steps.title">Vos préparatifs, dans l'ordre</h2>
+      </div>
+      <div class="filters seg" role="group" aria-label="Votre situation" data-i18n-aria="prof.eyebrow">
+        <button type="button" data-profile="europe" aria-pressed="true" data-i18n="prof.eu">J'arrive d'Europe</button>
+        <button type="button" data-profile="local" aria-pressed="false" data-i18n="prof.local">Je vis à Madagascar</button>
+      </div>
+      <ol class="steps" data-for="europe" data-title="J'arrive d'Europe">
+        <li data-i18n="eu.1"><span class="when">Dès maintenant</span><span><a href="#p-vols">Réservez votre billet d'avion</a>. Avril tombe pendant les vacances scolaires de printemps : les prix montent vite.</span></li>
+        <li data-i18n="eu.2"><span class="when">Avant le 25 février 2027</span><span><a href="#p-rsvp">Confirmez votre présence</a> et vos dates de séjour.</span></li>
+        <li data-i18n="eu.3"><span class="when">Février 2027</span><span><a href="#p-hebergement">Réservez votre hébergement</a> et vérifiez votre passeport.</span></li>
+        <li data-i18n="eu.4"><span class="when">Mars 2027</span><span>Consultation santé et <a href="#p-formalites">demande de visa</a>.</span></li>
+        <li data-i18n="eu.5"><span class="when">La semaine du départ</span><span><a href="#p-valise">Bouclez votre valise</a> avec la liste à cocher.</span></li>
+      </ol>
+      <ol class="steps" data-for="local" data-title="Je vis à Madagascar">
+        <li data-i18n="lo.1"><span class="when">Avant le 25 février 2027</span><span><a href="#p-rsvp">Confirmez votre présence</a> et le nombre de personnes.</span></li>
+        <li data-i18n="lo.2"><span class="when">Mars 2027</span><span>Préparez votre tenue selon le <a href="#p-ceremonie">code vestimentaire</a>.</span></li>
+        <li data-i18n="lo.3"><span class="when">Avril 2027</span><span>Repérez le trajet jusqu'à la <a href="#p-ceremonie">Villa ny Natiora</a>, sur le By-pass, et prévoyez de la marge pour la circulation.</span></li>
+        <li data-i18n="lo.4"><span class="when">Le 25 avril</span><span>Arrivez à 10 h 30 pour l'accueil des invités. Voir le <a href="#p-jourj">programme du jour J</a>.</span></li>
+        <li data-i18n="lo.5"><span class="when">Après le mariage</span><span>Si vous le souhaitez, rejoignez une partie de la <a href="#p-semaine">semaine de découverte</a>.</span></li>
+      </ol>
+    <nav class="pager" aria-label="Rubrique précédente et suivante"><a class="prev" href="#p-rsvp"><span><i aria-hidden="true">← </i>Précédent</span><b>Répondre à l’invitation</b></a><a class="next" href="#p-vols"><span>Suivant<i aria-hidden="true"> →</i></span><b>Billet d’avion</b></a></nav></section>
+
+    <!-- ===== VOLS ===== -->
+    <section class="page" id="p-vols" data-page="" aria-labelledby="t-vols">
+      <div class="page-head">
+        <p class="eyebrow" data-i18n="grp.venir">Venir</p>
+        <h2 id="t-vols" tabindex="-1" data-i18n="vols.title">Billet d'avion depuis l'Europe</h2>
+        <p class="lead" data-i18n="vols.lead">Vous atterrirez à l'aéroport international d'Antananarivo-Ivato, code <span class="mono">TNR</span>, à environ 15 km au nord du centre.</p>
+      </div>
+      <div class="subtabs" role="tablist" aria-labelledby="t-vols">
+        <button type="button" role="tab" id="tab-vols-1" aria-controls="sp-vols-1" aria-selected="true" data-i18n="tab.vols" tabindex="0">Les vols</button>
+        <button type="button" role="tab" id="tab-vols-2" aria-controls="sp-vols-2" aria-selected="false" data-i18n="tab.comparer" tabindex="-1">Comparer</button>
+        <button type="button" role="tab" id="tab-vols-3" aria-controls="sp-vols-3" aria-selected="false" data-i18n="tab.conseils" tabindex="-1">Conseils</button>
+      </div>
+      <div class="subpanel" role="tabpanel" id="sp-vols-1" aria-labelledby="tab-vols-1" data-title="Les vols">
+        <dl class="facts">
+          <div data-i18n="vols.f1"><dt>Vol direct</dt><dd>Depuis Paris-Charles-de-Gaulle, environ 11 h de vol.</dd></div>
+          <div data-i18n="vols.f2"><dt>Avec escale</dt><dd>De 14 à 20 h selon l'escale : La Réunion, Maurice, Addis-Abeba, Istanbul, Nairobi…</dd></div>
+          <div data-i18n="vols.f3"><dt>Depuis l'Espagne</dt><dd>Pas de vol direct : correspondance à Paris, Addis-Abeba, Istanbul ou Nairobi depuis Madrid ou Barcelone.</dd></div>
+        </dl>
+      </div>
+      <div class="subpanel" role="tabpanel" id="sp-vols-2" aria-labelledby="tab-vols-2" data-title="Comparer">
+        <div class="table-wrap">
+          <table>
+            <caption class="sr-only" data-i18n="vols.cap">Options de vol vers Antananarivo</caption>
+            <thead><tr data-i18n="vols.th"><th scope="col">Option</th><th scope="col">Durée</th><th scope="col">À savoir</th></tr></thead>
+            <tbody>
+              <tr data-i18n="vols.r1"><td>Direct depuis Paris</td><td class="mono">≈ 11 h</td><td>Le plus simple, souvent de nuit.</td></tr>
+              <tr data-i18n="vols.r2"><td>Via La Réunion ou Maurice</td><td class="mono">14–16 h</td><td>Possibilité d'ajouter une étape dans l'océan Indien.</td></tr>
+              <tr data-i18n="vols.r3"><td>Via Addis-Abeba, Istanbul ou Nairobi</td><td class="mono">15–20 h</td><td>Souvent moins cher, départ possible d'autres villes d'Europe.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="todo" title="À décider : réservation groupée ?" data-i18n="vols.todo">Un tarif de groupe ou une sélection de vols recommandés pourra être ajouté ici.</p>
+      </div>
+      <div class="subpanel" role="tabpanel" id="sp-vols-3" aria-labelledby="tab-vols-3" data-title="Conseils">
+        <dl class="facts">
+          <div data-i18n="vols.f5"><dt>Quand réserver</dt><dd>Dès maintenant : avril coïncide avec les vacances scolaires de printemps en France.</dd></div>
+          <div data-i18n="vols.f6"><dt>Arrivée conseillée</dt><dd>Au moins deux jours avant la cérémonie, pour récupérer du voyage.</dd></div>
+          <div data-i18n="vols.f4"><dt>Décalage horaire</dt><dd>+1 h par rapport à Paris et Madrid en avril.</dd></div>
+        </dl>
+        <div class="clock">
+          <div><span data-i18n="clock.tnr">À Tananarive</span><b class="mono" id="clock-tnr">00:54</b></div>
+          <div><span data-i18n="clock.par">À Paris</span><b class="mono" id="clock-par">23:54</b></div>
+          <p id="clock-diff">Aujourd’hui, Madagascar a 1 h d’avance sur Paris. En avril, l’écart sera de 1 h.</p>
+        </div>
+      </div>
+    <nav class="pager" aria-label="Rubrique précédente et suivante"><a class="prev" href="#p-preparatifs"><span><i aria-hidden="true">← </i>Précédent</span><b>Vos préparatifs</b></a><a class="next" href="#p-formalites"><span>Suivant<i aria-hidden="true"> →</i></span><b>Formalités</b></a></nav></section>
+
+    <!-- ===== FORMALITÉS ===== -->
+    <section class="page" id="p-formalites" data-page="" aria-labelledby="t-formalites">
+      <div class="page-head">
+        <p class="eyebrow" data-i18n="grp.venir">Venir</p>
+        <h2 id="t-formalites" tabindex="-1" data-i18n="form.title">Formalités administratives</h2>
+        <p class="lead" data-i18n="form.lead">Un visa touristique est obligatoire pour les ressortissants européens.</p>
+      </div>
+      <div class="subtabs" role="tablist" aria-labelledby="t-formalites">
+        <button type="button" role="tab" id="tab-form-1" aria-controls="sp-form-1" aria-selected="true" data-i18n="tab.maintenant" tabindex="0">Dès maintenant</button>
+        <button type="button" role="tab" id="tab-form-2" aria-controls="sp-form-2" aria-selected="false" data-i18n="tab.sante" tabindex="-1">Santé et visa</button>
+        <button type="button" role="tab" id="tab-form-4" aria-controls="sp-form-4" aria-selected="false" data-i18n="dou.title" tabindex="-1">Douane</button>
+        <button type="button" role="tab" id="tab-form-3" aria-controls="sp-form-3" aria-selected="false" data-i18n="tab.depart" tabindex="-1">Avant le départ</button>
+      </div>
+      <div class="subpanel" role="tabpanel" id="sp-form-1" aria-labelledby="tab-form-1" data-title="Dès maintenant">
+        <ol class="steps">
+          <li data-i18n="form.1"><span class="when">Dès maintenant</span><span><b>Passeport</b> valide au moins 6 mois après votre date de retour, avec des pages vierges.</span></li>
+          <li data-i18n="form.2"><span class="when">À la réservation</span><span><b>Assurance voyage</b> couvrant les frais médicaux et le rapatriement.</span></li>
+        </ol>
+      </div>
+      <div class="subpanel" role="tabpanel" id="sp-form-2" aria-labelledby="tab-form-2" data-title="Santé et visa">
+        <ol class="steps" start="3" style="counter-reset: step 2">
+          <li data-i18n="form.3"><span class="when">2 mois avant</span><span><b>Consultation santé</b> chez votre médecin ou dans un centre de vaccinations internationales : vaccins conseillés et prévention du paludisme selon l'itinéraire.</span></li>
+          <li data-i18n="form.4"><span class="when">1 mois avant</span><span><b>Visa</b> : demandez l'e-visa en ligne, ou obtenez-le à l'arrivée à l'aéroport. Un billet retour est exigé. N'utilisez que le portail officiel en <span class="mono">.gov.mg</span> ; méfiez-vous des sites intermédiaires payants.</span></li>
+        </ol>
+      </div>
+      <div class="subpanel" role="tabpanel" id="sp-form-4" aria-labelledby="tab-form-4" data-title="Douane">
+        <div class="panel">
+          <h3 class="tab-echo" data-i18n="dou.title">Douane</h3>
+          <p data-i18n="dou.text">Ce que vous pouvez apporter ou rapporter, et ce qu'il faut déclarer à l'arrivée comme au départ : consultez le guide officiel des douanes malgaches avant de faire vos valises.</p>
+          <div><a class="btn ghost" href="https://www.douanes.gov.mg/srcs/uploads/2024/07/Guide-de-passage-en-douane-23-07-2024.pdf" target="_blank" rel="noopener" data-i18n="dou.link">Guide de passage en douane (PDF)</a></div>
+        </div>
+      </div>
+      <div class="subpanel" role="tabpanel" id="sp-form-3" aria-labelledby="tab-form-3" data-title="Avant le départ">
+        <ol class="steps" start="5" style="counter-reset: step 4">
+          <li data-i18n="form.5"><span class="when">Avant le départ</span><span><b>Signalez votre voyage à votre pays</b> : sur Ariane pour les Français, au <span lang="es">Registro de Viajeros</span> pour les Espagnols. Gardez une copie numérique de vos documents.</span></li>
+        </ol>
+        <div class="notice" role="note">
+          <span aria-hidden="true">ⓘ</span>
+          <p data-i18n="form.notice">Les règles changent : vérifiez-les sur la page <a href="https://www.diplomatie.gouv.fr/fr/conseils-aux-voyageurs/conseils-par-pays-destination/madagascar/" target="_blank" rel="noopener">Conseils aux voyageurs — Madagascar</a> du ministère français des Affaires étrangères, ou sur le site du <a href="https://www.exteriores.gob.es/" target="_blank" rel="noopener" lang="es">Ministerio de Asuntos Exteriores</a> pour les Espagnols, avant votre départ.</p>
+        </div>
+      </div>
+    <nav class="pager" aria-label="Rubrique précédente et suivante"><a class="prev" href="#p-vols"><span><i aria-hidden="true">← </i>Précédent</span><b>Billet d’avion</b></a><a class="next" href="#p-meteo"><span>Suivant<i aria-hidden="true"> →</i></span><b>Météo</b></a></nav></section>
+
+    <!-- ===== MÉTÉO ===== -->
+    <section class="page" id="p-meteo" data-page="" aria-labelledby="t-meteo">
+      <div class="page-head">
+        <p class="eyebrow" data-i18n="grp.venir">Venir</p>
+        <h2 id="t-meteo" tabindex="-1" data-i18n="met.title">La météo en avril</h2>
+        <p class="lead" data-i18n="met.lead">Avril marque la fin de la saison des pluies. À Tananarive, à 1 280 m d'altitude, les journées sont douces et les nuits fraîches. Sur les côtes, il fait chaud et humide.</p>
+      </div>
+      <div class="subtabs" role="tablist" aria-labelledby="t-meteo">
+        <button type="button" role="tab" id="tab-met-1" aria-controls="sp-met-1" aria-selected="true" data-i18n="tab.temperatures" tabindex="0">Températures</button>
+        <button type="button" role="tab" id="tab-met-2" aria-controls="sp-met-2" aria-selected="false" data-i18n="tab.conseils" tabindex="-1">Conseils</button>
+      </div>
+      <div class="subpanel" role="tabpanel" id="sp-met-1" aria-labelledby="tab-met-1" data-title="Températures">
+        <div class="panel">
+          <h3 data-i18n="met.chart">Températures moyennes d'avril, minimum et maximum</h3>
+          <div class="temps" id="temps" role="list"><div class="temp-row" role="listitem"><span class="label">Antananarivo<small>1 280 m · le mariage</small></span><span class="track"><span class="range" style="left:16%;width:40.00000000000001%"><span class="lo" aria-hidden="true">14°</span><span class="hi" aria-hidden="true">24°</span></span><span class="sr-only">de 14 à 24 degrés</span></span></div><div class="temp-row" role="listitem"><span class="label">Antsirabe<small>1 500 m</small></span><span class="track"><span class="range" style="left:8%;width:40%"><span class="lo" aria-hidden="true">12°</span><span class="hi" aria-hidden="true">22°</span></span><span class="sr-only">de 12 à 22 degrés</span></span></div><div class="temp-row" role="listitem"><span class="label">Andasibe<small>forêt humide</small></span><span class="track"><span class="range" style="left:20%;width:36.00000000000001%"><span class="lo" aria-hidden="true">15°</span><span class="hi" aria-hidden="true">24°</span></span><span class="sr-only">de 15 à 24 degrés</span></span></div><div class="temp-row" role="listitem"><span class="label">Morondava<small>côte ouest, baobabs</small></span><span class="track"><span class="range" style="left:44%;width:44%"><span class="lo" aria-hidden="true">21°</span><span class="hi" aria-hidden="true">32°</span></span><span class="sr-only">de 21 à 32 degrés</span></span></div><div class="temp-row" role="listitem"><span class="label">Nosy Be<small>île au nord-ouest</small></span><span class="track"><span class="range" style="left:52%;width:32%"><span class="lo" aria-hidden="true">23°</span><span class="hi" aria-hidden="true">31°</span></span><span class="sr-only">de 23 à 31 degrés</span></span></div></div>
+          <div class="axis" aria-hidden="true"><span></span><div id="axis"><span style="left:0%">10°</span><span style="left:20%">15°</span><span style="left:40%">20°</span><span style="left:60%">25°</span><span style="left:80%">30°</span><span style="left:100%">35°</span></div></div>
+          <p><small data-i18n="met.note">Moyennes indicatives, en °C.</small></p>
+        </div>
+      </div>
+      <div class="subpanel" role="tabpanel" id="sp-met-2" aria-labelledby="tab-met-2" data-title="Conseils">
+        <dl class="facts">
+          <div data-i18n="met.f1"><dt>Pluie</dt><dd>Averses encore possibles en fin de journée, surtout en début de mois.</dd></div>
+          <div data-i18n="met.f2"><dt>Soleil</dt><dd>Fort même par temps frais : chapeau et crème solaire.</dd></div>
+          <div data-i18n="met.f3"><dt>Écart jour / nuit</dt><dd>Jusqu'à 10 °C sur les hautes terres. Pensez aux couches.</dd></div>
+        </dl>
+      </div>
+    <nav class="pager" aria-label="Rubrique précédente et suivante"><a class="prev" href="#p-formalites"><span><i aria-hidden="true">← </i>Précédent</span><b>Formalités</b></a><a class="next" href="#p-valise"><span>Suivant<i aria-hidden="true"> →</i></span><b>Valise</b></a></nav></section>
+
+    <!-- ===== VALISE ===== -->
+    <section class="page" id="p-valise" data-page="" aria-labelledby="t-valise">
+      <div class="page-head">
+        <p class="eyebrow" data-i18n="grp.venir">Venir</p>
+        <h2 id="t-valise" tabindex="-1" data-i18n="val.title">Qu'apporter dans sa valise</h2>
+        <p class="lead" data-i18n="val.lead">Cochez au fur et à mesure. Vos coches restent enregistrées sur cet appareil.</p>
+      </div>
+      <div class="progress">
+        <p id="pack-count" aria-live="polite">0 sur 18 objet prêt</p>
+        <div class="progress-bar" aria-hidden="true"><i id="pack-bar" style="width: 0%;"></i></div>
+      </div>
+      <div class="packing" id="packing"><div class="subtabs" role="tablist" aria-labelledby="t-valise"><button type="button" role="tab" id="tab-val-0" aria-controls="sp-val-0" aria-selected="true" tabindex="0">Documents</button><button type="button" role="tab" id="tab-val-1" aria-controls="sp-val-1" aria-selected="false" tabindex="-1">Pour la cérémonie</button><button type="button" role="tab" id="tab-val-2" aria-controls="sp-val-2" aria-selected="false" tabindex="-1">Santé</button><button type="button" role="tab" id="tab-val-3" aria-controls="sp-val-3" aria-selected="false" tabindex="-1">Pratique</button></div><div class="subpanel" role="tabpanel" id="sp-val-0" aria-labelledby="tab-val-0" data-title="Documents"><fieldset><legend class="sr-only">Documents</legend><label class="check"><input type="checkbox" id="p-passeport" data-pack="passeport"><span>Passeport<small>Valide 6 mois après le retour</small></span></label><label class="check"><input type="checkbox" id="p-visa" data-pack="visa"><span>E-visa imprimé ou argent pour le visa</span></label><label class="check"><input type="checkbox" id="p-billets" data-pack="billets"><span>Billets d’avion et attestation d’assurance</span></label><label class="check"><input type="checkbox" id="p-copies" data-pack="copies"><span>Copies de vos documents<small>Sur papier et sur votre téléphone</small></span></label><label class="check"><input type="checkbox" id="p-euros" data-pack="euros"><span>Euros en espèces<small>Billets récents et en bon état, pour le change</small></span></label></fieldset></div><div class="subpanel" role="tabpanel" id="sp-val-1" aria-labelledby="tab-val-1" data-title="Pour la cérémonie"><fieldset><legend class="sr-only">Pour la cérémonie</legend><label class="check"><input type="checkbox" id="p-tenue" data-pack="tenue"><span>Votre tenue du jour J</span></label><label class="check"><input type="checkbox" id="p-chale" data-pack="chale"><span>Un châle ou une veste<small>Pour la soirée, fraîche en altitude</small></span></label><label class="check"><input type="checkbox" id="p-chaussures" data-pack="chaussures"><span>Chaussures confortables<small>Le sol peut être inégal</small></span></label><label class="check"><input type="checkbox" id="p-cadeau" data-pack="cadeau"><span>Votre tso-drano pour les mariés<small>Selon la coutume malgache</small></span></label></fieldset></div><div class="subpanel" role="tabpanel" id="sp-val-2" aria-labelledby="tab-val-2" data-title="Santé"><fieldset><legend class="sr-only">Santé</legend><label class="check"><input type="checkbox" id="p-moustique" data-pack="moustique"><span>Anti-moustique pour les tropiques</span></label><label class="check"><input type="checkbox" id="p-solaire" data-pack="solaire"><span>Crème solaire, chapeau et lunettes de soleil<small>La cérémonie a lieu en plein air</small></span></label><label class="check"><input type="checkbox" id="p-trousse" data-pack="trousse"><span>Trousse de pharmacie<small>Antidiarrhéique, pansements, désinfectant</small></span></label><label class="check"><input type="checkbox" id="p-traitements" data-pack="traitements"><span>Vos traitements personnels<small>Avec l’ordonnance</small></span></label></fieldset></div><div class="subpanel" role="tabpanel" id="sp-val-3" aria-labelledby="tab-val-3" data-title="Pratique"><fieldset><legend class="sr-only">Pratique</legend><label class="check"><input type="checkbox" id="p-lampe" data-pack="lampe"><span>Lampe frontale<small>Les coupures de courant sont fréquentes</small></span></label><label class="check"><input type="checkbox" id="p-batterie" data-pack="batterie"><span>Batterie externe</span></label><label class="check"><input type="checkbox" id="p-adaptateur" data-pack="adaptateur"><span>Pas besoin d’adaptateur<small>Les prises sont les mêmes qu’en France et en Espagne</small></span></label><label class="check"><input type="checkbox" id="p-pluie" data-pack="pluie"><span>Un vêtement de pluie léger</span></label><label class="check"><input type="checkbox" id="p-couches" data-pack="couches"><span>Un pull pour les soirées</span></label></fieldset></div></div>
+    <nav class="pager" aria-label="Rubrique précédente et suivante"><a class="prev" href="#p-meteo"><span><i aria-hidden="true">← </i>Précédent</span><b>Météo</b></a><a class="next" href="#p-hebergement"><span>Suivant<i aria-hidden="true"> →</i></span><b>Hébergement</b></a></nav></section>
+
+    <!-- ===== HÉBERGEMENT ===== -->
+    <section class="page" id="p-hebergement" data-page="" aria-labelledby="t-hebergement">
+      <div class="page-head">
+        <p class="eyebrow" data-i18n="grp.place">Sur place</p>
+        <h2 id="t-hebergement" tabindex="-1" data-i18n="heb.title">Hébergement</h2>
+        <p class="lead" data-i18n="heb.lead">Où dormir selon le moment du séjour. Notre sélection d'hôtels sera ajoutée ici.</p>
+      </div>
+      <div class="subtabs" role="tablist" aria-labelledby="t-hebergement">
+        <button type="button" role="tab" id="tab-heb-1" aria-controls="sp-heb-1" aria-selected="true" data-i18n="tab.quartiers" tabindex="0">Quartiers</button>
+        <button type="button" role="tab" id="tab-heb-2" aria-controls="sp-heb-2" aria-selected="false" data-i18n="heb.sel" tabindex="-1">Notre sélection</button>
+      </div>
+      <div class="subpanel" role="tabpanel" id="sp-heb-1" aria-labelledby="tab-heb-1" data-title="Quartiers">
+        <div class="grid swipe" tabindex="0" role="group" aria-labelledby="tab-heb-1">
+          <div class="panel" data-i18n="heb.p1"><p class="eyebrow">Arrivée et départ</p><h3>Près de l'aéroport d'Ivato</h3><p>Pratique pour la première nuit après un long vol, et la dernière avant un départ matinal.</p></div>
+          <div class="panel" data-i18n="heb.p2"><p class="eyebrow">Charme</p><h3>Haute-Ville</h3><p>Ruelles pavées, maisons anciennes et vue sur les collines. Les principaux sites se rejoignent à pied.</p></div>
+          <div class="panel" data-i18n="heb.p3"><p class="eyebrow">Confort</p><h3>Ivandry et Ankorondrano</h3><p>Quartiers récents, hôtels modernes et nombreux restaurants.</p></div>
+        </div>
+      </div>
+      <div class="subpanel" role="tabpanel" id="sp-heb-2" aria-labelledby="tab-heb-2" data-title="Notre sélection">
+        <div class="table-wrap">
+          <table>
+            <caption class="sr-only" data-i18n="heb.cap">Hôtels recommandés</caption>
+            <thead><tr data-i18n="heb.th"><th scope="col">Gamme</th><th scope="col">Hôtel</th><th scope="col">Prix par nuit</th><th scope="col">Distance de la villa</th></tr></thead>
+            <tbody>
+              <tr data-i18n="heb.r1"><td>Simple</td><td class="todo" title="À compléter">Hôtel à choisir</td><td class="mono">—</td><td class="mono">—</td></tr>
+              <tr data-i18n="heb.r2"><td>Intermédiaire</td><td class="todo" title="À compléter">Hôtel à choisir</td><td class="mono">—</td><td class="mono">—</td></tr>
+              <tr data-i18n="heb.r3"><td>Haut de gamme</td><td class="todo" title="À compléter">Hôtel à choisir</td><td class="mono">—</td><td class="mono">—</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    <nav class="pager" aria-label="Rubrique précédente et suivante"><a class="prev" href="#p-valise"><span><i aria-hidden="true">← </i>Précédent</span><b>Valise</b></a><a class="next" href="#p-transport"><span>Suivant<i aria-hidden="true"> →</i></span><b>Se déplacer à Tana</b></a></nav></section>
+
+    <!-- ===== TRANSPORT LOCAL ===== -->
+    <section class="page" id="p-transport" data-page="" aria-labelledby="t-transport">
+      <div class="page-head">
+        <p class="eyebrow" data-i18n="grp.place">Sur place</p>
+        <h2 id="t-transport" tabindex="-1" data-i18n="tr.title">Se déplacer à Tananarive</h2>
+        <p class="lead" data-i18n="tr.lead">La ville est étendue, vallonnée et souvent embouteillée. Comptez large pour chaque trajet.</p>
+      </div>
+      <div class="subtabs" role="tablist" aria-labelledby="t-transport">
+        <button type="button" role="tab" id="tab-tr-1" aria-controls="sp-tr-1" aria-selected="true" data-i18n="tab.trajets" tabindex="0">Trajets</button>
+        <button type="button" role="tab" id="tab-tr-2" aria-controls="sp-tr-2" aria-selected="false" data-i18n="tab.route" tabindex="-1">Sur la route</button>
+        <button type="button" role="tab" id="tab-tr-5" aria-controls="sp-tr-5" aria-selected="false" data-i18n="tab.vtc" tabindex="-1">Applis VTC</button>
+        <button type="button" role="tab" id="tab-tr-3" aria-controls="sp-tr-3" aria-selected="false" data-i18n="tab.argent" tabindex="-1">Argent</button>
+        <button type="button" role="tab" id="tab-tr-4" aria-controls="sp-tr-4" aria-selected="false" data-i18n="tab.conv" tabindex="-1">Convertisseur</button>
+      </div>
+      <div class="subpanel" role="tabpanel" id="sp-tr-1" aria-labelledby="tab-tr-1" data-title="Trajets">
+        <div class="grid swipe" tabindex="0" role="group" aria-labelledby="tab-tr-1">
+          <div class="panel" data-i18n="tr.p1"><h3>Depuis l'aéroport</h3><p>De 30 minutes à 1 h 30 jusqu'au centre selon l'heure. <span class="todo" title="À décider">Une navette pour les invités est à l'étude.</span></p></div>
+          <div class="panel" data-i18n="tr.p3"><h3>Voiture avec chauffeur</h3><p>La solution la plus confortable pour la journée du mariage et pour la semaine de découverte.</p></div>
+        </div>
+      </div>
+      <div class="subpanel" role="tabpanel" id="sp-tr-2" aria-labelledby="tab-tr-2" data-title="Sur la route">
+        <div class="grid swipe" tabindex="0" role="group" aria-labelledby="tab-tr-2">
+          <div class="panel" data-i18n="tr.p2"><h3>Taxis</h3><p>Les taxis n'ont pas de compteur : fixez le prix avant de monter et payez en ariary. Demandez à votre hôtel un chauffeur de confiance.</p></div>
+          <div class="panel" data-i18n="tr.p4"><h3>À éviter</h3><p>Marcher seul la nuit, et les minibus collectifs (<span lang="mg">taxi-be</span>) avec des bagages.</p></div>
+        </div>
+        <dl class="facts">
+          <div data-i18n="tr.f1"><dt>Heures de pointe</dt><dd>De 7 h à 9 h et de 16 h à 19 h.</dd></div>
+        </dl>
+      </div>
+      <div class="subpanel" role="tabpanel" id="sp-tr-5" aria-labelledby="tab-tr-5" data-title="Applis VTC">
+        <div class="grid swipe" tabindex="0" role="group" aria-labelledby="tab-tr-5">
+          <div class="panel">
+            <div data-i18n="vtc.2"><h3>inDrive</h3><p>Application internationale : vous proposez votre prix, les chauffeurs acceptent ou font une contre-offre. Souvent la moins chère ; paiement en espèces, en ariary. Le nombre de chauffeurs varie selon les quartiers.</p></div>
+            <p class="stores"><a class="btn ghost" href="https://apps.apple.com/app/id780125801" target="_blank" rel="noopener" aria-label="Télécharger inDrive sur l'App Store" data-i18n-aria="vtc.a3">App Store</a><a class="btn ghost" href="https://play.google.com/store/apps/details?id=sinet.startup.inDriver" target="_blank" rel="noopener" aria-label="Télécharger inDrive sur Google Play" data-i18n-aria="vtc.a4">Google Play</a></p>
+          </div>
+          <div class="panel">
+            <div data-i18n="vtc.1"><h3>Piqla</h3><p>Application malgache de VTC, lancée en 2024 à Antananarivo. Prix connu à la commande et trajet suivi en direct ; paiement par carte bancaire ou MVola, assistance WhatsApp pour les visiteurs étrangers.</p></div>
+            <p class="stores"><a class="btn ghost" href="https://apps.apple.com/app/id6736907045" target="_blank" rel="noopener" aria-label="Télécharger Piqla sur l'App Store" data-i18n-aria="vtc.a1">App Store</a><a class="btn ghost" href="https://play.google.com/store/apps/details?id=com.piqla.customer" target="_blank" rel="noopener" aria-label="Télécharger Piqla sur Google Play" data-i18n-aria="vtc.a2">Google Play</a></p>
+          </div>
+        </div>
+        <p class="note" data-i18n="vtc.tip">Installez-les avant le départ et créez votre compte avec le Wi-Fi de l'hôtel ou une carte SIM locale. Vérifiez la plaque et le nom du chauffeur avant de monter.</p>
+      </div>
+      <div class="subpanel" role="tabpanel" id="sp-tr-3" aria-labelledby="tab-tr-3" data-title="Argent">
+        <div class="grid swipe" tabindex="0" role="group" aria-labelledby="tab-tr-3">
+          <div class="panel" data-i18n="chg.1"><h3>Aéroport d'Ivato</h3><p>Bureaux de change dans le hall des arrivées, ouverts à l'arrivée des vols internationaux : pratique pour le visa et le premier taxi. Au départ, on y reconvertit ses ariary.</p></div>
+          <div class="panel" data-i18n="chg.2"><h3>Socimad · Tsaralalana</h3><p>Bureau de change agréé du centre-ville, 14 rue Radama Ier. Horaires annoncés : 8 h – 17 h en semaine, à confirmer au +261 32 07 365 95.</p></div>
+          <div class="panel" data-i18n="chg.3"><h3>BMOI · Antaninarenina</h3><p>Banque du centre-ville : change des euros au guichet en semaine. La plupart des distributeurs de la ville acceptent la carte Visa.</p></div>
+        </div>
+        <p class="note" data-i18n="chg.tip">Gardez vos reçus de change et évitez les changeurs de rue. Prévoyez des petites coupures pour les taxis et les marchés.</p>
+      </div>
+      <div class="subpanel" role="tabpanel" id="sp-tr-4" aria-labelledby="tab-tr-4" data-title="Convertisseur">
+        <div class="panel">
+          <h3 data-i18n="tr.conv">Convertisseur euro – ariary</h3>
+          <div class="converter">
+            <div class="field"><label for="c-eur" data-i18n="tr.eur">Euros</label><input type="number" id="c-eur" inputmode="decimal" min="0" value="20"></div>
+            <div class="field"><label for="c-mga">Ariary</label><input type="number" id="c-mga" inputmode="numeric" min="0"></div>
+            <div class="field"><label for="c-rate" data-i18n="tr.rate">Taux : ariary pour 1 €</label><input type="number" id="c-rate" inputmode="numeric" min="1" value="5000" aria-describedby="c-rate-help"><small id="c-rate-help" data-i18n="tr.rate.help">Taux indicatif, à ajuster.</small></div>
+          </div>
+        </div>
+      </div>
+    <nav class="pager" aria-label="Rubrique précédente et suivante"><a class="prev" href="#p-hebergement"><span><i aria-hidden="true">← </i>Précédent</span><b>Hébergement</b></a><a class="next" href="#p-semaine"><span>Suivant<i aria-hidden="true"> →</i></span><b>Semaine de découverte</b></a></nav></section>
+
+    <!-- ===== SEMAINE ===== -->
+    <section class="page" id="p-semaine" data-page="" aria-labelledby="t-semaine">
+      <div class="page-head">
+        <p class="eyebrow" data-i18n="grp.place">Sur place</p>
+        <h2 id="t-semaine" tabindex="-1" data-i18n="sem.title">La semaine de découverte</h2>
+        <p class="lead" data-i18n="sem.lead">Un itinéraire proposé après le mariage, avant le retour en Europe. <span class="todo" title="À valider">Itinéraire à valider ensemble.</span></p>
+      </div>
+      <div class="subtabs" role="tablist" aria-labelledby="t-semaine">
+        <button type="button" role="tab" id="tab-sem-1" aria-controls="sp-sem-1" aria-selected="true" data-i18n="tab.sem1" tabindex="0">Jours 1 à 4</button>
+        <button type="button" role="tab" id="tab-sem-2" aria-controls="sp-sem-2" aria-selected="false" data-i18n="tab.sem2" tabindex="-1">Jours 5 à 7</button>
+      </div>
+      <div class="subpanel" role="tabpanel" id="sp-sem-1" aria-labelledby="tab-sem-1" data-title="Jours 1 à 4">
+        <ol class="timeline">
+          <li data-i18n="sem.1"><span class="day">J+1</span><div><h3>Repos et Haute-Ville</h3><p>Rova de Manjakamiadana, palais d'Andafiavaratra, déjeuner avec vue.</p></div></li>
+          <li data-i18n="sem.2"><span class="day">J+2</span><div><h3>Route vers Andasibe</h3><p>3 à 4 h de route vers l'est, à travers les rizières.</p></div></li>
+          <li data-i18n="sem.3"><span class="day">J+3</span><div><h3>Forêt d'Andasibe</h3><p>Le chant des indris au lever du jour, balade nocturne à la recherche des caméléons.</p></div></li>
+          <li data-i18n="sem.4"><span class="day">J+4</span><div><h3>Retour à Tananarive</h3><p>Arrêt au parc Peyrieras et à ses caméléons, sur la route.</p></div></li>
+        </ol>
+      </div>
+      <div class="subpanel" role="tabpanel" id="sp-sem-2" aria-labelledby="tab-sem-2" data-title="Jours 5 à 7">
+        <ol class="timeline">
+          <li data-i18n="sem.5"><span class="day">J+5</span><div><h3>Ambohimanga</h3><p>La colline royale classée par l'Unesco, à 20 km au nord.</p></div></li>
+          <li data-i18n="sem.6"><span class="day">J+6</span><div><h3>Marché de la Digue</h3><p>Artisanat, vanille, soie sauvage : le bon moment pour les souvenirs.</p></div></li>
+          <li data-i18n="sem.7"><span class="day">J+7</span><div><h3>Départ</h3><p>Dernière nuit près d'Ivato, vol retour.</p></div></li>
+        </ol>
+      </div>
+    <nav class="pager" aria-label="Rubrique précédente et suivante"><a class="prev" href="#p-transport"><span><i aria-hidden="true">← </i>Précédent</span><b>Se déplacer à Tana</b></a><a class="next" href="#p-adresses"><span>Suivant<i aria-hidden="true"> →</i></span><b>Bonnes adresses</b></a></nav></section>
+
+    <!-- ===== ADRESSES ===== -->
+    <section class="page" id="p-adresses" data-page="" aria-labelledby="t-adresses">
+      <div class="page-head">
+        <p class="eyebrow" data-i18n="grp.place">Sur place</p>
+        <h2 id="t-adresses" tabindex="-1" data-i18n="adr.title">Incontournables et adresses insolites</h2>
+        <p class="lead" data-i18n="adr.lead">À Tananarive, aux alentours et ailleurs sur l'île. <span class="todo" title="À compléter">Vos adresses personnelles viendront s'ajouter.</span></p>
+      </div>
+      <div class="filters" role="group" aria-label="Filtrer les lieux" data-i18n-aria="adr.filter" id="filters"><button type="button" data-f="tout" aria-pressed="true">Tout</button><button type="button" data-f="culture" aria-pressed="false">Culture</button><button type="button" data-f="nature" aria-pressed="false">Nature</button><button type="button" data-f="marches" aria-pressed="false">Marchés</button><button type="button" data-f="insolite" aria-pressed="false">Insolite</button><button type="button" data-f="restaurants" aria-pressed="false">Restaurants</button></div>
+      <p class="sr-only" id="places-count" aria-live="polite">19 lieux affichés</p>
+      <div class="carousel">
+        <button type="button" class="icon-btn car-prev" id="places-prev" aria-label="Lieux précédents" data-i18n-aria="car.prev" disabled=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></button>
+        <ul class="places car-list" id="places" tabindex="0" aria-label="Lieux" data-i18n-aria="car.aria"><li class="place insta"><p class="eyebrow">Coup de cœur Instagram</p><h3><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.4" cy="6.6" r="1.1" class="dot"></circle></svg>Where to Chill in Dago</h3><p>Restos, bars, cafés et sorties à Tana : le compte à suivre. <span class="where">@_where_to_chill_in_dago</span></p><a class="btn" href="https://www.instagram.com/_where_to_chill_in_dago/" target="_blank" rel="noopener">Voir sur Instagram</a></li><li class="place"><h3>Rova de Manjakamiadana</h3><span class="where">Tananarive · Haute-Ville</span><p>Le palais de la Reine domine la ville depuis la plus haute colline. La plus belle vue sur Tananarive.</p><span class="tags"><span class="chip ok">Culture</span></span></li><li class="place"><h3>Palais d’Andafiavaratra</h3><span class="where">Tananarive · Haute-Ville</span><p>L’ancienne résidence du Premier ministre, devenue musée, au bout des ruelles pavées.</p><span class="tags"><span class="chip ok">Culture</span></span></li><li class="place"><h3>Marché de la Digue</h3><span class="where">Tananarive · route d’Ivato</span><p>Le grand marché de l’artisanat : raphia, bois sculpté, soie sauvage, vanille.</p><span class="tags"><span class="chip ok">Marchés</span></span></li><li class="place"><h3>Analakely</h3><span class="where">Tananarive · centre</span><p>Le marché populaire au pied des grands escaliers. Animé, coloré, à faire accompagné.</p><span class="tags"><span class="chip ok">Marchés</span></span></li><li class="place resto"><h3>Le guide Tiakaly</h3><span class="where">Madagascar · tiakaly.com</span><p>Plus de 300 restaurants, hôtels et lieux testés à Madagascar : cherchez par plat, par quartier ou selon vos envies.</p><span class="tags"><span class="chip ok">Restaurants</span></span><a class="place-link" href="https://tiakaly.com/" target="_blank" rel="noopener">Voir le guide Tiakaly</a></li><li class="place resto"><h3>L’Arrivage</h3><span class="where">Antananarivo</span><p class="todo" title="À vérifier sur tiakaly.com : informations trouvées par recherche web">Brasserie à la française, fruits de mer et huîtres.</p><span class="tags"><span class="chip ok">Restaurants</span></span><a class="place-link" href="https://tiakaly.com/" target="_blank" rel="noopener">Voir le guide Tiakaly</a></li><li class="place resto"><h3>Trattoria Isoraka</h3><span class="where">Antananarivo · Isoraka</span><p class="todo" title="À vérifier sur tiakaly.com : informations trouvées par recherche web">Pizzeria citée par Tiakaly parmi les meilleures pizzas de Tana.</p><span class="tags"><span class="chip ok">Restaurants</span></span><a class="place-link" href="https://tiakaly.com/" target="_blank" rel="noopener">Voir le guide Tiakaly</a></li><li class="place resto"><h3>So Hot</h3><span class="where">Antananarivo</span><p class="todo" title="À vérifier sur tiakaly.com : informations trouvées par recherche web">Burgers recommandés par Tiakaly.</p><span class="tags"><span class="chip ok">Restaurants</span></span><a class="place-link" href="https://tiakaly.com/" target="_blank" rel="noopener">Voir le guide Tiakaly</a></li><li class="place resto"><h3>Club Madagascar</h3><span class="where">Talatamaty · près de l’aéroport</span><p class="todo" title="À vérifier sur tiakaly.com : informations trouvées par recherche web">Poulet frit à la coréenne, recommandé par Tiakaly.</p><span class="tags"><span class="chip ok">Restaurants</span></span><a class="place-link" href="https://tiakaly.com/" target="_blank" rel="noopener">Voir le guide Tiakaly</a></li><li class="place insolite"><h3>Musée de la photographie</h3><span class="where">Tananarive · Haute-Ville</span><p>Un siècle d’histoire malgache en images, dans une maison ancienne.</p><span class="tags"><span class="chip ok">Culture</span><span class="chip">Insolite</span></span></li><li class="place"><h3>Parc de Tsimbazaza</h3><span class="where">Tananarive · sud</span><p>Jardin botanique et zoologique : lémuriens, baobabs et plantes endémiques en pleine ville.</p><span class="tags"><span class="chip ok">Nature</span></span></li><li class="place"><h3>Colline royale d’Ambohimanga</h3><span class="where">20 km au nord</span><p>Ancienne cité royale et lieu sacré, inscrite au patrimoine mondial de l’Unesco.</p><span class="tags"><span class="chip ok">Culture</span></span></li><li class="place"><h3>Lemurs’ Park</h3><span class="where">22 km à l’ouest</span><p>Des lémuriens en semi-liberté dans un jardin botanique. Idéal pour une demi-journée.</p><span class="tags"><span class="chip ok">Nature</span></span></li><li class="place insolite"><h3>Croc Farm</h3><span class="where">Près de l’aéroport d’Ivato</span><p>Crocodiles du Nil, caméléons et fossas. À caser avant un vol.</p><span class="tags"><span class="chip ok">Nature</span><span class="chip">Insolite</span></span></li><li class="place"><h3>Andasibe-Mantadia</h3><span class="where">3 à 4 h à l’est</span><p>La forêt humide et le chant de l’indri, le plus grand des lémuriens.</p><span class="tags"><span class="chip ok">Nature</span></span></li><li class="place insolite"><h3>Antsirabe</h3><span class="where">3 à 4 h au sud</span><p>Ville d’eau aux pousse-pousse colorés et ateliers de miniatures en métal recyclé.</p><span class="tags"><span class="chip ok">Culture</span><span class="chip">Insolite</span></span></li><li class="place"><h3>Allée des Baobabs</h3><span class="where">Morondava · vol intérieur conseillé</span><p>Les baobabs géants au coucher du soleil, image emblématique de l’île.</p><span class="tags"><span class="chip ok">Nature</span></span></li><li class="place"><h3>Nosy Be</h3><span class="where">Nord-ouest · vol intérieur</span><p>Plages, plongée et îlots alentour pour finir le séjour au soleil.</p><span class="tags"><span class="chip ok">Nature</span></span></li><li class="place insolite"><h3>Tsingy de Bemaraha</h3><span class="where">Ouest</span><p>Forêt de pics calcaires. Souvent inaccessible en avril : les pistes rouvrent après la saison des pluies.</p><span class="tags"><span class="chip ok">Nature</span><span class="chip">Insolite</span></span></li></ul>
+        <button type="button" class="icon-btn car-next" id="places-next" aria-label="Lieux suivants" data-i18n-aria="car.next" disabled=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg></button>
+      </div>
+    <nav class="pager" aria-label="Rubrique précédente et suivante"><a class="prev" href="#p-semaine"><span><i aria-hidden="true">← </i>Précédent</span><b>Semaine de découverte</b></a></nav></section>
+  </main>
+
+  <nav class="bottombar" aria-label="Accès rapide" data-i18n-aria="bb.aria">
+    <span class="bb-ind" id="bb-ind" aria-hidden="true" style="transform: translateX(0%);"></span>
+    <a href="#p-accueil" data-quick="accueil"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"></path></svg><span data-i18n="bb.home">Accueil</span></a>
+    <a href="#p-jourj" data-quick="jourj"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg><span data-i18n="bb.jj">Jour J</span></a>
+    <a href="#p-ceremonie" data-quick="ceremonie"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg><span data-i18n="bb.lieu">Lieu</span></a>
+    <a href="#p-valise" data-quick="valise"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"></rect><path d="M9 7V5a3 3 0 0 1 6 0v2"></path></svg><span data-i18n="bb.val">Valise</span></a>
+  </nav>
+
+  <dialog class="menu" id="menu" aria-label="Menu" data-i18n-aria="menu.label">
+    <div class="menu-inner">
+      <div class="lamba" aria-hidden="true"></div>
+      <div class="menu-head">
+        <span class="monogram" aria-hidden="true">F&amp;D</span>
+        <h2 id="menu-title" lang="mg">Tonga soa</h2>
+        <button class="icon-btn" type="button" id="menu-close" aria-label="Fermer" data-i18n-aria="menu.close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"></path></svg></button>
+      </div>
+      <nav aria-label="Toutes les rubriques" data-i18n-aria="tiles.title" id="menu-nav" style="display:grid;gap:1.1rem"><div class="navgroup"><p class="navgroup-title">Le mariage</p><a class="navlink" href="#p-accueil" data-nav="accueil">Accueil</a><a class="navlink" href="#p-ceremonie" data-nav="ceremonie">La cérémonie</a><a class="navlink" href="#p-jourj" data-nav="jourj">Programme du jour J</a><a class="navlink" href="#p-rsvp" data-nav="rsvp">Répondre à l’invitation</a></div><div class="navgroup"><p class="navgroup-title">Venir</p><a class="navlink" href="#p-preparatifs" data-nav="preparatifs">Vos préparatifs</a><a class="navlink" href="#p-vols" data-nav="vols">Billet d’avion</a><a class="navlink" href="#p-formalites" data-nav="formalites">Formalités</a><a class="navlink" href="#p-meteo" data-nav="meteo">Météo</a><a class="navlink" href="#p-valise" data-nav="valise">Valise</a></div><div class="navgroup"><p class="navgroup-title">Sur place</p><a class="navlink" href="#p-hebergement" data-nav="hebergement">Hébergement</a><a class="navlink" href="#p-transport" data-nav="transport">Se déplacer à Tana</a><a class="navlink" href="#p-semaine" data-nav="semaine">Semaine de découverte</a><a class="navlink" href="#p-adresses" data-nav="adresses">Bonnes adresses</a></div></nav>
+      <div class="menu-tools">
+        <div>
+        <p>Langue · Fiteny · Idioma</p>
+        <div class="langs" role="group" aria-label="Langue · Fiteny · Idioma">
+          <button type="button" data-lang="fr" lang="fr" aria-label="Français" aria-pressed="true">FR</button>
+          <button type="button" data-lang="mg" lang="mg" aria-label="Malagasy" aria-pressed="false">MG</button>
+          <button type="button" data-lang="es" lang="es" aria-label="Español" aria-pressed="false">ES</button>
+        </div>
+        </div>
+        <div>
+        <p data-i18n="menu.text">Taille du texte</p>
+        <div class="textsize" role="group" aria-label="Taille du texte" data-i18n-aria="ts.group">
+          <button type="button" data-size="100" aria-pressed="true" aria-label="Texte normal" data-i18n-aria="ts.n">A</button>
+          <button type="button" data-size="115" aria-pressed="false" aria-label="Texte grand" data-i18n-aria="ts.l">A</button>
+          <button type="button" data-size="130" aria-pressed="false" aria-label="Texte très grand" data-i18n-aria="ts.xl">A</button>
+        </div>
+        </div>
+        <div data-fs-wrap="" hidden="">
+        <p data-i18n="fs.title">Affichage</p>
+        <button type="button" class="btn ghost" data-fs="" aria-pressed="false" hidden="">Plein écran</button>
+        </div>
+      </div>
+      <p class="menu-note" data-i18n="notice"><strong>Aperçu de travail.</strong> Les éléments soulignés en pointillé sont des exemples à remplacer par vos vraies informations au fil de nos échanges.</p>
+      <p class="menu-note" data-i18n="footer">Une question ? <span class="todo" title="À compléter">Contact des mariés ou d'un témoin</span></p>
+    </div>
+  </dialog>
+</div>
+
+<script>
+/* Traductions des contenus statiques. Le français est lu directement dans la page. */
+var I18N = {
+es: {
+  'skip': `Ir al contenido`,
+  'ts.group': `Tamaño del texto`, 'ts.n': `Texto normal`, 'ts.l': `Texto grande`, 'ts.xl': `Texto muy grande`,
+  'nav.aria': `Secciones`,
+  'notice': `<strong>Vista previa de trabajo.</strong> Los elementos subrayados con puntos son ejemplos que se sustituirán por la información definitiva.`,
+  'welcome': `<span lang="mg">Tonga soa</span> · Bienvenidos`,
+  'hero.type': `<span lang="mg">Vodiondry</span>`,
+  'tagline': `Tradición · Elegancia · Convivencia`,
+  'verse.text': `« <span class="script">Vestíos de amor,</span> que es el vínculo perfecto. »`,
+  'verse.ref': `Colosenses 3:14`,
+  'date': `Domingo, 25 de abril de 2027`,
+  'rsvp.cta': `Responder a la invitación`,
+  'prof.eyebrow': `Tu situación`, 'prof.eu': `Llego desde Europa`, 'prof.local': `Vivo en Madagascar`,
+  'steps.title': `Tus preparativos, en orden`,
+  'eu.1': `<span class="when">Desde ya</span><span><a href="#vols">Reserva tu billete de avión</a>. Abril coincide con vacaciones escolares en Europa: los precios suben rápido.</span>`,
+  'eu.2': `<span class="when">Antes del 25 de febrero de 2027</span><span><a href="#rsvp">Confirma tu asistencia</a> y las fechas de tu estancia.</span>`,
+  'eu.3': `<span class="when">Febrero de 2027</span><span><a href="#hebergement">Reserva tu alojamiento</a> y revisa tu pasaporte.</span>`,
+  'eu.4': `<span class="when">Marzo de 2027</span><span>Consulta médica y <a href="#formalites">solicitud del visado</a>.</span>`,
+  'eu.5': `<span class="when">La semana de salida</span><span><a href="#valise">Haz la maleta</a> con la lista para marcar.</span>`,
+  'lo.1': `<span class="when">Antes del 25 de febrero de 2027</span><span><a href="#rsvp">Confirma tu asistencia</a> y el número de personas.</span>`,
+  'lo.2': `<span class="when">Marzo de 2027</span><span>Prepara tu ropa según el <a href="#ceremonie">código de vestimenta</a>.</span>`,
+  'lo.3': `<span class="when">Abril de 2027</span><span>Localiza el trayecto hasta la <a href="#ceremonie">Villa ny Natiora</a>, en el By-pass, y cuenta con margen por el tráfico.</span>`,
+  'lo.4': `<span class="when">El 25 de abril</span><span>Llega a las 10:30 para la recepción de invitados. Consulta el <a href="#jourj">programa del gran día</a>.</span>`,
+  'lo.5': `<span class="when">Después de la boda</span><span>Si quieres, únete a una parte de la <a href="#semaine">semana de descubrimiento</a>.</span>`,
+  'clock.tnr': `En Antananarivo`, 'clock.par': `En París y Madrid`,
+  'tiles.title': `Todas las secciones`,
+  'grp.mariage': `La boda`, 'grp.venir': `Llegar`, 'grp.place': `Allí`,
+  'cer.title': `La ceremonia`,
+  'cer.lead': `Una boda tradicional sigue ritos precisos. Aquí tienes el lugar, la ropa que conviene llevar y algunas claves para entender lo que vas a vivir.`,
+  'cer.lieu': `Lugar`,
+  'cer.site': `Casa familiar rodeada de amplios espacios exteriores, a 200 m de la carretera principal del By-pass. Aparcamiento en el lugar.`,
+  'cer.time': `Cuenta entre 30 minutos y 1 h 30 de trayecto desde el centro, según el tráfico.`,
+  'cer.maps': `Abrir en Google Maps`,
+  'cer.tenue': `Ropa`, 'cer.dress.title': `Código de vestimenta`,
+  'cer.dress': `Para armonizar con el tema de la ceremonia, tradicional y elegante, os invitamos a elegir ropa o accesorios en los colores siguientes.`,
+  'pal.aria': `Colores del tema`, 'pal.1': `Melocotón`, 'pal.2': `Albaricoque`, 'pal.3': `Coral`, 'pal.4': `Rosa empolvado`, 'pal.5': `Verde salvia`, 'pal.6': `Azul pastel`, 'pal.7': `Amarillo pastel`,
+  'iti.title': `Cómo llegar`,
+  'iti.1': `<span class="when">By-pass</span><span>En el cruce con la carretera de Alasora (Orion Hotel y Domaine Alasora a un lado, Gastro Pizza Alasora al otro), toma la carretera de Alasora hacia el sur, dirección Alasora.</span>`,
+  'iti.2': `<span class="when">Carretera de Alasora</span><span>Pasa la Pharmacie Amboaroy y DTE System, y gira a la derecha a la altura de School Smart, que queda a tu izquierda.</span>`,
+  'iti.3': `<span class="when">Llegada</span><span>La villa está a tu derecha, justo después de Raitra Kidz; la iglesia Fiangonana Apokalypsy Alasora Libanona queda a tu izquierda. Aparcamiento en el lugar.</span>`,
+  'iti.note': `Según el plano de la invitación.`,
+  'cer.cold': `Las noches son frescas en altura: lleva una chaqueta o un chal.`,
+  'vod.title': `Entender el <span lang="mg">vodiondry</span>`,
+  'vod.1': `El <span lang="mg">vodiondry</span> es la petición de mano tradicional de las tierras altas. La familia del novio se presenta ante la familia de la novia para pedir oficialmente su mano. El nombre designa, en su origen, la pieza de cordero ofrecida a los padres de la novia; hoy, ese regalo es simbólico.`,
+  'vod.2': `Las dos familias se expresan mediante el <span lang="mg">kabary</span>, un arte oratorio hecho de proverbios e imágenes. Cada familia tiene su orador. Escucha, aplaude cuando aplauda la asamblea y deja la palabra a los mayores: ocupan un lugar de honor.`,
+  'vod.3': `Aquí se detallarán las etapas propias de nuestras familias.`,
+  'lex.note': `En malgache, la vocal final apenas se pronuncia. Las pronunciaciones son aproximadas.`,
+  'jj.title': `Programa del gran día`,
+  'jj.lead': `Domingo, 25 de abril de 2027, en la Villa ny Natiora.`,
+  'jj.1': `<h3>Llegada de los invitados</h3><p>Animación musical: <span lang="mg">Mpitsoka mozika</span>.</p>`,
+  'jj.2': `<h3>Inicio de la ceremonia tradicional</h3><p>El <span lang="mg">vodiondry</span>, al aire libre, alrededor de un podio florido.</p>`,
+  'jj.3': `<h3>Cóctel</h3><p>Fotos de los novios y fotos con los invitados, con un saxofonista.</p>`,
+  'jj.4': `<h3>Apertura del almuerzo</h3><p>Bajo la carpa, con un artista, una orquesta y un DJ.</p>`,
+  'jj.5': `<h3>La tarta</h3><p>Después, la fiesta continúa con el DJ.</p>`,
+  'jj.6': `<h3>Fin oficial de la recepción</h3>`,
+  'rsvp.lead': `Por favor, responde antes del 25 de febrero de 2027.`,
+  'rsvp.nom': `Nombre y apellidos`, 'rsvp.presence': `¿Asistirás?`,
+  'rsvp.oui': `Sí, con alegría`, 'rsvp.non': `No, lo siento`,
+  'rsvp.nb': `Número de personas, tú incluido`,
+  'rsvp.regime': `Dieta o alergias alimentarias`,
+  'rsvp.regime.help': `Vegetariano, sin cerdo, alergia… Déjalo vacío si no hay nada que indicar.`,
+  'rsvp.semaine': `También participo en la semana de descubrimiento`,
+  'rsvp.msg': `Unas palabras para los novios`, 'rsvp.send': `Enviar mi respuesta`,
+  'gift.eyebrow': `Vuestro regalo`,
+  'gift.text': `Los novios agradecerán recibir vuestro <span lang="mg">tso-drano</span>, según la costumbre malgache.`,
+  'vols.title': `Billete de avión desde Europa`,
+  'vols.lead': `Aterrizarás en el aeropuerto internacional de Antananarivo-Ivato, código <span class="mono">TNR</span>, a unos 15 km al norte del centro.`,
+  'vols.f1': `<dt>Vuelo directo</dt><dd>Desde París-Charles-de-Gaulle, unas 11 h de vuelo.</dd>`,
+  'vols.f2': `<dt>Con escala</dt><dd>De 14 a 20 h según la escala: La Reunión, Mauricio, Adís Abeba, Estambul, Nairobi…</dd>`,
+  'vols.f3': `<dt>Desde España</dt><dd>No hay vuelo directo: conexión en París, Adís Abeba, Estambul o Nairobi desde Madrid o Barcelona.</dd>`,
+  'vols.f4': `<dt>Diferencia horaria</dt><dd>+1 h respecto a París y Madrid en abril.</dd>`,
+  'vols.f5': `<dt>Cuándo reservar</dt><dd>Desde ya: abril coincide con vacaciones escolares en Francia.</dd>`,
+  'vols.f6': `<dt>Llegada recomendada</dt><dd>Al menos dos días antes de la ceremonia, para recuperarse del viaje.</dd>`,
+  'vols.cmp': `Comparar las opciones`, 'vols.cap': `Opciones de vuelo a Antananarivo`,
+  'vols.th': `<th scope="col">Opción</th><th scope="col">Duración</th><th scope="col">A tener en cuenta</th>`,
+  'vols.r1': `<td>Directo desde París</td><td class="mono">≈ 11 h</td><td>Lo más sencillo, a menudo nocturno.</td>`,
+  'vols.r2': `<td>Vía La Reunión o Mauricio</td><td class="mono">14–16 h</td><td>Posibilidad de añadir una parada en el océano Índico.</td>`,
+  'vols.r3': `<td>Vía Adís Abeba, Estambul o Nairobi</td><td class="mono">15–20 h</td><td>A menudo más barato, con salidas desde otras ciudades de Europa.</td>`,
+  'vols.todo': `Aquí podrá añadirse una tarifa de grupo o una selección de vuelos recomendados.`,
+  'form.title': `Trámites administrativos`,
+  'form.lead': `El visado de turista es obligatorio para los ciudadanos europeos.`,
+  'form.1': `<span class="when">Desde ya</span><span><b>Pasaporte</b> válido al menos 6 meses después de la fecha de regreso, con páginas en blanco.</span>`,
+  'form.2': `<span class="when">Al reservar</span><span><b>Seguro de viaje</b> que cubra gastos médicos y repatriación.</span>`,
+  'form.3': `<span class="when">2 meses antes</span><span><b>Consulta médica</b> con tu médico o en un centro de vacunación internacional: vacunas recomendadas y prevención de la malaria según el itinerario.</span>`,
+  'form.4': `<span class="when">1 mes antes</span><span><b>Visado</b>: solicita el e-visa en línea u obtenlo a la llegada al aeropuerto. Se exige billete de vuelta. Usa solo el portal oficial en <span class="mono">.gov.mg</span>; desconfía de los sitios intermediarios de pago.</span>`,
+  'form.5': `<span class="when">Antes de salir</span><span><b>Avisa de tu viaje a tu país</b>: en el <span lang="es">Registro de Viajeros</span> para los españoles, en Ariane para los franceses. Guarda una copia digital de tus documentos.</span>`,
+  'form.notice': `Las normas cambian: compruébalas en las <a href="https://www.exteriores.gob.es/" target="_blank" rel="noopener">recomendaciones de viaje del Ministerio de Asuntos Exteriores</a>, o en la página <a href="https://www.diplomatie.gouv.fr/fr/conseils-aux-voyageurs/conseils-par-pays-destination/madagascar/" target="_blank" rel="noopener" lang="fr">Conseils aux voyageurs — Madagascar</a> del ministerio francés, antes de salir.`,
+  'met.title': `El tiempo en abril`,
+  'met.lead': `Abril marca el final de la temporada de lluvias. En Antananarivo, a 1 280 m de altitud, los días son suaves y las noches frescas. En la costa hace calor y humedad.`,
+  'met.chart': `Temperaturas medias de abril, mínima y máxima`,
+  'met.note': `Medias orientativas, en °C.`,
+  'met.f1': `<dt>Lluvia</dt><dd>Todavía pueden caer chubascos al final del día, sobre todo a principios de mes.</dd>`,
+  'met.f2': `<dt>Sol</dt><dd>Fuerte incluso cuando hace fresco: sombrero y crema solar.</dd>`,
+  'met.f3': `<dt>Diferencia día / noche</dt><dd>Hasta 10 °C en las tierras altas. Vístete por capas.</dd>`,
+  'val.title': `Qué llevar en la maleta`,
+  'val.lead': `Marca a medida que avanzas. Tus marcas se guardan en este dispositivo.`,
+  'heb.title': `Alojamiento`,
+  'heb.lead': `Dónde dormir según el momento de la estancia. Aquí se añadirá nuestra selección de hoteles.`,
+  'heb.p1': `<p class="eyebrow">Llegada y salida</p><h3>Cerca del aeropuerto de Ivato</h3><p>Práctico para la primera noche tras un vuelo largo y la última antes de una salida temprana.</p>`,
+  'heb.p2': `<p class="eyebrow">Encanto</p><h3>Ciudad Alta</h3><p>Callejuelas empedradas, casas antiguas y vistas a las colinas. Los principales lugares se recorren a pie.</p>`,
+  'heb.p3': `<p class="eyebrow">Comodidad</p><h3>Ivandry y Ankorondrano</h3><p>Barrios recientes, hoteles modernos y muchos restaurantes.</p>`,
+  'heb.sel': `Nuestra selección`, 'heb.cap': `Hoteles recomendados`,
+  'heb.th': `<th scope="col">Gama</th><th scope="col">Hotel</th><th scope="col">Precio por noche</th><th scope="col">Distancia a la villa</th>`,
+  'heb.r1': `<td>Sencilla</td><td class="todo" title="Por completar">Hotel por elegir</td><td class="mono">—</td><td class="mono">—</td>`,
+  'heb.r2': `<td>Intermedia</td><td class="todo" title="Por completar">Hotel por elegir</td><td class="mono">—</td><td class="mono">—</td>`,
+  'heb.r3': `<td>Alta</td><td class="todo" title="Por completar">Hotel por elegir</td><td class="mono">—</td><td class="mono">—</td>`,
+  'tr.title': `Moverse por Antananarivo`,
+  'tr.lead': `La ciudad es extensa, con muchas colinas y atascos frecuentes. Cuenta con margen para cada trayecto.`,
+  'tr.p1': `<h3>Desde el aeropuerto</h3><p>Entre 30 minutos y 1 h 30 hasta el centro según la hora. <span class="todo" title="Por decidir">Se está estudiando un servicio de traslado para los invitados.</span></p>`,
+  'tr.p2': `<h3>Taxis</h3><p>Los taxis no tienen taxímetro: acuerda el precio antes de subir y paga en ariary. Pide a tu hotel un conductor de confianza.</p>`,
+  'tr.p3': `<h3>Coche con conductor</h3><p>La opción más cómoda para el día de la boda y para la semana de descubrimiento.</p>`,
+  'tr.p4': `<h3>Evita</h3><p>Caminar solo de noche y los minibuses colectivos (<span lang="mg">taxi-be</span>) con equipaje.</p>`,
+  'tr.f1': `<dt>Horas punta</dt><dd>De 7 h a 9 h y de 16 h a 19 h.</dd>`,
+  'tr.conv': `Conversor euro – ariary`, 'tr.eur': `Euros`,
+  'tr.rate': `Tipo: ariary por 1 €`, 'tr.rate.help': `Tipo orientativo, ajustable.`,
+  'sem.title': `La semana de descubrimiento`,
+  'sem.lead': `Un itinerario propuesto después de la boda, antes de volver a Europa. <span class="todo" title="Por validar">Itinerario por validar juntos.</span>`,
+  'sem.1': `<span class="day">Día 1</span><div><h3>Descanso y Ciudad Alta</h3><p>Rova de Manjakamiadana, palacio de Andafiavaratra, comida con vistas.</p></div>`,
+  'sem.2': `<span class="day">Día 2</span><div><h3>Ruta hacia Andasibe</h3><p>De 3 a 4 h de carretera hacia el este, entre arrozales.</p></div>`,
+  'sem.3': `<span class="day">Día 3</span><div><h3>Bosque de Andasibe</h3><p>El canto de los indris al amanecer y un paseo nocturno en busca de camaleones.</p></div>`,
+  'sem.4': `<span class="day">Día 4</span><div><h3>Regreso a Antananarivo</h3><p>Parada en el parque Peyrieras y sus camaleones, por el camino.</p></div>`,
+  'sem.5': `<span class="day">Día 5</span><div><h3>Ambohimanga</h3><p>La colina real declarada Patrimonio de la Humanidad por la Unesco, a 20 km al norte.</p></div>`,
+  'sem.6': `<span class="day">Día 6</span><div><h3>Mercado de la Digue</h3><p>Artesanía, vainilla, seda salvaje: el momento ideal para los recuerdos.</p></div>`,
+  'sem.7': `<span class="day">Día 7</span><div><h3>Salida</h3><p>Última noche cerca de Ivato y vuelo de regreso.</p></div>`,
+  'adr.title': `Imprescindibles y lugares insólitos`,
+  'adr.lead': `En Antananarivo, sus alrededores y el resto de la isla. <span class="todo" title="Por completar">Se añadirán vuestras direcciones personales.</span>`,
+  'adr.filter': `Filtrar los lugares`,
+  'footer': `¿Alguna pregunta? <span class="todo" title="Por completar">Contacto de los novios o de un testigo</span>`,
+  'fs.title': `Visualización`,
+  'bb.aria': `Acceso rápido`, 'bb.home': `Inicio`, 'bb.jj': `El día`, 'bb.lieu': `Lugar`, 'bb.val': `Maleta`, 'bb.menu': `Menú`,
+  'steps.cta': `Tus preparativos`,
+  'tab.mots': `Palabras malgaches`, 'tab.repondre': `Tu respuesta`,
+  'tab.details': `Detalles`, 'tab.sante': `Salud y visado`,
+  'dou.title': `Aduana`,
+  'dou.text': `Qué puedes llevar o traer de vuelta y qué hay que declarar a la llegada y a la salida: consulta la guía oficial de las aduanas malgaches antes de hacer la maleta.`,
+  'dou.link': `Guía de paso por la aduana (PDF, en francés)`, 'rsvp.next': `Continuar`,
+  'tab.vols': `Los vuelos`, 'tab.comparer': `Comparar`, 'tab.conseils': `Consejos`,
+  'tab.maintenant': `Desde ya`, 'tab.depart': `Antes de salir`, 'tab.temperatures': `Temperaturas`,
+  'tab.quartiers': `Barrios`, 'tab.trajets': `Trayectos`, 'tab.route': `En carretera`, 'tab.argent': `Dinero`, 'tab.vtc': `Apps VTC`,
+  'tab.sem1': `Días 1 a 4`, 'tab.sem2': `Días 5 a 7`,
+  'car.prev': `Lugares anteriores`, 'car.next': `Lugares siguientes`, 'car.aria': `Lugares`,
+  'tab.conv': `Conversor`,
+  'chg.1': `<h3>Aeropuerto de Ivato</h3><p>Oficinas de cambio en el vestíbulo de llegadas, abiertas a la llegada de los vuelos internacionales: práctico para el visado y el primer taxi. A la salida, allí se cambian los ariary sobrantes.</p>`,
+  'chg.2': `<h3>Socimad · Tsaralalana</h3><p>Oficina de cambio autorizada en el centro, 14 rue Radama Ier. Horario anunciado: de 8 a 17 h entre semana, a confirmar en el +261 32 07 365 95.</p>`,
+  'chg.3': `<h3>BMOI · Antaninarenina</h3><p>Banco del centro: cambio de euros en ventanilla entre semana. La mayoría de los cajeros de la ciudad aceptan la tarjeta Visa.</p>`,
+  'chg.tip': `Guarda los recibos de cambio y evita a los cambistas callejeros. Lleva billetes pequeños para los taxis y los mercados.`,
+  'vtc.1': `<h3>Piqla</h3><p>Aplicación malgache de VTC, lanzada en 2024 en Antananarivo. Precio conocido al reservar y trayecto seguido en directo; pago con tarjeta bancaria o MVola, asistencia por WhatsApp para los visitantes extranjeros.</p>`,
+  'vtc.2': `<h3>inDrive</h3><p>Aplicación internacional: tú propones el precio y los conductores aceptan o hacen una contraoferta. A menudo la más barata; pago en efectivo, en ariary. El número de conductores varía según los barrios.</p>`,
+  'vtc.tip': `Instálalas antes de salir y crea tu cuenta con el wifi del hotel o una tarjeta SIM local. Comprueba la matrícula y el nombre del conductor antes de subir.`,
+  'vtc.a1': `Descargar Piqla en App Store`, 'vtc.a2': `Descargar Piqla en Google Play`, 'vtc.a3': `Descargar inDrive en App Store`, 'vtc.a4': `Descargar inDrive en Google Play`,
+  'car.p': `Tarjeta anterior`, 'car.n': `Tarjeta siguiente`,
+  'vod.hint': `Desliza para descubrir las anécdotas →`,
+  'vod.t1': `La petición de mano`, 'vod.t2': `El <span lang="mg">kabary</span>`, 'anec.k': `¿Sabías que…?`,
+  'anec.1t': `La grupa del cordero`,
+  'anec.1': `<span lang="mg">Vodiondry</span> significa literalmente «grupa del cordero»: <span lang="mg">vody</span>, la grupa, y <span lang="mg">ondry</span>, el cordero. Esta pieza selecta se ofrecía a los padres de la novia; hoy la sustituye un sobre simbólico.`,
+  'anec.2t': `El bocado de honor`,
+  'anec.2': `No es casualidad: en la mesa, la rabadilla del pollo, el <span lang="mg">vodiakoho</span>, se reserva tradicionalmente al padre o al mayor. Ofrecer el «<span lang="mg">vody</span>» es rendir homenaje.`,
+  'anec.3t': `Empezar pidiendo disculpas`,
+  'anec.3': `Un <span lang="mg">kabary</span> empieza con la <span lang="mg">fialan-tsiny</span>: el orador se disculpa de antemano por sus torpezas y saluda a cada uno según su rango. Cuanto más humilde se muestra, más se le admira.`,
+  'anec.4t': `Un duelo cortés`,
+  'anec.4': `El orador de la familia de la novia puede fingir dudas o hacer preguntas; el del novio responde con proverbios e imágenes. El público aprecia las buenas réplicas.`,
+  'anec.5t': `Soplar el agua`,
+  'anec.5': `La bendición de los mayores se llama <span lang="mg">tso-drano</span>. La palabra evoca el agua que antaño se soplaba sobre los novios para darles suerte.`,
+  'ph.hint': `Desliza para ver todas las expresiones →`,
+  'phg.1': `Saludar`,
+  'ph.1.1': `Hola`, 'ph.1.1s': `« sa-lám »`,
+  'ph.1.2': `Buenos días`, 'ph.1.2s': `« ma-náu a-ún »`,
+  'ph.1.3m': `Manao ahoana ianao?`,
+  'ph.1.3': `¿Cómo estás?`, 'ph.1.3s': `« ma-náu a-ún ia-náu »`,
+  'ph.1.4': `Muy bien, gracias`, 'ph.1.4s': `« tsar be, mi-sóch »`,
+  'phg.2': `Presentarse`,
+  'ph.2.1': `Me llamo…`, 'ph.2.1s': `« ni a-na-ru di »`,
+  'ph.2.2m': `Iza no anaranao?`,
+  'ph.2.2': `¿Cómo te llamas?`, 'ph.2.2s': `« i-sa nu a-na-ra-náu »`,
+  'ph.2.3m': `Avy any Espaina aho`,
+  'ph.2.3': `Vengo de España`, 'ph.2.3s': `« a-vi a-ni es-páin a-u »`,
+  'ph.2.4': `Encantado de conocerte`, 'ph.2.4s': `« fa-li ma-fan-tach a-náu »`,
+  'phg.3': `Cortesía`,
+  'ph.3.1': `Muchas gracias`, 'ph.3.1s': `« mi-sóch be-tsák »`,
+  'ph.3.2': `Por favor, perdón`, 'ph.3.2s': `« a-za-fád »`,
+  'ph.3.3': `De nada`, 'ph.3.3s': `« tsi mis fi-sáu-ran »`,
+  'ph.3.4': `Sí · No`, 'ph.3.4s': `« é-ni · tsi »`,
+  'phg.4': `En la fiesta`,
+  'ph.4.1': `Bienvenidos`, 'ph.4.1s': `« tung súa »`,
+  'ph.4.2m': `Arahabaina!`,
+  'ph.4.2': `¡Felicidades!`, 'ph.4.2s': `« a-ra-a-báin »`,
+  'ph.4.3': `Les deseamos lo mejor`, 'ph.4.3s': `« mi-rár su u a-na-ré »`,
+  'ph.4.4m': `Mazotoa homana!`,
+  'ph.4.4': `¡Buen provecho!`, 'ph.4.4s': `« ma-su-tú u-mán »`,
+  'phg.5': `Útil`,
+  'ph.5.1': `No hablo malgache`, 'ph.5.1s': `« tsi ma-ái te-ni ma-la-gás a-u »`,
+  'ph.5.2m': `Tsara be!`,
+  'ph.5.2': `¡Qué bonito!`, 'ph.5.2s': `« tsar be »`,
+  'ph.5.3': `Adiós`, 'ph.5.3s': `« ve-lúm »`,
+  'menu.label': `Menú`, 'menu.close': `Cerrar`, 'menu.text': `Tamaño del texto`
+},
+mg: {
+  'skip': `Mankany amin'ny votoaty`,
+  'ts.group': `Haben'ny soratra`, 'ts.n': `Soratra mahazatra`, 'ts.l': `Soratra lehibe`, 'ts.xl': `Soratra lehibe dia lehibe`,
+  'nav.aria': `Lohateny`,
+  'notice': `<strong>Santionany am-panamboarana.</strong> Ohatra hosoloina ny tena vaovao ireo singa misy tsipika teboka eo ambaniny.`,
+  'welcome': `Tonga soa`,
+  'hero.type': `Vodiondry`,
+  'tagline': `Fomban-drazana · Hakanto · Fihavanana`,
+  'verse.text': `« <span class="script">Mitafia fitiavana,</span> fa fehin'ny fahatanterahana izany. »`,
+  'verse.ref': `Kolosiana 3:14`,
+  'date': `Alahady 25 aprily 2027`,
+  'rsvp.cta': `Hamaly ny fanasana`,
+  'prof.eyebrow': `Ny toerana misy anao`, 'prof.eu': `Avy any Eoropa aho`, 'prof.local': `Monina eto Madagasikara aho`,
+  'steps.title': `Ny fiomananao, araka ny filaharany`,
+  'eu.1': `<span class="when">Izao dieny izao</span><span><a href="#vols">Mandrafeta ny tapakila fiaramanidina</a>. Mifanandrify amin'ny fialan-tsasatry ny mpianatra any Eoropa ny aprily: miakatra haingana ny vidiny.</span>`,
+  'eu.2': `<span class="when">Alohan'ny 25 febroary 2027</span><span><a href="#rsvp">Hamafiso ny fahatongavanao</a> sy ny daty hijanonanao.</span>`,
+  'eu.3': `<span class="when">Febroary 2027</span><span><a href="#hebergement">Mandrafeta trano hipetrahana</a> ary hamarino ny pasipaoronao.</span>`,
+  'eu.4': `<span class="when">Martsa 2027</span><span>Fizahana ara-pahasalamana sy <a href="#formalites">fangatahana visa</a>.</span>`,
+  'eu.5': `<span class="when">Ny herinandro hiaingana</span><span><a href="#valise">Omano ny valizinao</a> amin'ny alalan'ny lisitra azo marihina.</span>`,
+  'lo.1': `<span class="when">Alohan'ny 25 febroary 2027</span><span><a href="#rsvp">Hamafiso ny fahatongavanao</a> sy ny isan'ny olona.</span>`,
+  'lo.2': `<span class="when">Martsa 2027</span><span>Omano ny akanjo hanaovanao araka ny <a href="#ceremonie">fitafiana voafaritra</a>.</span>`,
+  'lo.3': `<span class="when">Aprily 2027</span><span>Fantaro mialoha ny lalana mankany amin'ny <a href="#ceremonie">Villa ny Natiora</a>, eny amin'ny By-pass, ary omeo fotoana ampy noho ny fitohanan'ny fiara.</span>`,
+  'lo.4': `<span class="when">Ny 25 aprily</span><span>Tongava amin'ny 10 ora sy sasany maraina ho an'ny fandraisana ny vahiny. Jereo ny <a href="#jourj">fandaharana amin'ny andro lehibe</a>.</span>`,
+  'lo.5': `<span class="when">Aorian'ny fanambadiana</span><span>Raha tianao, manatevina ampahany amin'ny <a href="#semaine">herinandro fitsangatsanganana</a>.</span>`,
+  'clock.tnr': `Eto Antananarivo`, 'clock.par': `Any Paris`,
+  'tiles.title': `Ireo lohateny rehetra`,
+  'grp.mariage': `Ny fanambadiana`, 'grp.venir': `Ho tonga`, 'grp.place': `Eto an-toerana`,
+  'cer.title': `Ny lanonana`,
+  'cer.lead': `Manaraka fombafomba voafaritra ny fanambadiana araka ny fomban-drazana. Ireto ny toerana, ny fitafiana ary fanazavana vitsivitsy hahatakarana izay hiainantsika.`,
+  'cer.lieu': `Toerana`,
+  'cer.site': `Trano fianakaviana manana tokotany malalaka, 200 m miala ny lalana lehiben'ny By-pass. Misy toeram-piantsonana ao an-toerana.`,
+  'cer.time': `Omeo 30 minitra ka hatramin'ny adiny iray sy sasany ny dia avy eo afovoan-tanàna, arakaraka ny fitohanan'ny fiara.`,
+  'cer.maps': `Sokafy amin'ny Google Maps`,
+  'cer.tenue': `Fitafiana`, 'cer.dress.title': `Fitafiana voafaritra`,
+  'cer.dress': `Mba hifanaraka amin'ny lohahevitry ny lanonana, izay nentim-paharazana sy mihaja, dia manasa anareo izahay hisafidy fitafy na « accessoire » mifanaraka amin'ireo loko atolotra eto.`,
+  'pal.aria': `Loko voafidy`,
+  'iti.title': `Torolalana`,
+  'iti.1': `<span class="when">By-pass</span><span>Eo amin'ny sampanan-dalana mankany Alasora (Orion Hotel sy Domaine Alasora amin'ny ilany iray, Gastro Pizza Alasora amin'ny ilany), araho ny lalana mankany Alasora, mianatsimo.</span>`,
+  'iti.2': `<span class="when">Lalana mankany Alasora</span><span>Lalovy ny Pharmacie Amboaroy sy DTE System, ary mivilia ankavanana eo amin'ny School Smart, izay eo ankavianao.</span>`,
+  'iti.3': `<span class="when">Fahatongavana</span><span>Eo ankavananao ny villa, aorian'ny Raitra Kidz; eo ankavianao kosa ny Fiangonana Apokalypsy Alasora Libanona. Misy toeram-piantsonana ao an-toerana.</span>`,
+  'iti.note': `Araka ny sarintany ao amin'ny taratasy fanasana.`,
+  'cer.cold': `Mangatsiaka ny hariva eto amin'ny tany avo: mitondrà palitao na lamba.`,
+  'vod.title': `Ny vodiondry`,
+  'vod.1': `Ny vodiondry no fangatahana vady araka ny fomban-drazana eto amin'ny faritra afovoany. Ny fianakavian'ny lehilahy no mankany amin'ny fianakavian'ny vehivavy mba hangataka azy amin'ny fomba ofisialy. Avy amin'ny vodin'ondry natolotra ny ray aman-drenin'ny vehivavy taloha ny anarany; ankehitriny, fanomezana an'ohatra izany.`,
+  'vod.2': `Mifampiresaka amin'ny alalan'ny kabary ny fianakaviana roa tonta, kanto fiteny feno ohabolana sy sary an'oha-teny. Samy manana ny mpikabary azy ny fianakaviana tsirairay. Henoy tsara, mitehafa tanana rehefa mitehaka ny mpanatrika, ary omeo ny zokiolona ny fitenenana: izy ireo no manana ny toerana voninahitra.`,
+  'vod.3': `Hazavaina eto ireo dingana manokana amin'ny fianakavianay.`,
+  'jj.title': `Fandaharana amin'ny andro lehibe`,
+  'jj.lead': `Alahady 25 aprily 2027, ao amin'ny Villa ny Natiora.`,
+  'jj.1': `<h3>Fahatongavan'ny vahiny</h3><p>Mozika miaraka amin'ny Mpitsoka mozika.</p>`,
+  'jj.2': `<h3>Fanombohan'ny lanonana nentim-paharazana</h3><p>Ny vodiondry, an-kalamanjana, manodidina sehatra voaravaka voninkazo.</p>`,
+  'jj.3': `<h3>Fisotroana fandraisana</h3><p>Sary ho an'ny mpivady sy sary miaraka amin'ny vahiny, arahin'ny mpitendry saksofaonina.</p>`,
+  'jj.4': `<h3>Fanokafana ny sakafo atoandro</h3><p>Ao ambanin'ny lay, miaraka amin'ny mpanakanto, tarika ary DJ.</p>`,
+  'jj.5': `<h3>Ny mofomamy</h3><p>Avy eo, mitohy ny fety miaraka amin'ny DJ.</p>`,
+  'jj.6': `<h3>Fiafarana ofisialin'ny fandraisana</h3>`,
+  'rsvp.lead': `Mamalia azafady alohan'ny 25 febroary 2027.`,
+  'rsvp.nom': `Ny anaranao sy ny fanampin'anaranao`, 'rsvp.presence': `Ho tonga ve ianao?`,
+  'rsvp.oui': `Eny, am-pifaliana`, 'rsvp.non': `Tsia, indrisy`,
+  'rsvp.nb': `Isan'ny olona, tafiditra ao ianao`,
+  'rsvp.regime': `Sakafo tsy azonao hanina na tsy mety aminao`,
+  'rsvp.regime.help': `Tsy mihinan-kena, tsy mihinana henan-kisoa, tsy mahazaka sakafo sasany… Avelao ho foana raha tsy misy.`,
+  'rsvp.semaine': `Handray anjara amin'ny herinandro fitsangatsanganana koa aho`,
+  'rsvp.msg': `Teny vitsivitsy ho an'ny mpivady`, 'rsvp.send': `Alefaso ny valinteniko`,
+  'gift.eyebrow': `Ny fanomezanareo`,
+  'vols.title': `Tapakila fiaramanidina avy any Eoropa`,
+  'vols.lead': `Hidina ao amin'ny seranam-piaramanidina iraisam-pirenena Antananarivo-Ivato ny vahiny, kaody <span class="mono">TNR</span>, eo amin'ny 15 km eo avaratry ny afovoan-tanàna.`,
+  'vols.f1': `<dt>Sidina mivantana</dt><dd>Avy any Paris-Charles-de-Gaulle, eo amin'ny 11 ora eo ho eo.</dd>`,
+  'vols.f2': `<dt>Misy fijanonana</dt><dd>14 ka hatramin'ny 20 ora arakaraka ny fijanonana: La Réunion, Maurice, Addis-Abeba, Istanbul, Nairobi…</dd>`,
+  'vols.f3': `<dt>Avy any Espaina</dt><dd>Tsy misy sidina mivantana: mifindra fiaramanidina any Paris, Addis-Abeba, Istanbul na Nairobi avy any Madrid na Barcelone.</dd>`,
+  'vols.f4': `<dt>Elanelan'ora</dt><dd>Mialoha adiny iray an'i Paris sy Madrid amin'ny aprily.</dd>`,
+  'vols.f5': `<dt>Rahoviana no mandrafitra</dt><dd>Izao dieny izao: mifanandrify amin'ny fialan-tsasatry ny mpianatra any Frantsa ny aprily.</dd>`,
+  'vols.f6': `<dt>Fahatongavana atoro</dt><dd>Roa andro farafahakeliny alohan'ny lanonana, mba hanalana ny havizanana.</dd>`,
+  'vols.cmp': `Ampitahao ireo safidy`, 'vols.cap': `Safidy sidina mankany Antananarivo`,
+  'vols.th': `<th scope="col">Safidy</th><th scope="col">Faharetany</th><th scope="col">Tokony ho fantatra</th>`,
+  'vols.r1': `<td>Mivantana avy any Paris</td><td class="mono">≈ 11 h</td><td>Tsotra indrindra, matetika amin'ny alina.</td>`,
+  'vols.r2': `<td>Mandalo La Réunion na Maurice</td><td class="mono">14–16 h</td><td>Azo ampiana fijanonana any amin'ny Ranomasimbe Indianina.</td>`,
+  'vols.r3': `<td>Mandalo Addis-Abeba, Istanbul na Nairobi</td><td class="mono">15–20 h</td><td>Matetika mora kokoa, azo iaingana avy amin'ny tanàna hafa any Eoropa.</td>`,
+  'vols.todo': `Mety hampiana eto ny vidiny ho an'ny vondrona na sidina voafantina.`,
+  'form.title': `Taratasy ilaina`,
+  'form.lead': `Tsy maintsy manana visa fizahan-tany ny teratany eoropeanina.`,
+  'form.1': `<span class="when">Izao dieny izao</span><span><b>Pasipaoro</b> manan-kery 6 volana farafahakeliny aorian'ny daty hiverenana, misy pejy foana.</span>`,
+  'form.2': `<span class="when">Amin'ny famandrihana</span><span><b>Fiantohana dia</b> mandrakotra ny fitsaboana sy ny famerenana any amin'ny firenena niaviana.</span>`,
+  'form.3': `<span class="when">2 volana mialoha</span><span><b>Fizahana ara-pahasalamana</b> any amin'ny dokotera na foibe vaksiny iraisam-pirenena: vaksiny atoro sy fisorohana tazomoka arakaraka ny lalana haleha.</span>`,
+  'form.4': `<span class="when">1 volana mialoha</span><span><b>Visa</b>: angataho an-tserasera ny e-visa, na alaivo eny amin'ny seranam-piaramanidina rehefa tonga. Takiana ny tapakila miverina. Ny vavahadin-tserasera ofisialy misy <span class="mono">.gov.mg</span> ihany no ampiasao; tandremo ireo tranonkala mpanelanelana mampandoa vola.</span>`,
+  'form.5': `<span class="when">Alohan'ny hiaingana</span><span><b>Ampahafantaro ny firenenao ny dianao</b>: amin'ny Ariane ho an'ny Frantsay, amin'ny <span lang="es">Registro de Viajeros</span> ho an'ny Espaniola. Tehirizo ny dika nomerikan'ny taratasinao.</span>`,
+  'form.notice': `Miova ny fitsipika: hamarino ao amin'ny pejy <a href="https://www.diplomatie.gouv.fr/fr/conseils-aux-voyageurs/conseils-par-pays-destination/madagascar/" target="_blank" rel="noopener" lang="fr">Conseils aux voyageurs — Madagascar</a> an'ny minisiteran'ny Raharaham-bahiny frantsay, na ao amin'ny tranonkalan'ny <a href="https://www.exteriores.gob.es/" target="_blank" rel="noopener" lang="es">Ministerio de Asuntos Exteriores</a> ho an'ny Espaniola, alohan'ny hiaingana.`,
+  'met.title': `Ny toetr'andro amin'ny aprily`,
+  'met.lead': `Ny aprily no fiafaran'ny fotoanan'ny orana. Eto Antananarivo, 1 280 m ny haavony, malefaka ny andro ary mangatsiaka ny alina. Mafana sy mando kosa any amoron-tsiraka.`,
+  'met.chart': `Mari-pana antonony amin'ny aprily, ambany indrindra sy ambony indrindra`,
+  'met.note': `Salanisa tondro, amin'ny °C.`,
+  'met.f1': `<dt>Orana</dt><dd>Mbola mety hisy oram-baratra amin'ny hariva, indrindra amin'ny fiandohan'ny volana.</dd>`,
+  'met.f2': `<dt>Masoandro</dt><dd>Mahery na dia mangatsiatsiaka aza: satroka sy menaka fiarovana amin'ny masoandro.</dd>`,
+  'met.f3': `<dt>Elanelana andro sy alina</dt><dd>Hatramin'ny 10 °C any amin'ny tany avo. Mitafy akanjo maromaro.</dd>`,
+  'val.title': `Inona no ho entina ao anaty valizy`,
+  'val.lead': `Mariho tsikelikely. Voatahiry ato amin'ity fitaovana ity ny marikao.`,
+  'heb.title': `Trano hipetrahana`,
+  'heb.lead': `Toerana hatoriana arakaraka ny fotoana. Hampiana eto ireo hotely nofantenanay.`,
+  'heb.p1': `<p class="eyebrow">Fahatongavana sy fiaingana</p><h3>Akaikin'ny seranam-piaramanidina Ivato</h3><p>Mety tsara ho an'ny alina voalohany aorian'ny dia lavitra, sy ny farany alohan'ny fiaingana maraina be.</p>`,
+  'heb.p2': `<p class="eyebrow">Hakanto</p><h3>Tanàna Ambony</h3><p>Lalana rarafana vato, trano tranainy ary fahitana ireo havoana. Azo tongavana an-tongotra ireo toerana malaza.</p>`,
+  'heb.p3': `<p class="eyebrow">Fahamorana</p><h3>Ivandry sy Ankorondrano</h3><p>Faritra vaovao, hotely maoderina ary trano fisakafoanana maro.</p>`,
+  'heb.sel': `Ny safidinay`, 'heb.cap': `Hotely atoro`,
+  'heb.th': `<th scope="col">Sokajy</th><th scope="col">Hotely</th><th scope="col">Vidiny isan'alina</th><th scope="col">Halavirana amin'ny villa</th>`,
+  'heb.r1': `<td>Tsotra</td><td class="todo" title="Hofenoina">Hotely mbola hofidiana</td><td class="mono">—</td><td class="mono">—</td>`,
+  'heb.r2': `<td>Antonony</td><td class="todo" title="Hofenoina">Hotely mbola hofidiana</td><td class="mono">—</td><td class="mono">—</td>`,
+  'heb.r3': `<td>Ambony</td><td class="todo" title="Hofenoina">Hotely mbola hofidiana</td><td class="mono">—</td><td class="mono">—</td>`,
+  'tr.title': `Fivezivezena eto Antananarivo`,
+  'tr.lead': `Midadasika sy be havoana ary matetika mitohana ny tanàna. Omeo fotoana ampy ny dia tsirairay.`,
+  'tr.p1': `<h3>Avy eny amin'ny seranam-piaramanidina</h3><p>30 minitra ka hatramin'ny adiny iray sy sasany mankany afovoan-tanàna arakaraka ny ora. <span class="todo" title="Mbola hotapahina">Eo am-pandinihana ny fiara fitateram-bahiny.</span></p>`,
+  'tr.p2': `<h3>Taxi</h3><p>Tsy misy fanisana ny taxi: ifanaraho mialoha ny saran-dalana ary aloavy amin'ny ariary. Angataho amin'ny hotelinao ny mpamily azo itokisana.</p>`,
+  'tr.p3': `<h3>Fiara misy mpamily</h3><p>Vahaolana mahazo aina indrindra amin'ny andron'ny fanambadiana sy amin'ny herinandro fitsangatsanganana.</p>`,
+  'tr.p4': `<h3>Tokony hialana</h3><p>Mandeha an-tongotra irery amin'ny alina, sy ny taxi-be raha mitondra entana.</p>`,
+  'tr.f1': `<dt>Ora fitohanana</dt><dd>7 ora ka hatramin'ny 9 ora maraina, ary 4 ora ka hatramin'ny 7 ora hariva.</dd>`,
+  'tr.conv': `Fanovana euro – ariary`, 'tr.eur': `Euro`,
+  'tr.rate': `Sandam-bola: ariary isaky ny 1 €`, 'tr.rate.help': `Sanda tondro, azo ovaina.`,
+  'sem.title': `Herinandro fitsangatsanganana`,
+  'sem.lead': `Lalana atolotra aorian'ny fanambadiana, alohan'ny hiverenan'ny vahiny any Eoropa. <span class="todo" title="Mbola hamarinina">Lalana mbola hamarinina miaraka.</span>`,
+  'sem.1': `<span class="day">Andro 1</span><div><h3>Fialan-tsasatra sy Tanàna Ambony</h3><p>Rovan'i Manjakamiadana, lapan'Andafiavaratra, sakafo atoandro manatrika ny tanàna.</p></div>`,
+  'sem.2': `<span class="day">Andro 2</span><div><h3>Lalana mankany Andasibe</h3><p>3 ka hatramin'ny 4 ora mianatsinanana, mamakivaky tanimbary.</p></div>`,
+  'sem.3': `<span class="day">Andro 3</span><div><h3>Alan'Andasibe</h3><p>Ny hiran'ny babakoto amin'ny maraina, ary fitsangatsanganana amin'ny alina hitadiavana tana.</p></div>`,
+  'sem.4': `<span class="day">Andro 4</span><div><h3>Miverina any Antananarivo</h3><p>Mijanona ao amin'ny valan-javaboahary Peyrieras sy ny tanany eny an-dalana.</p></div>`,
+  'sem.5': `<span class="day">Andro 5</span><div><h3>Ambohimanga</h3><p>Ny Vohitra Masina, lova iraisan'izao tontolo izao ankatoavin'ny Unesco, 20 km avaratra.</p></div>`,
+  'sem.6': `<span class="day">Andro 6</span><div><h3>Tsenan'ny Digue</h3><p>Asa tanana, lavanila, landy: fotoana tsara hividianana fahatsiarovana.</p></div>`,
+  'sem.7': `<span class="day">Andro 7</span><div><h3>Fiaingana</h3><p>Alina farany akaikin'Ivato, sidina miverina.</p></div>`,
+  'adr.title': `Toerana tsy tokony hadino sy toerana miavaka`,
+  'adr.lead': `Eto Antananarivo, manodidina azy ary any amin'ny faritra hafa amin'ny nosy. <span class="todo" title="Hofenoina">Hampiana eto ireo toerana tianay manokana.</span>`,
+  'adr.filter': `Sivano ireo toerana`,
+  'footer': `Misy fanontaniana ve? <span class="todo" title="Hofenoina">Fifandraisana amin'ny mpivady na vavolombelona</span>`,
+  'fs.title': `Fampisehoana`,
+  'bb.aria': `Fidirana haingana`, 'bb.home': `Fandraisana`, 'bb.jj': `Fandaharana`, 'bb.lieu': `Toerana`, 'bb.val': `Valizy`, 'bb.menu': `Lisitra`,
+  'steps.cta': `Ny fiomananao`,
+  'tab.repondre': `Ny valinteninao`,
+  'tab.details': `Antsipiriany`, 'tab.sante': `Fahasalamana sy visa`,
+  'dou.title': `Fadintseranana`,
+  'dou.text': `Izay azonao entina na averina, sy izay tokony hambara rehefa tonga sy rehefa miainga: vakio ny torolalana ofisialin'ny fadintseranana malagasy alohan'ny hanomananao ny valizinao.`,
+  'dou.link': `Torolalana momba ny fadintseranana (PDF, amin'ny teny frantsay)`, 'rsvp.next': `Tohizana`,
+  'tab.vols': `Ny sidina`, 'tab.comparer': `Ampitahao`, 'tab.conseils': `Torohevitra`,
+  'tab.maintenant': `Izao dieny izao`, 'tab.depart': `Alohan'ny hiaingana`, 'tab.temperatures': `Mari-pana`,
+  'tab.quartiers': `Faritra`, 'tab.trajets': `Dia`, 'tab.route': `Eny an-dalana`, 'tab.argent': `Vola`, 'tab.vtc': `Rindranasa VTC`,
+  'tab.sem1': `Andro 1 hatramin'ny 4`, 'tab.sem2': `Andro 5 hatramin'ny 7`,
+  'car.prev': `Toerana teo aloha`, 'car.next': `Toerana manaraka`, 'car.aria': `Toerana`,
+  'tab.conv': `Fanovana vola`,
+  'chg.1': `<h3>Seranam-piaramanidina Ivato</h3><p>Biraon'ny fanakalozam-bola ao amin'ny efitrano fahatongavana, misokatra rehefa tonga ny sidina iraisam-pirenena: mety tsara amin'ny visa sy ny taxi voalohany. Rehefa miainga, eo no anakalozana ny ariary sisa.</p>`,
+  'chg.2': `<h3>Socimad · Tsaralalana</h3><p>Biraon'ny fanakalozam-bola ankatoavina eo afovoan-tanàna, 14 lalana Radama I. Ora fiasana: 8 ora maraina ka hatramin'ny 5 ora hariva amin'ny andro fiasana, hamarino amin'ny +261 32 07 365 95.</p>`,
+  'chg.3': `<h3>BMOI · Antaninarenina</h3><p>Banky eo afovoan-tanàna: manakalo euro eo amin'ny varavarankely amin'ny andro fiasana. Mandray karatra Visa ny ankamaroan'ny milina mpamoaka vola eto an-tanàna.</p>`,
+  'chg.tip': `Tehirizo ny tapakila fanakalozana ary aza manakalo vola amin'ny olona eny an-dalana. Mitondrà vola madinika ho an'ny taxi sy ny tsena.`,
+  'vtc.1': `<h3>Piqla</h3><p>Rindranasa VTC malagasy, natomboka tamin'ny 2024 teto Antananarivo. Fantatra mialoha ny saran-dalana ary arahina mivantana ny dia; andoavana amin'ny karatra banky na MVola, misy fanampiana amin'ny WhatsApp ho an'ny vahiny.</p>`,
+  'vtc.2': `<h3>inDrive</h3><p>Rindranasa iraisam-pirenena: ianao no manolotra ny vidiny, ary ny mpamily no manaiky na manolotra vidiny hafa. Matetika no mora indrindra; aloa amin'ny vola ariary mivantana. Miovaova arakaraka ny faritra ny isan'ny mpamily.</p>`,
+  'vtc.tip': `Apetraho alohan'ny hiaingana ary sokafy ny kaontinao amin'ny Wi-Fi an'ny hotely na karatra SIM malagasy. Hamarino ny laharan'ny fiara sy ny anaran'ny mpamily alohan'ny hiakarana.`,
+  'vtc.a1': `Misintona Piqla amin'ny App Store`, 'vtc.a2': `Misintona Piqla amin'ny Google Play`, 'vtc.a3': `Misintona inDrive amin'ny App Store`, 'vtc.a4': `Misintona inDrive amin'ny Google Play`,
+  'car.p': `Teo aloha`, 'car.n': `Manaraka`,
+  'vod.hint': `Atosory hahitana ireo zava-mahaliana →`,
+  'vod.t1': `Ny fangatahana`, 'vod.t2': `Ny kabary`, 'anec.k': `Fantatrao ve?`,
+  'anec.1t': `Vodin'ondry`,
+  'anec.1': `Ara-bakiteny, ny hoe vodiondry dia ny vodin'ny ondry. Io ampahany voafantina io no natolotra ny ray aman-drenin'ny vehivavy taloha; valopy an'ohatra no misolo azy ankehitriny.`,
+  'anec.2t': `Anjara voninahitra`,
+  'anec.2': `Tsy kisendrasendra izany: eo amin'ny latabatra, ho an'ny ray na ny zokiolona ny vodiakoho. Ny fanomezana ny « vody » dia fanomezam-boninahitra.`,
+  'anec.3t': `Manomboka amin'ny fialan-tsiny`,
+  'anec.3': `Manomboka amin'ny fialan-tsiny ny kabary: miala tsiny mialoha amin'ny mety ho diso ny mpikabary ary miarahaba ny tsirairay araka ny toerany. Arakaraka ny hanetren-tenany no hankafizana azy.`,
+  'anec.4t': `Fifanandrinana am-pahalalam-pomba`,
+  'anec.4': `Mety hanao ho misalasala na hametraka fanontaniana ny mpikabarin'ny fianakavian'ny vehivavy; mamaly amin'ny ohabolana sy sary an'oha-teny kosa ny an'ny lehilahy. Ankafizin'ny mpanatrika ny valin-teny mahay.`,
+  'anec.5t': `Tso-drano`,
+  'anec.5': `Tso-drano no iantsoana ny tahin'ny zokiolona. Mampahatsiahy ny rano notsofina tamin'ny mpivady taloha ho fitahiana izany.`,
+  'menu.label': `Lisitra`, 'menu.close': `Hidio`, 'menu.text': `Haben'ny soratra`
+}
+};
+
+(function () {
+  document.documentElement.classList.add('js');
+  var store = {
+    get: function (k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } },
+    set: function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  };
+  var lang = 'fr';
+  function L(o) { return typeof o === 'string' ? o : (o[lang] || o.fr); }
+
+  /* Textes générés par le script, dans les trois langues */
+  var T = {
+    insta: { kicker: { fr: 'Coup de cœur Instagram', es: 'Favorito en Instagram', mg: "Tianay ao amin'ny Instagram" },
+      text: { fr: 'Restos, bars, cafés et sorties à Tana : le compte à suivre.', es: 'Restaurantes, bares, cafés y salidas en Tana: la cuenta que seguir.', mg: "Sakafo, bar, kafe sy fialamboly eto Tana: ny kaonty arahina." },
+      cta: { fr: 'Voir sur Instagram', es: 'Ver en Instagram', mg: "Jereo ao amin'ny Instagram" } },
+    pack: { fr: function (n, t) { return n + ' sur ' + t + (n > 1 ? ' objets prêts' : ' objet prêt'); },
+            es: function (n, t) { return n + ' de ' + t + ' listos'; },
+            mg: function (n, t) { return n + ' amin’ny ' + t + ' vonona'; } },
+    count: { fr: function (n) { return n + ' lieux affichés'; }, es: function (n) { return n + ' lugares mostrados'; }, mg: function (n) { return n + ' toerana aseho'; } },
+    diff: { fr: function (h) { return 'Aujourd’hui, Madagascar a ' + h + ' h d’avance sur Paris. En avril, l’écart sera de 1 h.'; },
+            es: function (h) { return 'Hoy, Madagascar va ' + h + ' h por delante de París y Madrid. En abril, la diferencia será de 1 h.'; },
+            mg: function (h) { return 'Androany, mialoha an’i Paris ' + h + ' ora i Madagasikara. Amin’ny aprily, adiny iray ny elanelana.'; } },
+    temp: { fr: function (a, b) { return 'de ' + a + ' à ' + b + ' degrés'; }, es: function (a, b) { return 'de ' + a + ' a ' + b + ' grados'; }, mg: function (a, b) { return a + ' ka hatramin’ny ' + b + ' degre'; } },
+    rsvpErr: { fr: 'Indiquez votre nom pour que nous sachions qui répond.', es: 'Indica tu nombre para que sepamos quién responde.', mg: 'Soraty ny anaranao mba hahafantaranay hoe iza no mamaly.' },
+    rsvpOk: { fr: 'Aperçu : ce formulaire n’enregistre encore rien. Il sera relié à votre tableau des réponses.', es: 'Vista previa: este formulario todavía no guarda nada. Se conectará a la tabla de respuestas.', mg: 'Santionany: mbola tsy mitahiry na inona na inona ity taratasy ity. Hampifandraisina amin’ny tabilaon’ny valinteny izy avy eo.' },
+    all: { fr: 'Tout', es: 'Todo', mg: 'Rehetra' },
+    prev: { fr: 'Précédent', es: 'Anterior', mg: 'Teo aloha' },
+    next: { fr: 'Suivant', es: 'Siguiente', mg: 'Manaraka' },
+    pager: { fr: 'Rubrique précédente et suivante', es: 'Sección anterior y siguiente', mg: 'Lohateny teo aloha sy manaraka' },
+    fs: { fr: 'Plein écran', es: 'Pantalla completa', mg: 'Efijery feno' },
+    fsExit: { fr: 'Quitter le plein écran', es: 'Salir de pantalla completa', mg: 'Hiala amin\u2019ny efijery feno' }
+  };
+
+  /* ---------- Navigation ---------- */
+  var NAV = [
+    { title: { fr: 'Le mariage', es: 'La boda', mg: 'Ny fanambadiana' }, items: [
+      ['accueil', { fr: 'Accueil', es: 'Inicio', mg: 'Fandraisana' }],
+      ['ceremonie', { fr: 'La cérémonie', es: 'La ceremonia', mg: 'Ny lanonana' }],
+      ['jourj', { fr: 'Programme du jour J', es: 'Programa del gran día', mg: 'Fandaharana amin’ny andro lehibe' }],
+      ['rsvp', { fr: 'Répondre à l’invitation', es: 'Responder a la invitación', mg: 'Hamaly ny fanasana' }]] },
+    { title: { fr: 'Venir', es: 'Llegar', mg: 'Ho tonga' }, items: [
+      ['preparatifs', { fr: 'Vos préparatifs', es: 'Tus preparativos', mg: 'Ny fiomananao' }],
+      ['vols', { fr: 'Billet d’avion', es: 'Billete de avión', mg: 'Tapakila fiaramanidina' }],
+      ['formalites', { fr: 'Formalités', es: 'Trámites', mg: 'Taratasy ilaina' }],
+      ['meteo', { fr: 'Météo', es: 'El tiempo', mg: 'Toetr’andro' }],
+      ['valise', { fr: 'Valise', es: 'Maleta', mg: 'Valizy' }]] },
+    { title: { fr: 'Sur place', es: 'Allí', mg: 'Eto an-toerana' }, items: [
+      ['hebergement', { fr: 'Hébergement', es: 'Alojamiento', mg: 'Trano hipetrahana' }],
+      ['transport', { fr: 'Se déplacer à Tana', es: 'Moverse por Tana', mg: 'Fivezivezena eto Tana' }],
+      ['semaine', { fr: 'Semaine de découverte', es: 'Semana de descubrimiento', mg: 'Herinandro fitsangatsanganana' }],
+      ['adresses', { fr: 'Bonnes adresses', es: 'Buenas direcciones', mg: 'Toerana tsara' }]] }
+  ];
+  function buildNav(el) {
+    el.innerHTML = NAV.map(function (g) {
+      return '<div class="navgroup"><p class="navgroup-title">' + L(g.title) + '</p>' + g.items.map(function (it) {
+        return '<a class="navlink" href="#' + it[0] + '" data-nav="' + it[0] + '">' + L(it[1]) + '</a>';
+      }).join('') + '</div>';
+    }).join('');
+  }
+  var pages = Array.prototype.slice.call(document.querySelectorAll('[data-page]'));
+  var ids = pages.map(function (p) { return p.id.slice(2); });
+  /* Le HTML pré-rendu pointe vers les sections (#p-…) pour être lisible sans script ; le site utilise #rubrique */
+  document.querySelectorAll('a[href^="#p-"]').forEach(function (a) {
+    var id = a.getAttribute('href').slice(3);
+    if (ids.indexOf(id) !== -1) a.setAttribute('href', '#' + id);
+  });
+  if (/^#p-/.test(location.hash) && ids.indexOf(location.hash.slice(3)) !== -1) history.replaceState(null, '', '#' + location.hash.slice(3));
+  var current = 'accueil';
+  var menu = document.getElementById('menu');
+  var QUICK = ['accueil', 'jourj', 'ceremonie', 'valise'];
+  var ind = document.getElementById('bb-ind');
+
+  function show(id, moveFocus) {
+    if (ids.indexOf(id) === -1) id = 'accueil';
+    current = id;
+    pages.forEach(function (p) { p.classList.toggle('is-active', p.id === 'p-' + id); p.style.transform = p.style.opacity = p.style.transition = ''; });
+    document.querySelectorAll('[data-nav],[data-quick]').forEach(function (a) {
+      var target = a.getAttribute('data-nav') || a.getAttribute('data-quick');
+      if (target === id) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    });
+    var qi = QUICK.indexOf(id);
+    if (qi !== -1) ind.style.transform = 'translateX(' + qi * 100 + '%)';
+    ind.classList.toggle('off', qi === -1);   /* rubrique hors raccourcis : pas de repère */
+    carButtons();
+    if (moveFocus) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      var h = document.querySelector('#p-' + id + ' [tabindex="-1"]');
+      if (h) h.focus({ preventScroll: true });
+    }
+  }
+  /* Transition animée entre rubriques, vers l'avant ou vers l'arrière selon l'ordre du livret */
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var canVT = typeof document.startViewTransition === 'function' && !reduceMotion;
+  if (canVT) document.documentElement.classList.add('vt');
+  function order() { return NAV.reduce(function (a, g) { return a.concat(g.items.map(function (it) { return it[0]; })); }, []); }
+  function go(id) {
+    if (ids.indexOf(id) === -1) id = 'accueil';
+    if (id === current) return;
+    var o = order();
+    document.documentElement.setAttribute('data-dir', o.indexOf(id) < o.indexOf(current) ? 'back' : 'fwd');
+    if (canVT) document.startViewTransition(function () { show(id, true); });
+    else show(id, true);
+  }
+  window.addEventListener('hashchange', function () {
+    var h = location.hash.slice(1);
+    if (h && ids.indexOf(h) === -1 && document.getElementById(h)) return; /* lien d'évitement */
+    if (menu.open) menu.close();
+    go(h);
+  });
+
+  /* Balayage du doigt (téléphone et tablette) : vers la gauche, rubrique suivante ; vers la droite, précédente.
+     Toute la page réagit, y compris l'espace libre sous un contenu court, sauf les barres et le menu.
+     La page suit le doigt ; les carrousels, onglets et tableaux qui défilent gardent leur propre glissement,
+     puis passent la main à la rubrique voisine une fois arrivés au bout. */
+  var sw = null, swLock = 0;
+  /* true : zone sans balayage ; un élément : il défile d'abord lui-même ; null : balayage libre */
+  function swipeBlocker(el) {
+    if (!el || !el.closest || el.closest('.topbar, .bottombar, .sidebar, dialog')) return true;
+    for (; el && el !== document.body; el = el.parentElement) {
+      if (el.matches('textarea, select, input[type="range"]') || (el === document.activeElement && el.matches('input'))) return true;   /* saisie en cours */
+      if (el.scrollWidth > el.clientWidth + 1 && /auto|scroll/.test(getComputedStyle(el).overflowX)) return el;
+    }
+    return null;
+  }
+  function neighbour(dx) { var o = order(), i = o.indexOf(current); return dx < 0 ? o[i + 1] : o[i - 1]; }
+  document.addEventListener('touchstart', function (e) {
+    sw = null;
+    if (e.touches.length !== 1 || Date.now() < swLock || (window.visualViewport && visualViewport.scale > 1.01)) return;
+    var t = e.touches[0];
+    if (t.clientX < 24 || t.clientX > window.innerWidth - 24) return;   /* bords : geste « retour » du navigateur */
+    var blk = swipeBlocker(e.target);
+    if (blk === true) return;
+    sw = { x: t.clientX, y: t.clientY, t: Date.now(), dx: 0, axis: null, from: current, scroller: blk, page: document.getElementById('p-' + current) };
+  }, { passive: true });
+  document.addEventListener('touchmove', function (e) {
+    if (!sw) return;
+    if (e.touches.length !== 1) { sw.dx = 0; endSwipe(); return; }
+    var t = e.touches[0], dx = t.clientX - sw.x, dy = t.clientY - sw.y;
+    if (sw.from !== current) { sw = null; return; }
+    if (!sw.axis) {
+      if (Math.abs(dx) < 10 && Math.abs(dy) < 10) return;
+      if (Math.abs(dx) < Math.abs(dy) * 1.3) { sw = null; return; }   /* défilement vertical : on laisse faire */
+      var sc = sw.scroller;
+      if (sc && (dx < 0 ? sc.scrollLeft < sc.scrollWidth - sc.clientWidth - 2 : sc.scrollLeft > 2)) { sw = null; return; }   /* il reste à faire défiler */
+      sw.axis = 'x';
+    }
+    if (e.cancelable) e.preventDefault();
+    sw.dx = dx;
+    if (reduceMotion) return;
+    var free = !!neighbour(dx);
+    sw.page.style.transition = 'none';
+    sw.page.style.transform = 'translateX(' + Math.round(free ? dx * 0.55 : dx * 0.15) + 'px)';   /* résistance au bout du livret */
+    sw.page.style.opacity = free ? String(1 - Math.min(Math.abs(dx) / window.innerWidth, 0.45)) : '';
+  }, { passive: false });
+  function endSwipe() {
+    var s = sw; sw = null;
+    if (!s || !s.axis) return;
+    var target = neighbour(s.dx), dist = Math.abs(s.dx), speed = dist / Math.max(1, Date.now() - s.t);
+    /* Un balayage = une seule rubrique voisine, calculée depuis la rubrique où le doigt s'est posé */
+    if (s.from === current && target && (dist > Math.min(90, window.innerWidth * 0.22) || (dist > 40 && speed > 0.45))) {
+      swLock = Date.now() + 450;
+      location.hash = target;
+    } else if (s.page.style.transform) {
+      s.page.style.transition = 'transform 0.35s var(--ease), opacity 0.35s var(--ease)';
+      s.page.style.transform = s.page.style.opacity = '';
+    }
+  }
+  document.addEventListener('touchend', endSwipe);
+  document.addEventListener('touchcancel', function () { if (sw) sw.dx = 0; endSwipe(); });
+
+  function buildPagers() {
+    var o = order(), names = {};
+    NAV.forEach(function (g) { g.items.forEach(function (it) { names[it[0]] = it[1]; }); });
+    pages.forEach(function (p) {
+      var old = p.querySelector('.pager'); if (old) old.remove();
+      var i = o.indexOf(p.id.slice(2)), prev = o[i - 1], next = o[i + 1];
+      var nav = document.createElement('nav');
+      nav.className = 'pager'; nav.setAttribute('aria-label', L(T.pager));
+      nav.innerHTML = (prev ? '<a class="prev" href="#' + prev + '"><span><i aria-hidden="true">← </i>' + L(T.prev) + '</span><b>' + L(names[prev]) + '</b></a>' : '') +
+        (next ? '<a class="next" href="#' + next + '"><span>' + L(T.next) + '<i aria-hidden="true"> →</i></span><b>' + L(names[next]) + '</b></a>' : '');
+      p.appendChild(nav);
+    });
+  }
+
+  var topbar = document.querySelector('.topbar');
+  function onScroll() { topbar.classList.toggle('scrolled', window.scrollY > 8); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  document.getElementById('menu-close').addEventListener('click', function () { menu.close(); });
+  menu.addEventListener('click', function (e) {
+    if (e.target === menu) { menu.close(); return; }   /* clic sur le voile, à droite du panneau */
+    var a = e.target.closest('a');
+    if (a && a.hash === location.hash) menu.close();
+  });
+
+  /* Bouton du menu latéral : replie ou déplie la colonne de gauche sur ordinateur (choix mémorisé) */
+  /* Bouton Menu, en haut à gauche : ouvre le panneau latéral sur téléphone,
+     replie ou déplie la colonne de gauche sur ordinateur (choix mémorisé) */
+  var navToggle = document.getElementById('menu-open');
+  var wide = window.matchMedia('(min-width: 960px)');
+  var NAVFOLD = { fold: { fr: 'Replier le menu', es: 'Plegar el menú', mg: 'Aforony ny lisitra' }, unfold: { fr: 'Déplier le menu', es: 'Desplegar el menú', mg: 'Sokafy ny lisitra' }, open: { fr: 'Ouvrir le menu', es: 'Abrir el menú', mg: 'Sokafy ny lisitra' } };
+  function navLabel() {
+    var folded = document.documentElement.classList.contains('nav-collapsed');
+    if (wide.matches) {
+      navToggle.setAttribute('aria-controls', 'sidebar');
+      navToggle.setAttribute('aria-expanded', String(!folded));
+      navToggle.setAttribute('aria-label', L(folded ? NAVFOLD.unfold : NAVFOLD.fold));
+    } else {
+      navToggle.setAttribute('aria-controls', 'menu');
+      navToggle.setAttribute('aria-expanded', String(menu.open));
+      navToggle.setAttribute('aria-label', L(NAVFOLD.open));
+    }
+  }
+  if (wide.addEventListener) wide.addEventListener('change', navLabel);
+  menu.addEventListener('close', navLabel);
+  function setFolded(folded) {
+    document.documentElement.classList.toggle('nav-collapsed', folded);
+    navLabel();
+    store.set('wed-nav-folded', folded);
+  }
+  navToggle.addEventListener('click', function () {
+    if (wide.matches) { setFolded(!document.documentElement.classList.contains('nav-collapsed')); return; }
+    if (menu.showModal) menu.showModal(); else menu.setAttribute('open', '');
+    navLabel();
+  });
+
+  /* ---------- Sous-onglets (motif WAI-ARIA « tabs », activation au clic et aux flèches) ---------- */
+  function selectTab(tab, focus) {
+    var list = tab.closest('[role="tablist"]');
+    list.querySelectorAll('[role="tab"]').forEach(function (t) {
+      var on = t === tab, panel = document.getElementById(t.getAttribute('aria-controls'));
+      t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1;
+      if (panel) panel.hidden = !on;
+    });
+    if (focus) tab.focus();
+    tab.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    carButtons();
+  }
+  function syncTabs() {
+    document.querySelectorAll('[role="tablist"]').forEach(function (list) {
+      var sel = list.querySelector('[role="tab"][aria-selected="true"]:not([hidden])') || list.querySelector('[role="tab"]:not([hidden])');
+      if (sel) selectTab(sel, false);
+    });
+  }
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest('.subtabs [role="tab"]');
+    if (t) selectTab(t, false);
+    var go = e.target.closest('[data-goto]');
+    if (go) selectTab(document.getElementById(go.getAttribute('data-goto')), true);
+  });
+  document.addEventListener('keydown', function (e) {
+    var t = e.target.closest && e.target.closest('.subtabs [role="tab"]');
+    if (!t) return;
+    var tabs = Array.prototype.filter.call(t.parentNode.querySelectorAll('[role="tab"]'), function (x) { return !x.hidden; });
+    var i = tabs.indexOf(t), next = null;
+    if (e.key === 'ArrowRight') next = tabs[(i + 1) % tabs.length];
+    else if (e.key === 'ArrowLeft') next = tabs[(i - 1 + tabs.length) % tabs.length];
+    else if (e.key === 'Home') next = tabs[0];
+    else if (e.key === 'End') next = tabs[tabs.length - 1];
+    if (next) { e.preventDefault(); selectTab(next, true); }
+  });
+
+  /* ---------- Profil : invité venant d'Europe ou vivant à Madagascar ---------- */
+  var profBtns = document.querySelectorAll('[data-profile]');
+  function setProfile(p) {
+    profBtns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-profile') === p)); });
+    document.querySelectorAll('[data-for]').forEach(function (el) { el.hidden = el.getAttribute('data-for') !== p; });
+    store.set('wed-profile', p);
+  }
+  profBtns.forEach(function (b) { b.addEventListener('click', function () { setProfile(b.getAttribute('data-profile')); }); });
+
+  /* ---------- Plein écran (navigateurs d'ordinateur et Android ; masqué ailleurs) ---------- */
+  var fsBtns = document.querySelectorAll('[data-fs]');
+  var fsOk = !!(document.fullscreenEnabled && document.documentElement.requestFullscreen);
+  function fsLabel() {
+    var on = !!document.fullscreenElement, label = L(on ? T.fsExit : T.fs);
+    fsBtns.forEach(function (b) {
+      b.setAttribute('aria-pressed', String(on));
+      if (b.classList.contains('icon-btn')) b.setAttribute('aria-label', label); else b.textContent = label;
+    });
+  }
+  if (fsOk) {
+    document.querySelectorAll('[data-fs],[data-fs-wrap]').forEach(function (el) { el.hidden = false; });
+    fsBtns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var req = document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen();
+        if (req && req.catch) req.catch(function () {});
+      });
+    });
+    document.addEventListener('fullscreenchange', fsLabel);
+  }
+
+  /* ---------- Taille du texte ---------- */
+  var sizeBtns = document.querySelectorAll('[data-size]');
+  function setSize(s) {
+    document.documentElement.style.setProperty('--user-size', s / 100);
+    sizeBtns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-size') === String(s))); });
+    store.set('wed-size', s);
+  }
+  sizeBtns.forEach(function (b) { b.addEventListener('click', function () { setSize(b.getAttribute('data-size')); }); });
+  if (store.get('wed-size')) setSize(store.get('wed-size'));
+
+  /* ---------- Horloges ---------- */
+  function timeIn(tz) {
+    try { return new Intl.DateTimeFormat('fr-FR', { hour: '2-digit', minute: '2-digit', timeZone: tz }).format(new Date()); }
+    catch (e) { return '—'; }
+  }
+  function offsetMinutes(tz) {
+    try {
+      var parts = new Intl.DateTimeFormat('en-US', { timeZone: tz, hour12: false, year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }).formatToParts(new Date());
+      var o = {}; parts.forEach(function (p) { o[p.type] = p.value; });
+      return (Date.UTC(+o.year, +o.month - 1, +o.day, +o.hour % 24, +o.minute) - Date.now()) / 6e4;
+    } catch (e) { return null; }
+  }
+  function clocks() {
+    document.getElementById('clock-tnr').textContent = timeIn('Indian/Antananarivo');
+    document.getElementById('clock-par').textContent = timeIn('Europe/Paris');
+    var a = offsetMinutes('Indian/Antananarivo'), b = offsetMinutes('Europe/Paris');
+    if (a !== null && b !== null) document.getElementById('clock-diff').textContent = L(T.diff)(Math.round((a - b) / 60));
+  }
+  setInterval(clocks, 30000);
+
+  /* ---------- Météo ---------- */
+  var MIN = 10, MAX = 35;
+  var CITIES = [
+    ['Antananarivo', { fr: '1 280 m · le mariage', es: '1 280 m · la boda', mg: '1 280 m · ny fanambadiana' }, 14, 24],
+    ['Antsirabe', '1 500 m', 12, 22],
+    ['Andasibe', { fr: 'forêt humide', es: 'bosque húmedo', mg: 'ala mando' }, 15, 24],
+    ['Morondava', { fr: 'côte ouest, baobabs', es: 'costa oeste, baobabs', mg: 'morontsiraka andrefana, baobab' }, 21, 32],
+    ['Nosy Be', { fr: 'île au nord-ouest', es: 'isla del noroeste', mg: 'nosy any avaratra andrefana' }, 23, 31]
+  ];
+  function pct(v) { return ((v - MIN) / (MAX - MIN)) * 100; }
+  function renderWeather() {
+    document.getElementById('temps').innerHTML = CITIES.map(function (c) {
+      return '<div class="temp-row" role="listitem"><span class="label">' + c[0] + '<small>' + L(c[1]) + '</small></span>' +
+        '<span class="track"><span class="range" style="left:' + pct(c[2]) + '%;width:' + (pct(c[3]) - pct(c[2])) + '%">' +
+        '<span class="lo" aria-hidden="true">' + c[2] + '°</span><span class="hi" aria-hidden="true">' + c[3] + '°</span></span>' +
+        '<span class="sr-only">' + L(T.temp)(c[2], c[3]) + '</span></span></div>';
+    }).join('');
+  }
+  var axis = '';
+  for (var t = MIN; t <= MAX; t += 5) axis += '<span style="left:' + pct(t) + '%">' + t + '°</span>';
+  document.getElementById('axis').innerHTML = axis;
+
+  /* ---------- Valise ---------- */
+  var PACK = [
+    [{ fr: 'Documents', es: 'Documentos', mg: 'Taratasy' }, [
+      ['passeport', { fr: 'Passeport', es: 'Pasaporte', mg: 'Pasipaoro' }, { fr: 'Valide 6 mois après le retour', es: 'Válido 6 meses después del regreso', mg: 'Manan-kery 6 volana aorian’ny fiverenana' }],
+      ['visa', { fr: 'E-visa imprimé ou argent pour le visa', es: 'E-visa impreso o dinero para el visado', mg: 'E-visa vita pirinty na vola ho an’ny visa' }],
+      ['billets', { fr: 'Billets d’avion et attestation d’assurance', es: 'Billetes de avión y certificado del seguro', mg: 'Tapakila fiaramanidina sy fanamarinana fiantohana' }],
+      ['copies', { fr: 'Copies de vos documents', es: 'Copias de tus documentos', mg: 'Dika mitovy amin’ny taratasinao' }, { fr: 'Sur papier et sur votre téléphone', es: 'En papel y en el móvil', mg: 'Amin’ny taratasy sy amin’ny findainao' }],
+      ['euros', { fr: 'Euros en espèces', es: 'Euros en efectivo', mg: 'Vola euro' }, { fr: 'Billets récents et en bon état, pour le change', es: 'Billetes recientes y en buen estado, para el cambio', mg: 'Taratasim-bola vaovao sy tsara endrika, hanakalozana' }]
+    ]],
+    [{ fr: 'Pour la cérémonie', es: 'Para la ceremonia', mg: 'Ho an’ny lanonana' }, [
+      ['tenue', { fr: 'Votre tenue du jour J', es: 'Tu ropa para el gran día', mg: 'Ny akanjonao amin’ny andro lehibe' }],
+      ['chale', { fr: 'Un châle ou une veste', es: 'Un chal o una chaqueta', mg: 'Lamba na palitao' }, { fr: 'Pour la soirée, fraîche en altitude', es: 'Para la noche, fresca en altura', mg: 'Ho an’ny hariva, mangatsiaka eny amin’ny tany avo' }],
+      ['chaussures', { fr: 'Chaussures confortables', es: 'Calzado cómodo', mg: 'Kiraro mahazo aina' }, { fr: 'Le sol peut être inégal', es: 'El suelo puede ser irregular', mg: 'Mety tsy marina tsara ny tany' }],
+      ['cadeau', { fr: 'Votre tso-drano pour les mariés', es: 'Tu tso-drano para los novios', mg: 'Ny tso-dranonao ho an’ny mpivady' }, { fr: 'Selon la coutume malgache', es: 'Según la costumbre malgache', mg: 'Araka ny fomba malagasy' }]
+    ]],
+    [{ fr: 'Santé', es: 'Salud', mg: 'Fahasalamana' }, [
+      ['moustique', { fr: 'Anti-moustique pour les tropiques', es: 'Repelente de mosquitos para el trópico', mg: 'Fanafody fandroahana moka' }],
+      ['solaire', { fr: 'Crème solaire, chapeau et lunettes de soleil', es: 'Crema solar, sombrero y gafas de sol', mg: 'Menaka fiarovana amin’ny masoandro, satroka ary solomaso maizina' }, { fr: 'La cérémonie a lieu en plein air', es: 'La ceremonia es al aire libre', mg: 'An-kalamanjana ny lanonana' }],
+      ['trousse', { fr: 'Trousse de pharmacie', es: 'Botiquín', mg: 'Fanafody fonosina' }, { fr: 'Antidiarrhéique, pansements, désinfectant', es: 'Antidiarreico, tiritas, desinfectante', mg: 'Fanafody aretim-kibo, plasitra, fanadiovana fery' }],
+      ['traitements', { fr: 'Vos traitements personnels', es: 'Tus tratamientos personales', mg: 'Ny fanafody fihinanao manokana' }, { fr: 'Avec l’ordonnance', es: 'Con la receta', mg: 'Miaraka amin’ny taratasim-panafody' }]
+    ]],
+    [{ fr: 'Pratique', es: 'Práctico', mg: 'Ilaina' }, [
+      ['lampe', { fr: 'Lampe frontale', es: 'Linterna frontal', mg: 'Jiro an-doha' }, { fr: 'Les coupures de courant sont fréquentes', es: 'Los cortes de luz son frecuentes', mg: 'Matetika no tapaka ny jiro' }],
+      ['batterie', { fr: 'Batterie externe', es: 'Batería externa', mg: 'Bateria fanampiny' }],
+      ['adaptateur', { fr: 'Pas besoin d’adaptateur', es: 'No hace falta adaptador', mg: 'Tsy mila adaptateur' }, { fr: 'Les prises sont les mêmes qu’en France et en Espagne', es: 'Los enchufes son como en España y Francia', mg: 'Mitovy amin’ny any Frantsa sy Espaina ny prizy' }],
+      ['pluie', { fr: 'Un vêtement de pluie léger', es: 'Un impermeable ligero', mg: 'Akanjo fiarovana amin’ny orana maivana' }],
+      ['couches', { fr: 'Un pull pour les soirées', es: 'Un jersey para las noches', mg: 'Akanjo mafana ho an’ny hariva' }]
+    ]]
+  ];
+  var checked = store.get('wed-pack') || {};
+  var total = PACK.reduce(function (s, g) { return s + g[1].length; }, 0);
+  /* Une catégorie par sous-onglet ; la catégorie ouverte est conservée au changement de langue */
+  function renderPacking() {
+    var open = document.querySelector('#packing [role="tab"][aria-selected="true"]');
+    var cur = open ? +open.id.split('-')[2] : 0;
+    document.getElementById('packing').innerHTML =
+      '<div class="subtabs" role="tablist" aria-labelledby="t-valise">' + PACK.map(function (g, i) {
+        return '<button type="button" role="tab" id="tab-val-' + i + '" aria-controls="sp-val-' + i + '" aria-selected="' + (i === cur) + '" tabindex="' + (i === cur ? 0 : -1) + '">' + L(g[0]) + '</button>';
+      }).join('') + '</div>' +
+      PACK.map(function (g, i) {
+        return '<div class="subpanel" role="tabpanel" id="sp-val-' + i + '" aria-labelledby="tab-val-' + i + '"' + (i === cur ? '' : ' hidden') + '><fieldset><legend class="sr-only">' + L(g[0]) + '</legend>' + g[1].map(function (it) {
+          return '<label class="check"><input type="checkbox" id="p-' + it[0] + '" data-pack="' + it[0] + '"' + (checked[it[0]] ? ' checked' : '') + '>' +
+            '<span>' + L(it[1]) + (it[2] ? '<small>' + L(it[2]) + '</small>' : '') + '</span></label>';
+        }).join('') + '</fieldset></div>';
+      }).join('');
+  }
+  function packUpdate() {
+    var n = Object.keys(checked).filter(function (k) { return checked[k]; }).length;
+    document.getElementById('pack-count').textContent = L(T.pack)(n, total);
+    document.getElementById('pack-bar').style.width = (n / total * 100) + '%';
+  }
+  document.getElementById('packing').addEventListener('change', function (e) {
+    var k = e.target.getAttribute('data-pack'); if (!k) return;
+    checked[k] = e.target.checked; store.set('wed-pack', checked); packUpdate();
+  });
+
+  /* ---------- Convertisseur ---------- */
+  var eur = document.getElementById('c-eur'), mga = document.getElementById('c-mga'), rate = document.getElementById('c-rate');
+  function fromEur() { mga.value = Math.round((+eur.value || 0) * (+rate.value || 0)); }
+  function fromMga() { var r = +rate.value || 0; eur.value = r ? Math.round((+mga.value || 0) / r * 100) / 100 : 0; }
+  eur.addEventListener('input', fromEur); rate.addEventListener('input', fromEur); mga.addEventListener('input', fromMga);
+  fromEur();
+
+  /* ---------- Adresses ---------- */
+  var TAGS = {
+    culture: { fr: 'Culture', es: 'Cultura', mg: 'Kolontsaina' },
+    nature: { fr: 'Nature', es: 'Naturaleza', mg: 'Natiora' },
+    marches: { fr: 'Marchés', es: 'Mercados', mg: 'Tsena' },
+    insolite: { fr: 'Insolite', es: 'Insólito', mg: 'Miavaka' },
+    restaurants: { fr: 'Restaurants', es: 'Restaurantes', mg: 'Fisakafoanana' }
+  };
+  /* Adresses repérées dans le guide Tiakaly (tiakaly.com) ; le site n'a pu être lu que via la recherche web, d'où le marquage « à vérifier » */
+  var TIAKALY = { link: { href: 'https://tiakaly.com/', label: { fr: 'Voir le guide Tiakaly', es: 'Ver la guía Tiakaly', mg: 'Jereo ny torolalana Tiakaly' } } };
+  var A_VERIFIER = { check: true, link: TIAKALY.link };
+  var TANA = { fr: 'Tananarive', es: 'Antananarivo', mg: 'Antananarivo' };
+  function where(fr, es, mg) { return { fr: fr, es: es, mg: mg }; }
+  var PLACES = [
+    [{ fr: 'Rova de Manjakamiadana', es: 'Rova de Manjakamiadana', mg: 'Rovan’i Manjakamiadana' }, where('Tananarive · Haute-Ville', 'Antananarivo · Ciudad Alta', 'Antananarivo · Tanàna Ambony'),
+      { fr: 'Le palais de la Reine domine la ville depuis la plus haute colline. La plus belle vue sur Tananarive.', es: 'El palacio de la Reina domina la ciudad desde la colina más alta. La mejor vista de Antananarivo.', mg: 'Manjaka ambonin’ny tanàna avy eo amin’ny havoana avo indrindra ny Rova. Ny fahitana tsara indrindra an’Antananarivo.' }, ['culture']],
+    [{ fr: 'Palais d’Andafiavaratra', es: 'Palacio de Andafiavaratra', mg: 'Lapan’Andafiavaratra' }, where('Tananarive · Haute-Ville', 'Antananarivo · Ciudad Alta', 'Antananarivo · Tanàna Ambony'),
+      { fr: 'L’ancienne résidence du Premier ministre, devenue musée, au bout des ruelles pavées.', es: 'La antigua residencia del Primer Ministro, hoy museo, al final de las callejuelas empedradas.', mg: 'Trano fonenan’ny Praiminisitra taloha, lasa tranombakoka, eo amin’ny faran’ny lalana rarafana vato.' }, ['culture']],
+    [{ fr: 'Marché de la Digue', es: 'Mercado de la Digue', mg: 'Tsenan’ny Digue' }, where('Tananarive · route d’Ivato', 'Antananarivo · carretera de Ivato', 'Antananarivo · lalana mankany Ivato'),
+      { fr: 'Le grand marché de l’artisanat : raphia, bois sculpté, soie sauvage, vanille.', es: 'El gran mercado de artesanía: rafia, madera tallada, seda salvaje, vainilla.', mg: 'Tsena lehibe ho an’ny asa tanana: rofia, sokitra hazo, landy, lavanila.' }, ['marches']],
+    ['Analakely', where('Tananarive · centre', 'Antananarivo · centro', 'Antananarivo · afovoan-tanàna'),
+      { fr: 'Le marché populaire au pied des grands escaliers. Animé, coloré, à faire accompagné.', es: 'El mercado popular al pie de las grandes escaleras. Animado y colorido; mejor ir acompañado.', mg: 'Tsena malaza eo am-pototry ny tohatra lehibe. Mientanentana sy maro loko; tsara raha misy miaraka aminao.' }, ['marches']],
+    [{ fr: 'Le guide Tiakaly', es: 'La guía Tiakaly', mg: 'Torolalana Tiakaly' }, where('Madagascar · tiakaly.com', 'Madagascar · tiakaly.com', 'Madagasikara · tiakaly.com'),
+      { fr: 'Plus de 300 restaurants, hôtels et lieux testés à Madagascar : cherchez par plat, par quartier ou selon vos envies.', es: 'Más de 300 restaurantes, hoteles y lugares probados en Madagascar: busca por plato, por barrio o según tus antojos.', mg: 'Trano fisakafoanana, hotely ary toerana maherin’ny 300 nosedraina eto Madagasikara: tadiavo araka ny sakafo, ny faritra na ny filanao.' }, ['restaurants'], TIAKALY],
+    ['L’Arrivage', where('Antananarivo', 'Antananarivo', 'Antananarivo'),
+      { fr: 'Brasserie à la française, fruits de mer et huîtres.', es: 'Brasserie de estilo francés, marisco y ostras.', mg: 'Trano fisakafoanana araka ny fomba frantsay, hazan-dranomasina.' }, ['restaurants'], A_VERIFIER],
+    ['Trattoria Isoraka', where('Antananarivo · Isoraka', 'Antananarivo · Isoraka', 'Antananarivo · Isoraka'),
+      { fr: 'Pizzeria citée par Tiakaly parmi les meilleures pizzas de Tana.', es: 'Pizzería citada por Tiakaly entre las mejores pizzas de Tana.', mg: 'Pizzeria notanisain’i Tiakaly ho anisan’ny pizza tsara indrindra eto Tana.' }, ['restaurants'], A_VERIFIER],
+    ['So Hot', where('Antananarivo', 'Antananarivo', 'Antananarivo'),
+      { fr: 'Burgers recommandés par Tiakaly.', es: 'Hamburguesas recomendadas por Tiakaly.', mg: 'Burger atoron’i Tiakaly.' }, ['restaurants'], A_VERIFIER],
+    ['Club Madagascar', where('Talatamaty · près de l’aéroport', 'Talatamaty · cerca del aeropuerto', 'Talatamaty · akaikin’ny seranam-piaramanidina'),
+      { fr: 'Poulet frit à la coréenne, recommandé par Tiakaly.', es: 'Pollo frito al estilo coreano, recomendado por Tiakaly.', mg: 'Akoho endasina araka ny fomba koreana, atoron’i Tiakaly.' }, ['restaurants'], A_VERIFIER],
+    [{ fr: 'Musée de la photographie', es: 'Museo de la Fotografía', mg: 'Tranombakoka momba ny sary' }, where('Tananarive · Haute-Ville', 'Antananarivo · Ciudad Alta', 'Antananarivo · Tanàna Ambony'),
+      { fr: 'Un siècle d’histoire malgache en images, dans une maison ancienne.', es: 'Un siglo de historia malgache en imágenes, en una casa antigua.', mg: 'Tantara malagasy nandritra ny zato taona amin’ny alalan’ny sary, ao anaty trano tranainy.' }, ['culture', 'insolite']],
+    [{ fr: 'Parc de Tsimbazaza', es: 'Parque de Tsimbazaza', mg: 'Valan-javaboahary Tsimbazaza' }, where('Tananarive · sud', 'Antananarivo · sur', 'Antananarivo · atsimo'),
+      { fr: 'Jardin botanique et zoologique : lémuriens, baobabs et plantes endémiques en pleine ville.', es: 'Jardín botánico y zoológico: lémures, baobabs y plantas endémicas en plena ciudad.', mg: 'Zaridaina zava-maniry sy biby: gidro, baobab ary zava-maniry tsy hita afa-tsy eto, eo afovoan-tanàna.' }, ['nature']],
+    [{ fr: 'Colline royale d’Ambohimanga', es: 'Colina real de Ambohimanga', mg: 'Vohitra Masin’Ambohimanga' }, where('20 km au nord', '20 km al norte', '20 km avaratra'),
+      { fr: 'Ancienne cité royale et lieu sacré, inscrite au patrimoine mondial de l’Unesco.', es: 'Antigua ciudad real y lugar sagrado, Patrimonio de la Humanidad de la Unesco.', mg: 'Tanàna andriana fahiny sady toerana masina, lova iraisan’izao tontolo izao ankatoavin’ny Unesco.' }, ['culture']],
+    ['Lemurs’ Park', where('22 km à l’ouest', '22 km al oeste', '22 km andrefana'),
+      { fr: 'Des lémuriens en semi-liberté dans un jardin botanique. Idéal pour une demi-journée.', es: 'Lémures en semilibertad en un jardín botánico. Ideal para media jornada.', mg: 'Gidro tsy voafefy ao anatin’ny zaridaina zava-maniry. Mety tsara ho an’ny antsasak’andro.' }, ['nature']],
+    ['Croc Farm', where('Près de l’aéroport d’Ivato', 'Cerca del aeropuerto de Ivato', 'Akaikin’ny seranam-piaramanidina Ivato'),
+      { fr: 'Crocodiles du Nil, caméléons et fossas. À caser avant un vol.', es: 'Cocodrilos del Nilo, camaleones y fosas. Para encajar antes de un vuelo.', mg: 'Voay, tana ary fosa. Azo tsidihina alohan’ny sidina.' }, ['nature', 'insolite']],
+    ['Andasibe-Mantadia', where('3 à 4 h à l’est', 'De 3 a 4 h al este', '3 ka hatramin’ny 4 ora atsinanana'),
+      { fr: 'La forêt humide et le chant de l’indri, le plus grand des lémuriens.', es: 'El bosque húmedo y el canto del indri, el mayor de los lémures.', mg: 'Ny ala mando sy ny hiran’ny babakoto, ny gidro lehibe indrindra.' }, ['nature']],
+    ['Antsirabe', where('3 à 4 h au sud', 'De 3 a 4 h al sur', '3 ka hatramin’ny 4 ora atsimo'),
+      { fr: 'Ville d’eau aux pousse-pousse colorés et ateliers de miniatures en métal recyclé.', es: 'Ciudad termal de coloridos pousse-pousse y talleres de miniaturas de metal reciclado.', mg: 'Tanàna misy rano mafana, posy maro loko ary toeram-panaovana kilalao vy averina ampiasaina.' }, ['culture', 'insolite']],
+    [{ fr: 'Allée des Baobabs', es: 'Avenida de los Baobabs', mg: 'Lalan’ny Baobab' }, where('Morondava · vol intérieur conseillé', 'Morondava · se recomienda vuelo interno', 'Morondava · sidina anatiny atoro'),
+      { fr: 'Les baobabs géants au coucher du soleil, image emblématique de l’île.', es: 'Los baobabs gigantes al atardecer, imagen emblemática de la isla.', mg: 'Ireo baobab goavana amin’ny filentehan’ny masoandro, sary mampiavaka ny nosy.' }, ['nature']],
+    ['Nosy Be', where('Nord-ouest · vol intérieur', 'Noroeste · vuelo interno', 'Avaratra andrefana · sidina anatiny'),
+      { fr: 'Plages, plongée et îlots alentour pour finir le séjour au soleil.', es: 'Playas, buceo e islotes cercanos para terminar la estancia al sol.', mg: 'Moron-dranomasina, filomanosana anaty rano ary nosy kely manodidina hamaranana ny dia amin’ny masoandro.' }, ['nature']],
+    ['Tsingy de Bemaraha', where('Ouest', 'Oeste', 'Andrefana'),
+      { fr: 'Forêt de pics calcaires. Souvent inaccessible en avril : les pistes rouvrent après la saison des pluies.', es: 'Bosque de agujas calizas. A menudo inaccesible en abril: las pistas reabren tras la temporada de lluvias.', mg: 'Ala vato sokay maranitra. Matetika tsy azo idirana amin’ny aprily: misokatra indray ny lalana aorian’ny fotoanan’ny orana.' }, ['nature', 'insolite']]
+  ];
+  var filter = 'tout';
+  var filters = document.getElementById('filters');
+  function renderFilters() {
+    filters.innerHTML = '<button type="button" data-f="tout" aria-pressed="' + (filter === 'tout') + '">' + L(T.all) + '</button>' +
+      Object.keys(TAGS).map(function (k) { return '<button type="button" data-f="' + k + '" aria-pressed="' + (filter === k) + '">' + L(TAGS[k]) + '</button>'; }).join('');
+  }
+  function renderPlaces() {
+    var list = PLACES.filter(function (p) { return filter === 'tout' || p[3].indexOf(filter) !== -1; });
+    /* En tête du carrousel, quel que soit le filtre : le compte Instagram recommandé */
+    var insta = '<li class="place insta"><p class="eyebrow">' + L(T.insta.kicker) + '</p>' +
+      '<h3><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" class="dot"/></svg>Where to Chill in Dago</h3>' +
+      '<p>' + L(T.insta.text) + ' <span class="where">@_where_to_chill_in_dago</span></p>' +
+      '<a class="btn" href="https://www.instagram.com/_where_to_chill_in_dago/" target="_blank" rel="noopener">' + L(T.insta.cta) + '</a></li>';
+    document.getElementById('places').innerHTML = insta + list.map(function (p) {
+      var opt = p[4] || {};
+      return '<li class="place' + (p[3].indexOf('insolite') !== -1 ? ' insolite' : '') + (p[3].indexOf('restaurants') !== -1 ? ' resto' : '') + '"><h3>' + L(p[0]) + '</h3><span class="where">' + L(p[1]) + '</span>' +
+        '<p' + (opt.check ? ' class="todo" title="À vérifier sur tiakaly.com : informations trouvées par recherche web"' : '') + '>' + L(p[2]) + '</p>' +
+        '<span class="tags">' + p[3].map(function (t) { return '<span class="chip' + (t === 'insolite' ? '' : ' ok') + '">' + L(TAGS[t]) + '</span>'; }).join('') + '</span>' +
+        (opt.link ? '<a class="place-link" href="' + opt.link.href + '" target="_blank" rel="noopener">' + L(opt.link.label) + '</a>' : '') + '</li>';
+    }).join('');
+    document.getElementById('places-count').textContent = L(T.count)(list.length);
+  }
+  filters.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-f]'); if (!b) return;
+    filter = b.getAttribute('data-f');
+    filters.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+    renderPlaces();
+    placesEl.scrollLeft = 0; carButtons();
+  });
+
+  /* Carrousels (lieux, vodiondry) : défilement horizontal, boutons précédent / suivant sur grand écran */
+  var placesEl = document.getElementById('places');
+  var carousels = Array.prototype.map.call(document.querySelectorAll('.carousel'), function (root) {
+    return { list: root.querySelector('.car-list'), prev: root.querySelector('.car-prev'), next: root.querySelector('.car-next') };
+  });
+  function carButtons() {   /* l'état des boutons dépend de la largeur visible : à recalculer quand un carrousel apparaît */
+    (carousels || []).forEach(function (c) {
+      c.prev.disabled = c.list.scrollLeft <= 2;
+      c.next.disabled = c.list.scrollLeft + c.list.clientWidth >= c.list.scrollWidth - 2;
+    });
+  }
+  carousels.forEach(function (c) {
+    function move(dir) {
+      var card = c.list.querySelector('li');
+      var step = card ? card.getBoundingClientRect().width + 16 : c.list.clientWidth;
+      c.list.scrollBy({ left: dir * step, behavior: reduceMotion ? 'auto' : 'smooth' });
+    }
+    c.prev.addEventListener('click', function () { move(-1); });
+    c.next.addEventListener('click', function () { move(1); });
+    c.list.addEventListener('scroll', carButtons, { passive: true });
+  });
+  window.addEventListener('resize', carButtons);
+
+  /* ---------- Réponse ---------- */
+  document.getElementById('rsvp-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var nom = document.getElementById('r-nom');
+    var status = document.getElementById('rsvp-status');
+    if (!nom.value.trim()) {
+      selectTab(document.getElementById('tab-rsvp-1'), false);
+      nom.setAttribute('aria-invalid', 'true'); nom.focus();
+      status.textContent = L(T.rsvpErr);
+      return;
+    }
+    nom.removeAttribute('aria-invalid');
+    status.textContent = L(T.rsvpOk);
+  });
+
+  /* ---------- Langue ---------- */
+  var FR = {}, FRA = {};
+  document.querySelectorAll('[data-i18n]').forEach(function (el) { FR[el.getAttribute('data-i18n')] = el.innerHTML; });
+  document.querySelectorAll('[data-i18n-aria]').forEach(function (el) { FRA[el.getAttribute('data-i18n-aria')] = el.getAttribute('aria-label'); });
+  var langBtns = document.querySelectorAll('[data-lang]');
+  function setLang(l) {
+    lang = I18N[l] || l === 'fr' ? l : 'fr';
+    var dict = I18N[lang] || {};
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var k = el.getAttribute('data-i18n');
+      el.innerHTML = lang === 'fr' || dict[k] === undefined ? FR[k] : dict[k];
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+      var k = el.getAttribute('data-i18n-aria');
+      el.setAttribute('aria-label', lang === 'fr' || dict[k] === undefined ? FRA[k] : dict[k]);
+    });
+    document.querySelectorAll('[data-hide-in]').forEach(function (el) { el.hidden = el.getAttribute('data-hide-in') === lang; });
+    langBtns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang)); });
+    document.documentElement.lang = lang;
+    document.getElementById('app').lang = lang;
+    buildNav(document.getElementById('sidebar'));
+    buildNav(document.getElementById('menu-nav'));
+    buildPagers();
+    renderWeather(); renderPacking(); packUpdate(); renderFilters(); renderPlaces();
+    clocks();
+    fsLabel();
+    navLabel();
+    syncTabs();
+    carButtons();
+    show(current, false);
+    store.set('wed-lang', lang);
+  }
+  langBtns.forEach(function (b) { b.addEventListener('click', function () { setLang(b.getAttribute('data-lang')); }); });
+
+  var nav = (navigator.language || 'fr').slice(0, 2);
+  setLang(store.get('wed-lang') || (nav === 'es' || nav === 'mg' ? nav : 'fr'));
+  setProfile(store.get('wed-profile') === 'local' ? 'local' : 'europe');
+  setFolded(store.get('wed-nav-folded') === true);
+  show(location.hash.slice(1), false);
+  window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  document.documentElement.classList.add('ready');
+})();
+</script>
+
+
+</body></html>
