@@ -1,0 +1,16 @@
+{
+  "name": "Fitia & Diana — Vodiondry",
+  "short_name": "Fitia & Diana",
+  "description": "Toutes les informations pratiques pour les invités du mariage de Fitia et Diana, le 25 avril 2027 à Antananarivo.",
+  "lang": "fr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F7F3EE",
+  "theme_color": "#F7F3EE",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

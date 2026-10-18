@@ -4,6 +4,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mariage à Tananarive</title>
 <meta name="robots" content="noindex, nofollow">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="theme-color" content="#F7F3EE">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Fitia &amp; Diana">
 <meta name="description" content="Toutes les informations pratiques pour nos invités : vols, visa, hébergement, programme du jour J et semaine de découverte de Madagascar.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -610,6 +617,7 @@ th { font-family: var(--font-mono); font-size: var(--step--1); font-weight: 500;
   .subtabs [role="tab"] { padding-inline: 0.6rem; letter-spacing: 0.1em; }
 }
 .menu-note { font-size: 0.85rem; color: var(--muted); }
+.install-ios { display: block; font-size: 0.95rem; line-height: 1.45; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
@@ -900,8 +908,8 @@ html:not(.js) .toc-nojs { display: grid; gap: 0.75rem; padding: 1.25rem 0 0.5rem
           <div data-i18n="vols.f4"><dt>Décalage horaire</dt><dd>+1 h par rapport à Paris et Madrid en avril.</dd></div>
         </dl>
         <div class="clock">
-          <div><span data-i18n="clock.tnr">À Tananarive</span><b class="mono" id="clock-tnr">00:54</b></div>
-          <div><span data-i18n="clock.par">À Paris</span><b class="mono" id="clock-par">23:54</b></div>
+          <div><span data-i18n="clock.tnr">À Tananarive</span><b class="mono" id="clock-tnr">01:05</b></div>
+          <div><span data-i18n="clock.par">À Paris</span><b class="mono" id="clock-par">00:05</b></div>
           <p id="clock-diff">Aujourd’hui, Madagascar a 1 h d’avance sur Paris. En avril, l’écart sera de 1 h.</p>
         </div>
       </div>
@@ -1166,6 +1174,11 @@ html:not(.js) .toc-nojs { display: grid; gap: 0.75rem; padding: 1.25rem 0 0.5rem
           <button type="button" data-size="130" aria-pressed="false" aria-label="Texte très grand" data-i18n-aria="ts.xl">A</button>
         </div>
         </div>
+        <div data-install="" hidden="">
+        <p data-i18n="inst.title">Application</p>
+        <button type="button" class="btn ghost" id="install-btn" hidden="" data-i18n="inst.btn">Installer sur mon téléphone</button>
+        <span class="menu-note install-ios" id="install-ios" hidden="" data-i18n="inst.ios">Sur iPhone : touchez <b>Partager</b> puis « <b>Sur l'écran d'accueil</b> ».</span>
+        </div>
         <div data-fs-wrap="" hidden="">
         <p data-i18n="fs.title">Affichage</p>
         <button type="button" class="btn ghost" data-fs="" aria-pressed="false" hidden="">Plein écran</button>
@@ -1329,6 +1342,7 @@ es: {
   'vtc.1': `<h3>Piqla</h3><p>Aplicación malgache de VTC, lanzada en 2024 en Antananarivo. Precio conocido al reservar y trayecto seguido en directo; pago con tarjeta bancaria o MVola, asistencia por WhatsApp para los visitantes extranjeros.</p>`,
   'vtc.2': `<h3>inDrive</h3><p>Aplicación internacional: tú propones el precio y los conductores aceptan o hacen una contraoferta. A menudo la más barata; pago en efectivo, en ariary. El número de conductores varía según los barrios.</p>`,
   'vtc.tip': `Instálalas antes de salir y crea tu cuenta con el wifi del hotel o una tarjeta SIM local. Comprueba la matrícula y el nombre del conductor antes de subir.`,
+  'inst.title': `Aplicación`, 'inst.btn': `Instalar en mi teléfono`, 'inst.ios': `En iPhone: toca <b>Compartir</b> y luego «<b>Añadir a pantalla de inicio</b>».`,
   'vtc.a1': `Descargar Piqla en App Store`, 'vtc.a2': `Descargar Piqla en Google Play`, 'vtc.a3': `Descargar inDrive en App Store`, 'vtc.a4': `Descargar inDrive en Google Play`,
   'car.p': `Tarjeta anterior`, 'car.n': `Tarjeta siguiente`,
   'vod.hint': `Desliza para descubrir las anécdotas →`,
@@ -1523,6 +1537,7 @@ mg: {
   'vtc.1': `<h3>Piqla</h3><p>Rindranasa VTC malagasy, natomboka tamin'ny 2024 teto Antananarivo. Fantatra mialoha ny saran-dalana ary arahina mivantana ny dia; andoavana amin'ny karatra banky na MVola, misy fanampiana amin'ny WhatsApp ho an'ny vahiny.</p>`,
   'vtc.2': `<h3>inDrive</h3><p>Rindranasa iraisam-pirenena: ianao no manolotra ny vidiny, ary ny mpamily no manaiky na manolotra vidiny hafa. Matetika no mora indrindra; aloa amin'ny vola ariary mivantana. Miovaova arakaraka ny faritra ny isan'ny mpamily.</p>`,
   'vtc.tip': `Apetraho alohan'ny hiaingana ary sokafy ny kaontinao amin'ny Wi-Fi an'ny hotely na karatra SIM malagasy. Hamarino ny laharan'ny fiara sy ny anaran'ny mpamily alohan'ny hiakarana.`,
+  'inst.title': `Rindranasa`, 'inst.btn': `Apetraho ao amin'ny findaiko`, 'inst.ios': `Amin'ny iPhone: tsindrio ny <b>Partager</b> dia ny « <b>Sur l'écran d'accueil</b> ».`,
   'vtc.a1': `Misintona Piqla amin'ny App Store`, 'vtc.a2': `Misintona Piqla amin'ny Google Play`, 'vtc.a3': `Misintona inDrive amin'ny App Store`, 'vtc.a4': `Misintona inDrive amin'ny Google Play`,
   'car.p': `Teo aloha`, 'car.n': `Manaraka`,
   'vod.hint': `Atosory hahitana ireo zava-mahaliana →`,
@@ -1832,6 +1847,23 @@ mg: {
     });
     document.addEventListener('fullscreenchange', fsLabel);
   }
+
+  /* ---------- Application installable (écran d'accueil) et consultation hors connexion ---------- */
+  if ('serviceWorker' in navigator && window.isSecureContext) navigator.serviceWorker.register('sw.js').catch(function () {});
+  var installWrap = document.querySelector('[data-install]'), installBtn = document.getElementById('install-btn'), installEvt = null;
+  var installed = (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone === true;
+  var ios = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (!installed && ios) { installWrap.hidden = false; document.getElementById('install-ios').hidden = false; }
+  window.addEventListener('beforeinstallprompt', function (e) {
+    e.preventDefault(); installEvt = e;
+    if (!installed) { installWrap.hidden = false; installBtn.hidden = false; }
+  });
+  installBtn.addEventListener('click', function () {
+    if (!installEvt) return;
+    installEvt.prompt();
+    installEvt.userChoice.then(function () { installEvt = null; installWrap.hidden = true; });
+  });
+  window.addEventListener('appinstalled', function () { installWrap.hidden = true; });
 
   /* ---------- Taille du texte ---------- */
   var sizeBtns = document.querySelectorAll('[data-size]');
