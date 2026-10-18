@@ -954,8 +954,8 @@ html:not(.js) .toc-nojs { display: grid; gap: 0.75rem; padding: 1.25rem 0 0.5rem
           <div data-i18n="vols.f4"><dt>Décalage horaire</dt><dd>+1 h par rapport à Paris et Madrid en avril.</dd></div>
         </dl>
         <div class="clock">
-          <div><span data-i18n="clock.tnr">À Tananarive</span><b class="mono" id="clock-tnr">01:48</b></div>
-          <div><span data-i18n="clock.par">À Paris</span><b class="mono" id="clock-par">00:48</b></div>
+          <div><span data-i18n="clock.tnr">À Tananarive</span><b class="mono" id="clock-tnr">01:50</b></div>
+          <div><span data-i18n="clock.par">À Paris</span><b class="mono" id="clock-par">00:50</b></div>
           <p id="clock-diff">Aujourd’hui, Madagascar a 1 h d’avance sur Paris. En avril, l’écart sera de 1 h.</p>
         </div>
       </div>
@@ -1719,6 +1719,8 @@ mg: {
   var current = 'accueil';
   var menu = document.getElementById('menu');
   /* Profil d'invité : « je vis à Madagascar » retire billet d'avion, formalités, valise et hébergement */
+  /* Clé propre à l'écran d'introduction : un profil enregistré automatiquement par une version précédente ne compte pas comme un choix */
+  var PROFILE_KEY = 'wed-guest-type';
   var profile = 'europe', LOCAL_HIDE = ['vols', 'formalites', 'valise', 'hebergement'];
   function shown(id) { return profile !== 'local' || LOCAL_HIDE.indexOf(id) === -1; }
   var QUICK = ['accueil', 'jourj', 'ceremonie', 'valise'];
@@ -1929,13 +1931,13 @@ mg: {
     buildNav(document.getElementById('sidebar'));
     buildNav(document.getElementById('menu-nav'));
     buildPagers();
-    if (!keep) store.set('wed-profile', p);
+    if (!keep) store.set(PROFILE_KEY, p);
     if (!shown(current)) { history.replaceState(null, '', '#accueil'); show('accueil', false); } else show(current, false);
   }
   profBtns.forEach(function (b) { b.addEventListener('click', function () { setProfile(b.getAttribute('data-profile')); }); });
   /* Écran d'introduction : choisi une fois, puis rouvert depuis « Votre profil » en bas du menu */
   var intro = document.getElementById('intro');
-  intro.addEventListener('cancel', function (e) { if (!store.get('wed-profile')) e.preventDefault(); });
+  intro.addEventListener('cancel', function (e) { if (!store.get(PROFILE_KEY)) e.preventDefault(); });
   document.querySelectorAll('[data-choose]').forEach(function (b) {
     b.addEventListener('click', function () {
       setProfile(b.getAttribute('data-choose'));
@@ -2261,7 +2263,7 @@ mg: {
 
   var nav = (navigator.language || 'fr').slice(0, 2);
   setLang(store.get('wed-lang') || (nav === 'es' || nav === 'mg' ? nav : 'fr'));
-  var chosen = store.get('wed-profile');
+  var chosen = store.get(PROFILE_KEY);
   setProfile(chosen === 'local' ? 'local' : 'europe', true);
   if (chosen !== 'local' && chosen !== 'europe') intro.showModal();
   setFolded(store.get('wed-nav-folded') === true);
