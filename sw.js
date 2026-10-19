@@ -1,6 +1,6 @@
 // Hors connexion : une fois ouvert, le site reste consultable sans réseau (utile à Madagascar).
 // La page est toujours redemandée au réseau d'abord, pour que les invités voient les mises à jour.
-const CACHE = 'fitia-diana-v1';
+const CACHE = 'fitia-diana-v2';
 const CORE = ['./', 'manifest.webmanifest', 'assets/bouquet.webp', 'assets/coin-fleuri.webp',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png', 'icons/favicon-32.png'];
 

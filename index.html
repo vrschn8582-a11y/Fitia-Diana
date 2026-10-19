@@ -145,11 +145,13 @@ a { color: var(--forest); text-underline-offset: 0.18em; }
   font-family: var(--font-display); font-size: var(--step-1); text-decoration: none; color: var(--ink);
 }
 .brand-name { font-family: var(--font-body); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-block: 0.2rem; }
+/* Monogramme épuré : initiales droites, esperluette dorée, sans médaillon */
 .monogram {
-  flex: none; display: grid; place-items: center; width: 2.4rem; height: 2.4rem; border-radius: 50%;
-  border: 1px solid var(--gold); box-shadow: inset 0 0 0 3px var(--paper), inset 0 0 0 4px var(--gold);
-  font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: 1rem; letter-spacing: -0.02em; color: var(--forest);
+  flex: none; display: inline-flex; align-items: baseline; line-height: 1;
+  font-family: var(--font-display); font-weight: 400; font-size: 1.4rem; letter-spacing: 0.04em; color: var(--ink);
 }
+.monogram i { font-style: italic; font-size: 0.78em; color: var(--gold); margin: 0 0.1em; }
+.brand .brand-name { padding-left: 0.7rem; border-left: 1px solid var(--line); }
 @media (max-width: 460px) { .brand-name { display: none; } }
 .top-tools { display: flex; align-items: center; gap: 0.75rem; }
 .textsize, .langs { display: flex; align-items: center; gap: 0.25rem; }
@@ -700,7 +702,7 @@ html:not(.js) .toc-nojs { display: grid; gap: 0.75rem; padding: 1.25rem 0 0.5rem
   <header class="topbar">
     <div class="brand-wrap">
     <button type="button" class="icon-btn nav-toggle" id="menu-open" aria-controls="sidebar" aria-expanded="true" aria-label="Replier le menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
-    <a class="brand" href="#p-accueil"><span class="monogram" aria-hidden="true">F&amp;D</span><span class="brand-name">Fitia &amp; Diana</span></a>
+    <a class="brand" href="#p-accueil"><span class="monogram" aria-hidden="true">F<i>&amp;</i>D</span><span class="brand-name">Fitia &amp; Diana</span></a>
     </div>
     <div class="top-tools">
       <button type="button" class="prof-pill" id="prof-pill" data-open-intro="" aria-label="Votre profil : J’arrive d’Europe · changer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 13.5l7-2 4-7.5h2l-1.5 7.5 5-1.5 1.5-2.5h1.5l-1 4 1 4h-1.5l-1.5-2.5-5-1.5 1.5 7.5h-2l-4-7.5-7-2z"></path></svg><span>Europe</span></button>
@@ -955,8 +957,8 @@ html:not(.js) .toc-nojs { display: grid; gap: 0.75rem; padding: 1.25rem 0 0.5rem
           <div data-i18n="vols.f4"><dt>Décalage horaire</dt><dd>+1 h par rapport à Paris et Madrid en avril.</dd></div>
         </dl>
         <div class="clock">
-          <div><span data-i18n="clock.tnr">À Tananarive</span><b class="mono" id="clock-tnr">08:54</b></div>
-          <div><span data-i18n="clock.par">À Paris</span><b class="mono" id="clock-par">07:54</b></div>
+          <div><span data-i18n="clock.tnr">À Tananarive</span><b class="mono" id="clock-tnr">08:59</b></div>
+          <div><span data-i18n="clock.par">À Paris</span><b class="mono" id="clock-par">07:59</b></div>
           <p id="clock-diff">Aujourd’hui, Madagascar a 1 h d’avance sur Paris. En avril, l’écart sera de 1 h.</p>
         </div>
       </div>
@@ -1230,7 +1232,7 @@ html:not(.js) .toc-nojs { display: grid; gap: 0.75rem; padding: 1.25rem 0 0.5rem
     <div class="menu-inner">
       <div class="lamba" aria-hidden="true"></div>
       <div class="menu-head">
-        <span class="monogram" aria-hidden="true">F&amp;D</span>
+        <span class="monogram" aria-hidden="true">F<i>&amp;</i>D</span>
         <h2 id="menu-title" lang="mg">Tonga soa</h2>
         <button class="icon-btn" type="button" id="menu-close" aria-label="Fermer" data-i18n-aria="menu.close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"></path></svg></button>
       </div>
