@@ -497,9 +497,17 @@ select { font: inherit; color: var(--ink); background: var(--surface); border: 1
 .bud-total small { color: var(--muted); font-size: 0.9rem; }
 #b-lines div { grid-template-columns: minmax(0, 1fr) auto; padding-block: 0.3rem; line-height: 1.35; }
 #p-budget .check > span { display: grid; }
-.bud-src div { grid-template-columns: minmax(6rem, 9rem) minmax(0, 1fr); }
-.bud-src dd { font-size: 0.95rem; line-height: 1.45; }
-@media (max-width: 600px) { .bud-src div { display: block; padding-block: 0.35rem; } .bud-src dt { display: inline; font-size: 0.9rem; font-weight: 700; color: var(--ink); } .bud-src dt::after { content: " · "; font-weight: 400; } .bud-src dd { display: inline; font-size: 0.84rem; line-height: 1.4; } #sp-bud-3 .note { font-size: 0.82rem; line-height: 1.35; } #sp-bud-3 .bud-src div { padding-block: 0.25rem; } }
+/* Sources : poste et unité à gauche, montant en grand à droite, explication dessous */
+.bud-src .src { grid-template-columns: minmax(0, 1fr) auto; gap: 0.05rem 1rem; padding-block: 0.55rem; align-items: baseline; }
+.bud-src dt { display: grid; font-weight: 600; color: var(--ink); line-height: 1.25; }
+.bud-src dt small { font-weight: 400; font-size: 0.8rem; color: var(--muted); }
+.bud-src .amt { font-family: var(--font-display); font-size: 1.55rem; font-weight: 500; line-height: 1; color: var(--forest); text-align: right; font-variant-numeric: lining-nums tabular-nums; white-space: nowrap; }
+.bud-src .why { grid-column: 1 / -1; margin-top: 0.15rem; font-size: 0.88rem; line-height: 1.45; color: var(--muted); }
+.bud-src .why::first-letter { text-transform: uppercase; }
+.bud-src .why b { font-weight: 600; color: var(--ink); }
+.bud-src .why .it { white-space: nowrap; }
+@media (min-width: 960px) { .bud-src { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 2.5rem; } }
+@media (max-width: 600px) { .bud-src .src { padding-block: 0.3rem; } .bud-src dt { display: block; font-size: 0.95rem; } .bud-src dt small { display: inline; } .bud-src dt small::before { content: " · "; } .bud-src .why { margin-top: 0.1rem; font-size: 0.82rem; line-height: 1.38; } .bud-src .amt { font-size: 1.3rem; } #sp-bud-3 .note { font-size: 0.8rem; line-height: 1.3; } }
 @media (min-width: 960px) { #b-lines { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 2.5rem; } #b-lines .sum { grid-column: 1 / -1; } }
 #b-lines dd { text-align: right; font-variant-numeric: tabular-nums; }
 #b-lines .sum dt, #b-lines .sum dd { font-weight: 700; color: var(--ink); }
@@ -977,8 +985,8 @@ html:not(.js) .toc-nojs { display: grid; gap: 0.75rem; padding: 1.25rem 0 0.5rem
           <div data-i18n="vols.f4"><dt>Décalage horaire</dt><dd>+1 h par rapport à Paris et Madrid en avril.</dd></div>
         </dl>
         <div class="clock">
-          <div><span data-i18n="clock.tnr">À Tananarive</span><b class="mono" id="clock-tnr">15:05</b></div>
-          <div><span data-i18n="clock.par">À Paris</span><b class="mono" id="clock-par">14:05</b></div>
+          <div><span data-i18n="clock.tnr">À Tananarive</span><b class="mono" id="clock-tnr">15:18</b></div>
+          <div><span data-i18n="clock.par">À Paris</span><b class="mono" id="clock-par">14:18</b></div>
           <p id="clock-diff">Aujourd’hui, Madagascar a 1 h d’avance sur Paris. En avril, l’écart sera de 1 h.</p>
         </div>
       </div>
@@ -1109,10 +1117,10 @@ html:not(.js) .toc-nojs { display: grid; gap: 0.75rem; padding: 1.25rem 0 0.5rem
       </div>
       <div class="subpanel" role="tabpanel" id="sp-bud-3" aria-labelledby="tab-bud-3" data-title="Sources">
         <dl class="facts bud-src">
-          <div><dt data-i18n="bud.s1t">Vols</dt><dd id="b-src-1"><b>1 000&nbsp;€</b> par adulte depuis Paris — vol direct, haut de la fourchette relevée (484 € à 1 060 €) sur <a href="https://www.liligo.fr/vols/itineraires/paris/antananarivo" target="_blank" rel="noopener">Liligo</a>, <a href="https://www.partirou.com/vols/itineraire/paris/antananarivo/" target="_blank" rel="noopener">Partirou</a> et <a href="https://www.kayak.fr/vols/Antananarivo-Aeroport-Intl-d-Ivato-Tananarive--TNR/Paris-Orly-ORY" target="_blank" rel="noopener">Kayak</a>.</dd></div>
-          <div><dt data-i18n="bud.s2t">E-visa</dt><dd id="b-src-2"><b>35&nbsp;€</b> par personne — tarif officiel pour 30 jours sur <a href="https://evisamada-mg.com" target="_blank" rel="noopener">evisamada-mg.com</a>, confirmé par <a href="https://visasnews.com/madagascar-triple-le-prix-de-son-visa-electronique-de-15-jours/" target="_blank" rel="noopener">VisasNews</a> (même prix à tous les niveaux).</dd></div>
-          <div><dt data-i18n="bud.s3t">Hôtels</dt><dd id="b-src-3"><b>80&nbsp;€</b> par chambre et par nuit — environ 4 étoiles : 89 € en moyenne sur <a href="https://www.combien-coute.net/hotel3/madagascar/antananarivo/" target="_blank" rel="noopener">combien-coute.net</a>, dès 40 € sur <a href="https://www.kayak.fr/Antananarivo-Hotels.16091.hotel.ksp" target="_blank" rel="noopener">Kayak</a>.</dd></div>
-          <div><dt data-i18n="bud.s4t">Autres postes</dt><dd id="b-src-4">Assurance 60 €, repas 25 € par jour, transports 50 € par jour, chauffeur 65 € par jour : estimations à confirmer sur place.</dd></div>
+          <div class="src"><dt><span data-i18n="bud.s1t">Vols</span><small id="b-src-1u">par adulte depuis Paris</small></dt><dd class="amt" id="b-src-1a">1 000&nbsp;€</dd><dd class="why" id="b-src-1">vol direct, haut de la fourchette relevée (484&nbsp;€ à 1&nbsp;060&nbsp;€) sur <a href="https://www.liligo.fr/vols/itineraires/paris/antananarivo" target="_blank" rel="noopener">Liligo</a>, <a href="https://www.partirou.com/vols/itineraire/paris/antananarivo/" target="_blank" rel="noopener">Partirou</a> et <a href="https://www.kayak.fr/vols/Antananarivo-Aeroport-Intl-d-Ivato-Tananarive--TNR/Paris-Orly-ORY" target="_blank" rel="noopener">Kayak</a>.</dd></div>
+          <div class="src"><dt><span data-i18n="bud.s2t">E-visa</span><small id="b-src-2u">par personne</small></dt><dd class="amt" id="b-src-2a">35&nbsp;€</dd><dd class="why" id="b-src-2">tarif officiel pour 30 jours sur <a href="https://evisamada-mg.com" target="_blank" rel="noopener">evisamada-mg.com</a>, confirmé par <a href="https://visasnews.com/madagascar-triple-le-prix-de-son-visa-electronique-de-15-jours/" target="_blank" rel="noopener">VisasNews</a> (même prix à tous les niveaux).</dd></div>
+          <div class="src"><dt><span data-i18n="bud.s3t">Hôtels</span><small id="b-src-3u">par chambre et par nuit</small></dt><dd class="amt" id="b-src-3a">80&nbsp;€</dd><dd class="why" id="b-src-3">environ 4 étoiles : 89&nbsp;€ en moyenne sur <a href="https://www.combien-coute.net/hotel3/madagascar/antananarivo/" target="_blank" rel="noopener">combien-coute.net</a>, dès 40&nbsp;€ sur <a href="https://www.kayak.fr/Antananarivo-Hotels.16091.hotel.ksp" target="_blank" rel="noopener">Kayak</a>.</dd></div>
+          <div class="src"><dt><span data-i18n="bud.s4t">Autres postes</span><small id="b-src-4u">estimations, à confirmer sur place</small></dt><dd class="why" id="b-src-4"><span class="it">Assurance <b>60&nbsp;€</b></span> · <span class="it">Repas <b>25&nbsp;€</b> par jour</span> · <span class="it">Transports <b>50&nbsp;€</b> par jour</span> · <span class="it">Chauffeur <b>65&nbsp;€</b> par jour</span></dd></div>
         </dl>
         <p class="note" id="b-src-note">Niveau Confort · relevés d’octobre 2026, à vérifier avant de réserver.</p>
       </div>
@@ -1762,17 +1770,18 @@ mg: {
       perPerson: { fr: 'par personne', es: 'por persona', mg: 'isan’olona' },
       perRoom: { fr: 'par chambre et par nuit', es: 'por habitación y noche', mg: 'isaky ny efitrano sy alina' },
       vols: {
-        eco: { fr: 'vol avec escale, proche de la moyenne relevée (770 €) sur {lil}, {par} et {kayv}.', es: 'vuelo con escala, cerca de la media observada (770 €) en {lil}, {par} y {kayv}.', mg: 'sidina mijanona an-dalana, akaiky ny salan’isa hita (770 €) ao amin’ny {lil}, {par} sy {kayv}.' },
-        confort: { fr: 'vol direct, haut de la fourchette relevée (484 € à 1 060 €) sur {lil}, {par} et {kayv}.', es: 'vuelo directo, parte alta del rango observado (484 € a 1 060 €) en {lil}, {par} y {kayv}.', mg: 'sidina mivantana, ambony amin’ny vidiny hita (484 € ka 1 060 €) ao amin’ny {lil}, {par} sy {kayv}.' },
-        premium: { fr: 'classe supérieure ou dates chargées : au-delà des 1 060 € relevés sur {kayv}, jusqu’à 1 667 € sur {last}.', es: 'clase superior o fechas de mucha demanda: más de los 1 060 € de {kayv}, hasta 1 667 € en {last}.', mg: 'kilasy ambony na andro be mpandeha: mihoatra ny 1 060 € hita ao amin’ny {kayv}, hatramin’ny 1 667 € ao amin’ny {last}.' }
+        eco: { fr: 'vol avec escale, proche de la moyenne relevée (770 €) sur {lil}, {par} et {kayv}.', es: 'vuelo con escala, cerca de la media observada (770 €) en {lil}, {par} y {kayv}.', mg: 'sidina mijanona an-dalana, akaiky ny salan’isa hita (770 €) ao amin’ny {lil}, {par} sy {kayv}.' },
+        confort: { fr: 'vol direct, haut de la fourchette relevée (484 € à 1 060 €) sur {lil}, {par} et {kayv}.', es: 'vuelo directo, parte alta del rango observado (484 € a 1 060 €) en {lil}, {par} y {kayv}.', mg: 'sidina mivantana, ambony amin’ny vidiny hita (484 € ka 1 060 €) ao amin’ny {lil}, {par} sy {kayv}.' },
+        premium: { fr: 'classe supérieure ou dates chargées : au-delà des 1 060 € relevés sur {kayv}, jusqu’à 1 667 € sur {last}.', es: 'clase superior o fechas de mucha demanda: más de los 1 060 € de {kayv}, hasta 1 667 € en {last}.', mg: 'kilasy ambony na andro be mpandeha: mihoatra ny 1 060 € hita ao amin’ny {kayv}, hatramin’ny 1 667 € ao amin’ny {last}.' }
       },
       visa: { fr: 'tarif officiel pour 30 jours sur {evi}, confirmé par {vn} (même prix à tous les niveaux).', es: 'tarifa oficial de 30 días en {evi}, confirmada por {vn} (mismo precio en todos los niveles).', mg: 'vidiny ofisialy ho an’ny 30 andro ao amin’ny {evi}, nohamafisin’ny {vn} (mitovy amin’ny ambaratonga rehetra).' },
       hotel: {
-        eco: { fr: 'environ 3 étoiles : 47 € en moyenne sur {cc3}, dès 19 € sur {kayh}.', es: 'unas 3 estrellas: 47 € de media en {cc3}, desde 19 € en {kayh}.', mg: 'eo amin’ny 3 kintana: 47 € eo ho eo ao amin’ny {cc3}, manomboka 19 € ao amin’ny {kayh}.' },
-        confort: { fr: 'environ 4 étoiles : 89 € en moyenne sur {cc3}, dès 40 € sur {kayh}.', es: 'unas 4 estrellas: 89 € de media en {cc3}, desde 40 € en {kayh}.', mg: 'eo amin’ny 4 kintana: 89 € eo ho eo ao amin’ny {cc3}, manomboka 40 € ao amin’ny {kayh}.' },
-        premium: { fr: 'environ 5 étoiles : 104 € en moyenne sur {cc3}, 164 € les samedis sur {kayh}.', es: 'unas 5 estrellas: 104 € de media en {cc3}, 164 € los sábados en {kayh}.', mg: 'eo amin’ny 5 kintana: 104 € eo ho eo ao amin’ny {cc3}, 164 € ny asabotsy ao amin’ny {kayh}.' }
+        eco: { fr: 'environ 3 étoiles : 47 € en moyenne sur {cc3}, dès 19 € sur {kayh}.', es: 'unas 3 estrellas: 47 € de media en {cc3}, desde 19 € en {kayh}.', mg: 'eo amin’ny 3 kintana: 47 € eo ho eo ao amin’ny {cc3}, manomboka 19 € ao amin’ny {kayh}.' },
+        confort: { fr: 'environ 4 étoiles : 89 € en moyenne sur {cc3}, dès 40 € sur {kayh}.', es: 'unas 4 estrellas: 89 € de media en {cc3}, desde 40 € en {kayh}.', mg: 'eo amin’ny 4 kintana: 89 € eo ho eo ao amin’ny {cc3}, manomboka 40 € ao amin’ny {kayh}.' },
+        premium: { fr: 'environ 5 étoiles : 104 € en moyenne sur {cc3}, 164 € les samedis sur {kayh}.', es: 'unas 5 estrellas: 104 € de media en {cc3}, 164 € los sábados en {kayh}.', mg: 'eo amin’ny 5 kintana: 104 € eo ho eo ao amin’ny {cc3}, 164 € ny asabotsy ao amin’ny {kayh}.' }
       },
-      others: { fr: 'Assurance {a} €, repas {r} € par jour, transports {t} € par jour, chauffeur {d} € par jour : estimations à confirmer sur place.', es: 'Seguro {a} €, comidas {r} € al día, transporte {t} € al día, conductor {d} € al día: estimaciones a confirmar allí.', mg: 'Fiantohana {a} €, sakafo {r} € isan’andro, fitaterana {t} € isan’andro, mpamily {d} € isan’andro: tombana hamarinina eto an-toerana.' },
+      others: { fr: '<span class="it">Assurance <b>{a}&nbsp;€</b></span> · <span class="it">Repas <b>{r}&nbsp;€</b> par jour</span> · <span class="it">Transports <b>{t}&nbsp;€</b> par jour</span> · <span class="it">Chauffeur <b>{d}&nbsp;€</b> par jour</span>', es: '<span class="it">Seguro <b>{a}&nbsp;€</b></span> · <span class="it">Comidas <b>{r}&nbsp;€</b> al día</span> · <span class="it">Transporte <b>{t}&nbsp;€</b> al día</span> · <span class="it">Conductor <b>{d}&nbsp;€</b> al día</span>', mg: '<span class="it">Fiantohana <b>{a}&nbsp;€</b></span> · <span class="it">Sakafo <b>{r}&nbsp;€</b> isan’andro</span> · <span class="it">Fitaterana <b>{t}&nbsp;€</b> isan’andro</span> · <span class="it">Mpamily <b>{d}&nbsp;€</b> isan’andro</span>' },
+      othersUnit: { fr: 'estimations, à confirmer sur place', es: 'estimaciones, a confirmar allí', mg: 'tombana, hamarinina eto an-toerana' },
       note: { fr: 'Niveau {lvl} · relevés d’octobre 2026, à vérifier avant de réserver.', es: 'Nivel {lvl} · datos de octubre de 2026, a comprobar antes de reservar.', mg: 'Ambaratonga {lvl} · angona tamin’ny oktobra 2026, hamarino alohan’ny hamandrihana.' }
     },
     prof: { label: { fr: 'Votre profil', es: 'Tu perfil', mg: 'Ny momba anao' },
@@ -2162,11 +2171,15 @@ mg: {
         var l = S.links[k]; return l ? '<a href="' + l[0] + '" target="_blank" rel="noopener">' + l[1] + '</a>' : m;
       });
     }
-    function kept(amount, unit) { return '<b>' + eur.format(amount) + '</b> ' + L(unit) + ' — '; }
-    document.getElementById('b-src-1').innerHTML = kept(BUDGET.vol[c], S.perAdult) + fill(L(S.vols[c]));
-    document.getElementById('b-src-2').innerHTML = kept(BUDGET.visa, S.perPerson) + fill(L(S.visa));
-    document.getElementById('b-src-3').innerHTML = kept(BUDGET.hotel[c], S.perRoom) + fill(L(S.hotel[c]));
-    document.getElementById('b-src-4').innerHTML = fill(L(S.others), { a: BUDGET.assurance[c], r: BUDGET.repas[c], t: BUDGET.transport[c], d: BUDGET.semaine.chauffeur[c] });
+    function row(i, amount, unit, why) {
+      if (amount !== null) document.getElementById('b-src-' + i + 'a').textContent = eur.format(amount);
+      document.getElementById('b-src-' + i + 'u').textContent = L(unit);
+      document.getElementById('b-src-' + i).innerHTML = why;
+    }
+    row(1, BUDGET.vol[c], S.perAdult, fill(L(S.vols[c])));
+    row(2, BUDGET.visa, S.perPerson, fill(L(S.visa)));
+    row(3, BUDGET.hotel[c], S.perRoom, fill(L(S.hotel[c])));
+    row(4, null, S.othersUnit, fill(L(S.others), { a: BUDGET.assurance[c], r: BUDGET.repas[c], t: BUDGET.transport[c], d: BUDGET.semaine.chauffeur[c] }));
     var btn = document.querySelector('[data-comfort="' + c + '"]');
     document.getElementById('b-src-note').textContent = fill(L(S.note), { lvl: btn ? btn.textContent.trim() : c });
   }
