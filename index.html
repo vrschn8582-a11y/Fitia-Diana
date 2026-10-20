@@ -465,6 +465,7 @@ html { touch-action: pan-y pinch-zoom; }
 .timeline h3 { font-size: 1.25rem; }
 .timeline time, .timeline .day { font-family: var(--font-mono); font-weight: 500; color: var(--laterite); font-variant-numeric: tabular-nums; }
 .timeline p { color: var(--muted); font-size: 0.95rem; line-height: 1.4; }
+.timeline .day small { display: block; font-size: 0.72em; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
 
 /* Météo */
 .temps { display: grid; gap: 0.15rem; }
@@ -983,8 +984,8 @@ html:not(.js) .toc-nojs { display: grid; gap: 0.75rem; padding: 1.25rem 0 0.5rem
           <div data-i18n="vols.f4"><dt>Décalage horaire</dt><dd>+1 h par rapport à Paris et Madrid en avril.</dd></div>
         </dl>
         <div class="clock">
-          <div><span data-i18n="clock.tnr">À Tananarive</span><b class="mono" id="clock-tnr">16:26</b></div>
-          <div><span data-i18n="clock.par">À Paris</span><b class="mono" id="clock-par">15:26</b></div>
+          <div><span data-i18n="clock.tnr">À Tananarive</span><b class="mono" id="clock-tnr">16:58</b></div>
+          <div><span data-i18n="clock.par">À Paris</span><b class="mono" id="clock-par">15:58</b></div>
           <p id="clock-diff">Aujourd’hui, Madagascar a 1 h d’avance sur Paris. En avril, l’écart sera de 1 h.</p>
         </div>
       </div>
@@ -1099,7 +1100,7 @@ html:not(.js) .toc-nojs { display: grid; gap: 0.75rem; padding: 1.25rem 0 0.5rem
             <button type="button" data-comfort="eco" aria-pressed="false" data-i18n="bud.eco">Économique</button>
             <button type="button" data-comfort="confort" aria-pressed="true" data-i18n="bud.mid">Confort</button>
           </div>
-          <label class="check"><input type="checkbox" id="b-week"><span data-i18n="bud.week">Semaine de découverte <small>7 nuits de plus, avec chauffeur</small></span></label>
+          <label class="check"><input type="checkbox" id="b-week"><span data-i18n="bud.week">Semaine à Nosy Be <small>vol intérieur, 4 nuits, 4 excursions</small></span></label>
         </form>
         <div class="bud-total" aria-live="polite">
           <span data-i18n="bud.total">Total estimé</span>
@@ -1213,25 +1214,24 @@ html:not(.js) .toc-nojs { display: grid; gap: 0.75rem; padding: 1.25rem 0 0.5rem
       <div class="page-head">
         <p class="eyebrow" data-i18n="grp.place">Sur place</p>
         <h2 id="t-semaine" tabindex="-1" data-i18n="sem.title">La semaine de découverte</h2>
-        <p class="lead" data-i18n="sem.lead">Un itinéraire proposé après le mariage, avant le retour en Europe. <span class="todo" title="À valider">Itinéraire à valider ensemble.</span></p>
+        <p class="lead" data-i18n="sem.lead">Cinq jours à Nosy Be en petit groupe, avec les mariés, après une journée de repos à Tana. Chacun réserve son logement, idéalement à Andilana. <span class="todo" title="À confirmer">Programme à confirmer.</span></p>
       </div>
       <div class="subtabs" role="tablist" aria-labelledby="t-semaine">
-        <button type="button" role="tab" id="tab-sem-1" aria-controls="sp-sem-1" aria-selected="true" data-i18n="tab.sem1" tabindex="0">Jours 1 à 4</button>
-        <button type="button" role="tab" id="tab-sem-2" aria-controls="sp-sem-2" aria-selected="false" data-i18n="tab.sem2" tabindex="-1">Jours 5 à 7</button>
+        <button type="button" role="tab" id="tab-sem-1" aria-controls="sp-sem-1" aria-selected="true" data-i18n="tab.sem1" tabindex="0">27 – 29 avril</button>
+        <button type="button" role="tab" id="tab-sem-2" aria-controls="sp-sem-2" aria-selected="false" data-i18n="tab.sem2" tabindex="-1">30 avril – 2 mai</button>
       </div>
-      <div class="subpanel" role="tabpanel" id="sp-sem-1" aria-labelledby="tab-sem-1" data-title="Jours 1 à 4">
+      <div class="subpanel" role="tabpanel" id="sp-sem-1" aria-labelledby="tab-sem-1" data-title="27 – 29 avril">
         <ol class="timeline">
-          <li data-i18n="sem.1"><span class="day">J+1</span><div><h3>Repos et Haute-Ville</h3><p>Rova de Manjakamiadana, palais d'Andafiavaratra, déjeuner avec vue.</p></div></li>
-          <li data-i18n="sem.2"><span class="day">J+2</span><div><h3>Route vers Andasibe</h3><p>3 à 4 h de route vers l'est, à travers les rizières.</p></div></li>
-          <li data-i18n="sem.3"><span class="day">J+3</span><div><h3>Forêt d'Andasibe</h3><p>Le chant des indris au lever du jour, balade nocturne à la recherche des caméléons.</p></div></li>
-          <li data-i18n="sem.4"><span class="day">J+4</span><div><h3>Retour à Tananarive</h3><p>Arrêt au parc Peyrieras et à ses caméléons, sur la route.</p></div></li>
+          <li data-i18n="sem.1"><span class="day">27<small>mar.</small></span><div><h3>Envol pour Nosy Be</h3><p>1 h 45 de vol depuis Tana, installation à Andilana, coucher de soleil sur la plage.</p></div></li>
+          <li data-i18n="sem.2"><span class="day">28<small>mer.</small></span><div><h3>Lokobe en pirogue</h3><p>Forêt primaire, lémuriens noirs et déjeuner au village d'Ampasipohy.</p></div></li>
+          <li data-i18n="sem.3"><span class="day">29<small>jeu.</small></span><div><h3>Nosy Iranja</h3><p>Journée en bateau : banc de sable entre deux îlots, tortues, poisson grillé.</p></div></li>
         </ol>
       </div>
-      <div class="subpanel" role="tabpanel" id="sp-sem-2" aria-labelledby="tab-sem-2" data-title="Jours 5 à 7">
+      <div class="subpanel" role="tabpanel" id="sp-sem-2" aria-labelledby="tab-sem-2" data-title="30 avril – 2 mai">
         <ol class="timeline">
-          <li data-i18n="sem.5"><span class="day">J+5</span><div><h3>Ambohimanga</h3><p>La colline royale classée par l'Unesco, à 20 km au nord.</p></div></li>
-          <li data-i18n="sem.6"><span class="day">J+6</span><div><h3>Marché de la Digue</h3><p>Artisanat, vanille, soie sauvage : le bon moment pour les souvenirs.</p></div></li>
-          <li data-i18n="sem.7"><span class="day">J+7</span><div><h3>Départ</h3><p>Dernière nuit près d'Ivato, vol retour.</p></div></li>
+          <li data-i18n="sem.4"><span class="day">30<small>ven.</small></span><div><h3>Nosy Komba</h3><p>L'île des lémuriens et des brodeuses le matin, après-midi libre.</p></div></li>
+          <li data-i18n="sem.5"><span class="day">1<small>sam.</small></span><div><h3>Mont Passot et saveurs</h3><p>Ylang-ylang, cacao et vanille, vue sur les lacs sacrés, puis vol vers Tana.</p></div></li>
+          <li data-i18n="sem.6"><span class="day">2<small>dim.</small></span><div><h3>Retour en Europe</h3><p>Vol depuis Ivato, la tête pleine de souvenirs.</p></div></li>
         </ol>
       </div>
     <nav class="pager" aria-label="Rubrique précédente et suivante"><a class="prev" href="#p-transport"><span><i aria-hidden="true">← </i>Précédent</span><b>Se déplacer à Tana</b></a><a class="next" href="#p-adresses"><span>Suivant<i aria-hidden="true"> →</i></span><b>Bonnes adresses</b></a></nav></section>
@@ -1452,14 +1452,13 @@ es: {
   'tr.conv': `Conversor euro – ariary`, 'tr.eur': `Euros`,
   'tr.rate': `Tipo: ariary por 1 €`, 'tr.rate.help': `Tipo orientativo, ajustable.`,
   'sem.title': `La semana de descubrimiento`,
-  'sem.lead': `Un itinerario propuesto después de la boda, antes de volver a Europa. <span class="todo" title="Por validar">Itinerario por validar juntos.</span>`,
-  'sem.1': `<span class="day">Día 1</span><div><h3>Descanso y Ciudad Alta</h3><p>Rova de Manjakamiadana, palacio de Andafiavaratra, comida con vistas.</p></div>`,
-  'sem.2': `<span class="day">Día 2</span><div><h3>Ruta hacia Andasibe</h3><p>De 3 a 4 h de carretera hacia el este, entre arrozales.</p></div>`,
-  'sem.3': `<span class="day">Día 3</span><div><h3>Bosque de Andasibe</h3><p>El canto de los indris al amanecer y un paseo nocturno en busca de camaleones.</p></div>`,
-  'sem.4': `<span class="day">Día 4</span><div><h3>Regreso a Antananarivo</h3><p>Parada en el parque Peyrieras y sus camaleones, por el camino.</p></div>`,
-  'sem.5': `<span class="day">Día 5</span><div><h3>Ambohimanga</h3><p>La colina real declarada Patrimonio de la Humanidad por la Unesco, a 20 km al norte.</p></div>`,
-  'sem.6': `<span class="day">Día 6</span><div><h3>Mercado de la Digue</h3><p>Artesanía, vainilla, seda salvaje: el momento ideal para los recuerdos.</p></div>`,
-  'sem.7': `<span class="day">Día 7</span><div><h3>Salida</h3><p>Última noche cerca de Ivato y vuelo de regreso.</p></div>`,
+  'sem.lead': `Cinco días en Nosy Be en grupo reducido, con los novios, tras un día de descanso en Tana. Cada uno reserva su alojamiento, idealmente en Andilana. <span class="todo" title="Por confirmar">Programa por confirmar.</span>`,
+  'sem.1': `<span class="day">27<small>mar.</small></span><div><h3>Vuelo a Nosy Be</h3><p>1 h 45 de vuelo desde Tana, llegada a Andilana y atardecer en la playa.</p></div>`,
+  'sem.2': `<span class="day">28<small>mié.</small></span><div><h3>Lokobe en piragua</h3><p>Bosque primario, lémures negros y comida en el pueblo de Ampasipohy.</p></div>`,
+  'sem.3': `<span class="day">29<small>jue.</small></span><div><h3>Nosy Iranja</h3><p>Día en barco: banco de arena entre dos islotes, tortugas, pescado a la brasa.</p></div>`,
+  'sem.4': `<span class="day">30<small>vie.</small></span><div><h3>Nosy Komba</h3><p>La isla de los lémures y las bordadoras por la mañana, tarde libre.</p></div>`,
+  'sem.5': `<span class="day">1<small>sáb.</small></span><div><h3>Monte Passot y sabores</h3><p>Ylang-ylang, cacao y vainilla, vistas a los lagos sagrados y vuelo a Tana.</p></div>`,
+  'sem.6': `<span class="day">2<small>dom.</small></span><div><h3>Regreso a Europa</h3><p>Vuelo desde Ivato, con la cabeza llena de recuerdos.</p></div>`,
   'adr.title': `Imprescindibles y lugares insólitos`,
   'adr.lead': `En Antananarivo, sus alrededores y el resto de la isla. <span class="todo" title="Por completar">Se añadirán vuestras direcciones personales.</span>`,
   'adr.filter': `Filtrar los lugares`,
@@ -1475,7 +1474,7 @@ es: {
   'tab.vols': `Los vuelos`, 'tab.comparer': `Comparar`, 'tab.conseils': `Consejos`,
   'tab.maintenant': `Desde ya`, 'tab.depart': `Antes de salir`, 'tab.temperatures': `Temperaturas`,
   'tab.quartiers': `Barrios`, 'tab.trajets': `Trayectos`, 'tab.route': `En carretera`, 'tab.argent': `Dinero`, 'tab.vtc': `Apps VTC`,
-  'tab.sem1': `Días 1 a 4`, 'tab.sem2': `Días 5 a 7`,
+  'tab.sem1': `27 – 29 de abril`, 'tab.sem2': `30 de abril – 2 de mayo`,
   'car.prev': `Lugares anteriores`, 'car.next': `Lugares siguientes`, 'car.aria': `Lugares`,
   'tab.conv': `Conversor`,
   'chg.1': `<h3>Aeropuerto de Ivato</h3><p>Oficinas de cambio en el vestíbulo de llegadas, abiertas a la llegada de los vuelos internacionales: práctico para el visado y el primer taxi. A la salida, allí se cambian los ariary sobrantes.</p>`,
@@ -1491,7 +1490,7 @@ es: {
   'bud.tab1': `Mi viaje`, 'bud.tab2': `Detalle`, 'bud.adults': `Adultos`, 'bud.kids': `Niños (2 a 11 años)`, 'bud.from': `Salida`,
   'bud.paris': `París`, 'bud.france': `Otra ciudad de Francia`, 'bud.spain': `España`, 'bud.nights': `Noches en Tana`,
   'bud.comfort': `Nivel de confort`, 'bud.eco': `Económico`, 'bud.mid': `Confort`,
-  'bud.week': `Semana de descubrimiento <small>7 noches más, con conductor</small>`, 'bud.total': `Total estimado`,
+  'bud.week': `Semana en Nosy Be <small>vuelo interno, 4 noches, 4 excursiones</small>`, 'bud.total': `Total estimado`,
   'inst.title': `Aplicación`, 'inst.btn': `Instalar en mi teléfono`, 'inst.ios': `En iPhone: toca <b>Compartir</b> y luego «<b>Añadir a pantalla de inicio</b>».`,
   'vtc.a1': `Descargar Piqla en App Store`, 'vtc.a2': `Descargar Piqla en Google Play`, 'vtc.a3': `Descargar inDrive en App Store`, 'vtc.a4': `Descargar inDrive en Google Play`,
   'car.p': `Tarjeta anterior`, 'car.n': `Tarjeta siguiente`,
@@ -1654,14 +1653,13 @@ mg: {
   'tr.conv': `Fanovana euro – ariary`, 'tr.eur': `Euro`,
   'tr.rate': `Sandam-bola: ariary isaky ny 1 €`, 'tr.rate.help': `Sanda tondro, azo ovaina.`,
   'sem.title': `Herinandro fitsangatsanganana`,
-  'sem.lead': `Lalana atolotra aorian'ny fanambadiana, alohan'ny hiverenan'ny vahiny any Eoropa. <span class="todo" title="Mbola hamarinina">Lalana mbola hamarinina miaraka.</span>`,
-  'sem.1': `<span class="day">Andro 1</span><div><h3>Fialan-tsasatra sy Tanàna Ambony</h3><p>Rovan'i Manjakamiadana, lapan'Andafiavaratra, sakafo atoandro manatrika ny tanàna.</p></div>`,
-  'sem.2': `<span class="day">Andro 2</span><div><h3>Lalana mankany Andasibe</h3><p>3 ka hatramin'ny 4 ora mianatsinanana, mamakivaky tanimbary.</p></div>`,
-  'sem.3': `<span class="day">Andro 3</span><div><h3>Alan'Andasibe</h3><p>Ny hiran'ny babakoto amin'ny maraina, ary fitsangatsanganana amin'ny alina hitadiavana tana.</p></div>`,
-  'sem.4': `<span class="day">Andro 4</span><div><h3>Miverina any Antananarivo</h3><p>Mijanona ao amin'ny valan-javaboahary Peyrieras sy ny tanany eny an-dalana.</p></div>`,
-  'sem.5': `<span class="day">Andro 5</span><div><h3>Ambohimanga</h3><p>Ny Vohitra Masina, lova iraisan'izao tontolo izao ankatoavin'ny Unesco, 20 km avaratra.</p></div>`,
-  'sem.6': `<span class="day">Andro 6</span><div><h3>Tsenan'ny Digue</h3><p>Asa tanana, lavanila, landy: fotoana tsara hividianana fahatsiarovana.</p></div>`,
-  'sem.7': `<span class="day">Andro 7</span><div><h3>Fiaingana</h3><p>Alina farany akaikin'Ivato, sidina miverina.</p></div>`,
+  'sem.lead': `Dimy andro any Nosy Be miaraka amin'ny mpivady, vondrona kely, aorian'ny iray andro fialan-tsasatra eto Tana. Samy mamandrika ny toerana hipetrahany, any Andilana raha azo atao. <span class="todo" title="Mbola hamafisina">Fandaharana mbola hamafisina.</span>`,
+  'sem.1': `<span class="day">27<small>tal.</small></span><div><h3>Manidina mankany Nosy Be</h3><p>1 ora sy 45 minitra avy any Tana, fipetrahana any Andilana, filentehan'ny masoandro amoron-dranomasina.</p></div>`,
+  'sem.2': `<span class="day">28<small>alr.</small></span><div><h3>Lokobe an-dakana</h3><p>Ala voajanahary, gidro mainty ary sakafo atoandro ao an-tanànan'Ampasipohy.</p></div>`,
+  'sem.3': `<span class="day">29<small>alk.</small></span><div><h3>Nosy Iranja</h3><p>Iray andro an-tsambo: fasika mampitohy nosy kely roa, sokatra, trondro natono.</p></div>`,
+  'sem.4': `<span class="day">30<small>zom.</small></span><div><h3>Nosy Komba</h3><p>Ny nosin'ny gidro sy ny mpanjaitra amin'ny maraina, malalaka ny tolakandro.</p></div>`,
+  'sem.5': `<span class="day">1<small>sab.</small></span><div><h3>Tendrombohitra Passot sy tsiro</h3><p>Ilang-ilang, kakao ary lavanila, ireo farihy masina, avy eo manidina mankany Tana.</p></div>`,
+  'sem.6': `<span class="day">2<small>alh.</small></span><div><h3>Miverina any Eoropa</h3><p>Sidina avy any Ivato, feno fahatsiarovana ny saina.</p></div>`,
   'adr.title': `Toerana tsy tokony hadino sy toerana miavaka`,
   'adr.lead': `Eto Antananarivo, manodidina azy ary any amin'ny faritra hafa amin'ny nosy. <span class="todo" title="Hofenoina">Hampiana eto ireo toerana tianay manokana.</span>`,
   'adr.filter': `Sivano ireo toerana`,
@@ -1677,7 +1675,7 @@ mg: {
   'tab.vols': `Ny sidina`, 'tab.comparer': `Ampitahao`, 'tab.conseils': `Torohevitra`,
   'tab.maintenant': `Izao dieny izao`, 'tab.depart': `Alohan'ny hiaingana`, 'tab.temperatures': `Mari-pana`,
   'tab.quartiers': `Faritra`, 'tab.trajets': `Dia`, 'tab.route': `Eny an-dalana`, 'tab.argent': `Vola`, 'tab.vtc': `Rindranasa VTC`,
-  'tab.sem1': `Andro 1 hatramin'ny 4`, 'tab.sem2': `Andro 5 hatramin'ny 7`,
+  'tab.sem1': `27 – 29 aprily`, 'tab.sem2': `30 aprily – 2 mey`,
   'car.prev': `Toerana teo aloha`, 'car.next': `Toerana manaraka`, 'car.aria': `Toerana`,
   'tab.conv': `Fanovana vola`,
   'chg.1': `<h3>Seranam-piaramanidina Ivato</h3><p>Biraon'ny fanakalozam-bola ao amin'ny efitrano fahatongavana, misokatra rehefa tonga ny sidina iraisam-pirenena: mety tsara amin'ny visa sy ny taxi voalohany. Rehefa miainga, eo no anakalozana ny ariary sisa.</p>`,
@@ -1693,7 +1691,7 @@ mg: {
   'bud.tab1': `Ny diako`, 'bud.tab2': `Antsipiriany`, 'bud.adults': `Olon-dehibe`, 'bud.kids': `Ankizy (2–11 taona)`, 'bud.from': `Fiaingana`,
   'bud.paris': `Paris`, 'bud.france': `Tanàna hafa any Frantsa`, 'bud.spain': `Espaina`, 'bud.nights': `Alina eto Tana`,
   'bud.comfort': `Fahalalahana`, 'bud.eco': `Mora`, 'bud.mid': `Antonony`,
-  'bud.week': `Herinandro fitsangatsanganana <small>7 alina fanampiny, miaraka amin'ny mpamily</small>`, 'bud.total': `Totaliny tombanana`,
+  'bud.week': `Herinandro any Nosy Be <small>sidina anatiny, 4 alina, fitsangatsanganana 4</small>`, 'bud.total': `Totaliny tombanana`,
   'inst.title': `Rindranasa`, 'inst.btn': `Apetraho ao amin'ny findaiko`, 'inst.ios': `Amin'ny iPhone: tsindrio ny <b>Partager</b> dia ny « <b>Sur l'écran d'accueil</b> ».`,
   'vtc.a1': `Misintona Piqla amin'ny App Store`, 'vtc.a2': `Misintona Piqla amin'ny Google Play`, 'vtc.a3': `Misintona inDrive amin'ny App Store`, 'vtc.a4': `Misintona inDrive amin'ny Google Play`,
   'car.p': `Teo aloha`, 'car.n': `Manaraka`,
@@ -1746,7 +1744,9 @@ mg: {
         evi: ['https://evisamada-mg.com', 'evisamada-mg.com'],
         vn: ['https://visasnews.com/madagascar-triple-le-prix-de-son-visa-electronique-de-15-jours/', 'VisasNews'],
         cc3: ['https://www.combien-coute.net/hotel3/madagascar/antananarivo/', 'combien-coute.net'],
-        kayh: ['https://www.kayak.fr/Antananarivo-Hotels.16091.hotel.ksp', 'Kayak']
+        kayh: ['https://www.kayak.fr/Antananarivo-Hotels.16091.hotel.ksp', 'Kayak'],
+        momo: ['https://www.momondo.fr/vols/antananarivo/nosy-be', 'Momondo'],
+        aaa: ['https://www.aaa.com/tripcanvas/thing-to-do/cruise-ship-excursion-to-nosy-be-5558656P8', 'AAA']
       },
       perAdult: { fr: 'par adulte depuis Paris', es: 'por adulto desde París', mg: 'isaky ny olon-dehibe avy any Paris' },
       perPerson: { fr: 'par personne', es: 'por persona', mg: 'isan’olona' },
@@ -1764,7 +1764,7 @@ mg: {
         assurance: { fr: '<b>{x}</b> par personne. Estimation sans source vérifiée : comparez avec votre assurance ou celle de votre carte bancaire.', es: '<b>{x}</b> por persona. Estimación sin fuente verificada: compárala con tu seguro o el de tu tarjeta bancaria.', mg: '<b>{x}</b> isan’olona. Tombana tsy misy loharano voamarina: ampitahao amin’ny fiantohanao na an’ny karatra bankinao.' },
         repas: { fr: '<b>{x}</b> par personne et par jour (enfant : 60 %). Estimation à confirmer sur place.', es: '<b>{x}</b> por persona y día (niños: 60 %). Estimación a confirmar allí.', mg: '<b>{x}</b> isan’olona isan’andro (ankizy: 60 %). Tombana hamarinina eto an-toerana.' },
         transport: { fr: '<b>{x}</b> par jour à Tana et <b>{y}</b> de transfert aéroport aller-retour. Estimation à confirmer sur place.', es: '<b>{x}</b> al día en Tana y <b>{y}</b> de traslado al aeropuerto ida y vuelta. Estimación a confirmar allí.', mg: '<b>{x}</b> isan’andro eto Tana ary <b>{y}</b> ho an’ny fitaterana mankany amin’ny seranam-piaramanidina sy miverina. Tombana hamarinina eto an-toerana.' },
-        semaine: { fr: 'Chauffeur <b>{x}</b> par jour, hôtel <b>{y}</b> par chambre et par nuit, parcs et guides <b>{z}</b> par personne. Estimation à confirmer avec un contact local.', es: 'Conductor <b>{x}</b> al día, hotel <b>{y}</b> por habitación y noche, parques y guías <b>{z}</b> por persona. Estimación a confirmar con un contacto local.', mg: 'Mpamily <b>{x}</b> isan’andro, hotely <b>{y}</b> isaky ny efitrano sy alina, valan-javaboahary sy mpitari-dalana <b>{z}</b> isan’olona. Tombana hamarinina amin’ny olona eto an-toerana.' },
+        semaine: { fr: 'Vol Tana – Nosy Be <b>{x}</b> par adulte (dès 236 € sur {momo}), lodge <b>{y}</b> par chambre et par nuit (4 nuits, + 1 nuit à Tana), 4 excursions <b>{z}</b> par personne (environ 90 € pièce en privé sur {aaa}), navettes <b>{t}</b>. Estimation à confirmer.', es: 'Vuelo Tana – Nosy Be <b>{x}</b> por adulto (desde 236 € en {momo}), lodge <b>{y}</b> por habitación y noche (4 noches, + 1 noche en Tana), 4 excursiones <b>{z}</b> por persona (unos 90 € cada una en privado en {aaa}), traslados <b>{t}</b>. Estimación a confirmar.', mg: 'Sidina Tana – Nosy Be <b>{x}</b> isaky ny olon-dehibe (manomboka 236 € ao amin’ny {momo}), lodge <b>{y}</b> isaky ny efitrano sy alina (4 alina, + 1 alina eto Tana), fitsangatsanganana 4 <b>{z}</b> isan’olona (eo amin’ny 90 € avy ao amin’ny {aaa}), fitaterana <b>{t}</b>. Tombana hamarinina.' },
         divers: { fr: '<b>{x}</b> par personne : carte SIM, pourboires, souvenirs. Estimation.', es: '<b>{x}</b> por persona: tarjeta SIM, propinas, recuerdos. Estimación.', mg: '<b>{x}</b> isan’olona: karatra SIM, tip, fahatsiarovana. Tombana.' }
       },
       note: { fr: 'Niveau {lvl} · prix indicatifs d’octobre 2026, à vérifier. Hors cadeau aux mariés. Touchez un poste pour voir sa source.', es: 'Nivel {lvl} · precios orientativos de octubre de 2026, a comprobar. Sin el regalo a los novios. Toca una partida para ver su fuente.', mg: 'Ambaratonga {lvl} · vidiny tondro tamin’ny oktobra 2026, hamarino. Tsy tafiditra ny fanomezana ho an’ny mpivady. Tsindrio ny andalana iray hahitana ny loharano.' }
@@ -2108,7 +2108,7 @@ mg: {
     repas: { eco: 15, confort: 25 }, repasEnfant: 0.6, // par personne et par jour
     transport: { eco: 10, confort: 50 },           // par groupe et par jour à Tana
     transfert: { eco: 30, confort: 40 },           // aéroport aller-retour, par groupe
-    semaine: { nuits: 7, chauffeur: { eco: 55, confort: 65 }, hotel: { eco: 35, confort: 60 }, parcs: { eco: 60, confort: 80 } },
+    semaine: { jours: 5, nuits: 4, vol: { eco: 250, confort: 350 }, hotel: { eco: 45, confort: 90 }, excursions: { eco: 180, confort: 320 }, local: { eco: 40, confort: 70 } },   // Nosy Be : vol intérieur aller-retour par adulte, lodge par chambre et par nuit, 4 excursions par personne, navettes et tuk-tuk par groupe ; + 1 nuit à Tana au retour
     divers: { eco: 50, confort: 80 }              // SIM, pourboires, souvenirs, par personne
   };
   var bud = { a: 2, k: 0, from: 'paris', n: 4, c: 'confort', w: false };
@@ -2118,7 +2118,7 @@ mg: {
   var bIn = { a: document.getElementById('b-adults'), k: document.getElementById('b-kids'), from: document.getElementById('b-from'), n: document.getElementById('b-nights'), w: document.getElementById('b-week') };
   function clampInt(v, min, max, dflt) { v = parseInt(v, 10); return isNaN(v) ? dflt : Math.min(max, Math.max(min, v)); }
   function budgetCompute(b) {
-    var c = b.c, people = b.a + b.k, rooms = Math.ceil(b.a / 2), days = b.n + (b.w ? BUDGET.semaine.nuits : 0);
+    var c = b.c, people = b.a + b.k, rooms = Math.ceil(b.a / 2), days = b.n + (b.w ? BUDGET.semaine.jours : 0), W = BUDGET.semaine;
     var vol = BUDGET.vol[c] + BUDGET.volDepart[b.from];
     var lines = {
       vols: vol * b.a + vol * BUDGET.volEnfant * b.k,
@@ -2127,7 +2127,7 @@ mg: {
       hotel: rooms * BUDGET.hotel[c] * b.n,
       repas: BUDGET.repas[c] * (b.a + BUDGET.repasEnfant * b.k) * days,
       transport: BUDGET.transport[c] * b.n + BUDGET.transfert[c],
-      semaine: b.w ? BUDGET.semaine.nuits * (BUDGET.semaine.chauffeur[c] + rooms * BUDGET.semaine.hotel[c]) + BUDGET.semaine.parcs[c] * people : 0,
+      semaine: b.w ? W.vol[c] * (b.a + BUDGET.volEnfant * b.k) + rooms * (W.nuits * W.hotel[c] + BUDGET.hotel[c]) + W.excursions[c] * people + W.local[c] : 0,
       divers: BUDGET.divers[c] * people
     };
     var total = 0;
@@ -2168,7 +2168,7 @@ mg: {
       hotel: sourced(BUDGET.hotel[c], S.perRoom, S.hotel[c]),
       repas: est('repas', BUDGET.repas[c]),
       transport: est('transport', BUDGET.transport[c], BUDGET.transfert[c]),
-      semaine: est('semaine', W.chauffeur[c], W.hotel[c], W.parcs[c]),
+      semaine: fill(L(S.est.semaine), { x: eur.format(W.vol[c]), y: eur.format(W.hotel[c]), z: eur.format(W.excursions[c]), t: eur.format(W.local[c]) }),
       divers: est('divers', BUDGET.divers[c])
     };
   }
