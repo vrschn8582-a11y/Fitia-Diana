@@ -495,22 +495,20 @@ select { font: inherit; color: var(--ink); background: var(--surface); border: 1
 .bud-total span { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--laterite); }
 .bud-total b { font-family: var(--font-display); font-weight: 500; font-size: 2.2rem; line-height: 1.1; color: var(--forest); font-variant-numeric: lining-nums tabular-nums; }
 .bud-total small { color: var(--muted); font-size: 0.9rem; }
-#b-lines div { grid-template-columns: minmax(0, 1fr) auto; padding-block: 0.3rem; line-height: 1.35; }
+/* Détail : chaque poste se déplie pour montrer sa source (un seul ouvert à la fois) */
+.bud-lines { display: grid; border-top: 1px solid var(--line); }
+.bl > summary, .bl.sum { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: 1rem; padding-block: 0.3rem; line-height: 1.35; border-bottom: 1px solid var(--line); }
+.bl > summary { cursor: pointer; list-style: none; }
+.bl > summary::-webkit-details-marker { display: none; }
+.bl > summary .lbl::after { content: ""; display: inline-block; width: 0.4em; height: 0.4em; margin-left: 0.55em; border-right: 1.5px solid var(--gold); border-bottom: 1.5px solid var(--gold); transform: translateY(-0.25em) rotate(45deg); transition: transform 0.25s var(--ease); }
+.bl[open] > summary .lbl::after { transform: translateY(0) rotate(-135deg); }
+.bl[open] > summary { color: var(--forest); border-bottom-color: transparent; }
+.bl .val { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.bl.sum { font-weight: 700; color: var(--ink); }
+.bl .why { margin: 0 0 0.35rem; padding: 0.15rem 0 0.45rem 0.8rem; border-left: 2px solid var(--gold); border-bottom: 1px solid var(--line); font-size: 0.85rem; line-height: 1.45; color: var(--muted); }
+.bl .why b { font-weight: 600; color: var(--ink); }
+@media (min-width: 960px) { .bud-lines { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 2.5rem; align-items: start; } .bl.sum { grid-column: 1 / -1; } }
 #p-budget .check > span { display: grid; }
-/* Sources : poste et unité à gauche, montant en grand à droite, explication dessous */
-.bud-src .src { grid-template-columns: minmax(0, 1fr) auto; gap: 0.05rem 1rem; padding-block: 0.55rem; align-items: baseline; }
-.bud-src dt { display: grid; font-weight: 600; color: var(--ink); line-height: 1.25; }
-.bud-src dt small { font-weight: 400; font-size: 0.8rem; color: var(--muted); }
-.bud-src .amt { font-family: var(--font-display); font-size: 1.55rem; font-weight: 500; line-height: 1; color: var(--forest); text-align: right; font-variant-numeric: lining-nums tabular-nums; white-space: nowrap; }
-.bud-src .why { grid-column: 1 / -1; margin-top: 0.15rem; font-size: 0.88rem; line-height: 1.45; color: var(--muted); }
-.bud-src .why::first-letter { text-transform: uppercase; }
-.bud-src .why b { font-weight: 600; color: var(--ink); }
-.bud-src .why .it { white-space: nowrap; }
-@media (min-width: 960px) { .bud-src { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 2.5rem; } }
-@media (max-width: 600px) { .bud-src .src { padding-block: 0.3rem; } .bud-src dt { display: block; font-size: 0.95rem; } .bud-src dt small { display: inline; } .bud-src dt small::before { content: " · "; } .bud-src .why { margin-top: 0.1rem; font-size: 0.82rem; line-height: 1.38; } .bud-src .amt { font-size: 1.3rem; } #sp-bud-3 .note { font-size: 0.8rem; line-height: 1.3; } }
-@media (min-width: 960px) { #b-lines { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 2.5rem; } #b-lines .sum { grid-column: 1 / -1; } }
-#b-lines dd { text-align: right; font-variant-numeric: tabular-nums; }
-#b-lines .sum dt, #b-lines .sum dd { font-weight: 700; color: var(--ink); }
 .check { gap: 0.7rem; align-items: flex-start; padding: 0.3rem 0; line-height: 1.4; cursor: pointer; }
 .check input { width: 1.3rem; height: 1.3rem; margin-top: 0.15rem; accent-color: var(--forest); flex: none; }
 .check small { display: block; color: var(--muted); }
@@ -985,8 +983,8 @@ html:not(.js) .toc-nojs { display: grid; gap: 0.75rem; padding: 1.25rem 0 0.5rem
           <div data-i18n="vols.f4"><dt>Décalage horaire</dt><dd>+1 h par rapport à Paris et Madrid en avril.</dd></div>
         </dl>
         <div class="clock">
-          <div><span data-i18n="clock.tnr">À Tananarive</span><b class="mono" id="clock-tnr">15:18</b></div>
-          <div><span data-i18n="clock.par">À Paris</span><b class="mono" id="clock-par">14:18</b></div>
+          <div><span data-i18n="clock.tnr">À Tananarive</span><b class="mono" id="clock-tnr">15:53</b></div>
+          <div><span data-i18n="clock.par">À Paris</span><b class="mono" id="clock-par">14:53</b></div>
           <p id="clock-diff">Aujourd’hui, Madagascar a 1 h d’avance sur Paris. En avril, l’écart sera de 1 h.</p>
         </div>
       </div>
@@ -1087,7 +1085,6 @@ html:not(.js) .toc-nojs { display: grid; gap: 0.75rem; padding: 1.25rem 0 0.5rem
       <div class="subtabs" role="tablist" aria-labelledby="t-budget">
         <button type="button" role="tab" id="tab-bud-1" aria-controls="sp-bud-1" aria-selected="true" data-i18n="bud.tab1" tabindex="0">Mon voyage</button>
         <button type="button" role="tab" id="tab-bud-2" aria-controls="sp-bud-2" aria-selected="false" data-i18n="bud.tab2" tabindex="-1">Détail</button>
-        <button type="button" role="tab" id="tab-bud-3" aria-controls="sp-bud-3" aria-selected="false" data-i18n="bud.tab3" tabindex="-1">Sources</button>
       </div>
       <div class="subpanel" role="tabpanel" id="sp-bud-1" aria-labelledby="tab-bud-1" data-title="Mon voyage">
         <form class="bud-form" id="budget-form" novalidate="">
@@ -1112,17 +1109,8 @@ html:not(.js) .toc-nojs { display: grid; gap: 0.75rem; padding: 1.25rem 0 0.5rem
         </div>
       </div>
       <div class="subpanel" role="tabpanel" id="sp-bud-2" aria-labelledby="tab-bud-2" data-title="Détail">
-        <dl class="facts bud-lines" id="b-lines"><div><dt>Vols aller-retour</dt><dd>2 000&nbsp;€</dd></div><div><dt>E-visa</dt><dd>70&nbsp;€</dd></div><div><dt>Assurance voyage</dt><dd>120&nbsp;€</dd></div><div><dt>Hébergement à Tana</dt><dd>320&nbsp;€</dd></div><div><dt>Repas</dt><dd>200&nbsp;€</dd></div><div><dt>Transports sur place</dt><dd>240&nbsp;€</dd></div><div><dt>Divers (SIM, pourboires, souvenirs)</dt><dd>160&nbsp;€</dd></div><div class="sum"><dt>Total estimé</dt><dd>3 110&nbsp;€</dd></div></dl>
-        <p class="note" data-i18n="bud.note">Prix indicatifs relevés en octobre 2026, à vérifier : ils évoluent. Hors cadeau aux mariés.</p>
-      </div>
-      <div class="subpanel" role="tabpanel" id="sp-bud-3" aria-labelledby="tab-bud-3" data-title="Sources">
-        <dl class="facts bud-src">
-          <div class="src"><dt><span data-i18n="bud.s1t">Vols</span><small id="b-src-1u">par adulte depuis Paris</small></dt><dd class="amt" id="b-src-1a">1 000&nbsp;€</dd><dd class="why" id="b-src-1">vol direct, haut de la fourchette relevée (484&nbsp;€ à 1&nbsp;060&nbsp;€) sur <a href="https://www.liligo.fr/vols/itineraires/paris/antananarivo" target="_blank" rel="noopener">Liligo</a>, <a href="https://www.partirou.com/vols/itineraire/paris/antananarivo/" target="_blank" rel="noopener">Partirou</a> et <a href="https://www.kayak.fr/vols/Antananarivo-Aeroport-Intl-d-Ivato-Tananarive--TNR/Paris-Orly-ORY" target="_blank" rel="noopener">Kayak</a>.</dd></div>
-          <div class="src"><dt><span data-i18n="bud.s2t">E-visa</span><small id="b-src-2u">par personne</small></dt><dd class="amt" id="b-src-2a">35&nbsp;€</dd><dd class="why" id="b-src-2">tarif officiel pour 30 jours sur <a href="https://evisamada-mg.com" target="_blank" rel="noopener">evisamada-mg.com</a>, confirmé par <a href="https://visasnews.com/madagascar-triple-le-prix-de-son-visa-electronique-de-15-jours/" target="_blank" rel="noopener">VisasNews</a> (même prix à tous les niveaux).</dd></div>
-          <div class="src"><dt><span data-i18n="bud.s3t">Hôtels</span><small id="b-src-3u">par chambre et par nuit</small></dt><dd class="amt" id="b-src-3a">80&nbsp;€</dd><dd class="why" id="b-src-3">environ 4 étoiles : 89&nbsp;€ en moyenne sur <a href="https://www.combien-coute.net/hotel3/madagascar/antananarivo/" target="_blank" rel="noopener">combien-coute.net</a>, dès 40&nbsp;€ sur <a href="https://www.kayak.fr/Antananarivo-Hotels.16091.hotel.ksp" target="_blank" rel="noopener">Kayak</a>.</dd></div>
-          <div class="src"><dt><span data-i18n="bud.s4t">Autres postes</span><small id="b-src-4u">estimations, à confirmer sur place</small></dt><dd class="why" id="b-src-4"><span class="it">Assurance <b>60&nbsp;€</b></span> · <span class="it">Repas <b>25&nbsp;€</b> par jour</span> · <span class="it">Transports <b>50&nbsp;€</b> par jour</span> · <span class="it">Chauffeur <b>65&nbsp;€</b> par jour</span></dd></div>
-        </dl>
-        <p class="note" id="b-src-note">Niveau Confort · relevés d’octobre 2026, à vérifier avant de réserver.</p>
+        <div class="bud-lines" id="b-lines"><details class="bl" name="bud-src" data-line="vols"><summary><span class="lbl">Vols aller-retour</span><span class="val">2 000&nbsp;€</span></summary><div class="why"><b>1 000&nbsp;€</b> par adulte depuis Paris. Vol direct, haut de la fourchette relevée (484&nbsp;€ à 1&nbsp;060&nbsp;€) sur <a href="https://www.liligo.fr/vols/itineraires/paris/antananarivo" target="_blank" rel="noopener">Liligo</a>, <a href="https://www.partirou.com/vols/itineraire/paris/antananarivo/" target="_blank" rel="noopener">Partirou</a> et <a href="https://www.kayak.fr/vols/Antananarivo-Aeroport-Intl-d-Ivato-Tananarive--TNR/Paris-Orly-ORY" target="_blank" rel="noopener">Kayak</a>.</div></details><details class="bl" name="bud-src" data-line="visa"><summary><span class="lbl">E-visa</span><span class="val">70&nbsp;€</span></summary><div class="why"><b>35&nbsp;€</b> par personne. Tarif officiel pour 30 jours sur <a href="https://evisamada-mg.com" target="_blank" rel="noopener">evisamada-mg.com</a>, confirmé par <a href="https://visasnews.com/madagascar-triple-le-prix-de-son-visa-electronique-de-15-jours/" target="_blank" rel="noopener">VisasNews</a> (même prix à tous les niveaux).</div></details><details class="bl" name="bud-src" data-line="assurance"><summary><span class="lbl">Assurance voyage</span><span class="val">120&nbsp;€</span></summary><div class="why"><b>60&nbsp;€</b> par personne. Estimation sans source vérifiée : comparez avec votre assurance ou celle de votre carte bancaire.</div></details><details class="bl" name="bud-src" data-line="hotel"><summary><span class="lbl">Hébergement à Tana</span><span class="val">320&nbsp;€</span></summary><div class="why"><b>80&nbsp;€</b> par chambre et par nuit. Environ 4 étoiles : 89&nbsp;€ en moyenne sur <a href="https://www.combien-coute.net/hotel3/madagascar/antananarivo/" target="_blank" rel="noopener">combien-coute.net</a>, dès 40&nbsp;€ sur <a href="https://www.kayak.fr/Antananarivo-Hotels.16091.hotel.ksp" target="_blank" rel="noopener">Kayak</a>.</div></details><details class="bl" name="bud-src" data-line="repas"><summary><span class="lbl">Repas</span><span class="val">200&nbsp;€</span></summary><div class="why"><b>25&nbsp;€</b> par personne et par jour (enfant : 60 %). Estimation à confirmer sur place.</div></details><details class="bl" name="bud-src" data-line="transport"><summary><span class="lbl">Transports sur place</span><span class="val">240&nbsp;€</span></summary><div class="why"><b>50&nbsp;€</b> par jour à Tana et <b>40&nbsp;€</b> de transfert aéroport aller-retour. Estimation à confirmer sur place.</div></details><details class="bl" name="bud-src" data-line="divers"><summary><span class="lbl">Divers (SIM, pourboires, souvenirs)</span><span class="val">160&nbsp;€</span></summary><div class="why"><b>80&nbsp;€</b> par personne : carte SIM, pourboires, souvenirs. Estimation.</div></details><div class="bl sum"><span class="lbl">Total estimé</span><span class="val">3 110&nbsp;€</span></div></div>
+        <p class="note" id="b-note">Niveau Confort · prix indicatifs d’octobre 2026, à vérifier. Hors cadeau aux mariés. Touchez un poste pour voir sa source.</p>
       </div>
     <nav class="pager" aria-label="Rubrique précédente et suivante"><a class="prev" href="#p-valise"><span><i aria-hidden="true">← </i>Précédent</span><b>Valise</b></a><a class="next" href="#p-hebergement"><span>Suivant<i aria-hidden="true"> →</i></span><b>Hébergement</b></a></nav></section>
 
@@ -1505,8 +1493,6 @@ es: {
   'bud.paris': `París`, 'bud.france': `Otra ciudad de Francia`, 'bud.spain': `España`, 'bud.nights': `Noches en Tana`,
   'bud.comfort': `Nivel de confort`, 'bud.eco': `Económico`, 'bud.mid': `Confort`, 'bud.prem': `Premium`,
   'bud.week': `Semana de descubrimiento <small>7 noches más, con conductor</small>`, 'bud.total': `Total estimado`,
-  'bud.tab3': `Fuentes`, 'bud.s1t': `Vuelos`, 'bud.s2t': `E-visado`, 'bud.s3t': `Hoteles`, 'bud.s4t': `Otras partidas`,
-  'bud.note': `Precios orientativos de octubre de 2026, a comprobar: cambian. Sin incluir el regalo a los novios.`,
   'inst.title': `Aplicación`, 'inst.btn': `Instalar en mi teléfono`, 'inst.ios': `En iPhone: toca <b>Compartir</b> y luego «<b>Añadir a pantalla de inicio</b>».`,
   'vtc.a1': `Descargar Piqla en App Store`, 'vtc.a2': `Descargar Piqla en Google Play`, 'vtc.a3': `Descargar inDrive en App Store`, 'vtc.a4': `Descargar inDrive en Google Play`,
   'car.p': `Tarjeta anterior`, 'car.n': `Tarjeta siguiente`,
@@ -1709,8 +1695,6 @@ mg: {
   'bud.paris': `Paris`, 'bud.france': `Tanàna hafa any Frantsa`, 'bud.spain': `Espaina`, 'bud.nights': `Alina eto Tana`,
   'bud.comfort': `Fahalalahana`, 'bud.eco': `Mora`, 'bud.mid': `Antonony`, 'bud.prem': `Ambony`,
   'bud.week': `Herinandro fitsangatsanganana <small>7 alina fanampiny, miaraka amin'ny mpamily</small>`, 'bud.total': `Totaliny tombanana`,
-  'bud.tab3': `Loharano`, 'bud.s1t': `Sidina`, 'bud.s2t': `E-visa`, 'bud.s3t': `Hotely`, 'bud.s4t': `Hafa`,
-  'bud.note': `Vidiny tondro tamin'ny oktobra 2026, hamarino fa miova. Tsy tafiditra ny fanomezana ho an'ny mpivady.`,
   'inst.title': `Rindranasa`, 'inst.btn': `Apetraho ao amin'ny findaiko`, 'inst.ios': `Amin'ny iPhone: tsindrio ny <b>Partager</b> dia ny « <b>Sur l'écran d'accueil</b> ».`,
   'vtc.a1': `Misintona Piqla amin'ny App Store`, 'vtc.a2': `Misintona Piqla amin'ny Google Play`, 'vtc.a3': `Misintona inDrive amin'ny App Store`, 'vtc.a4': `Misintona inDrive amin'ny Google Play`,
   'car.p': `Teo aloha`, 'car.n': `Manaraka`,
@@ -1780,9 +1764,14 @@ mg: {
         confort: { fr: 'environ 4 étoiles : 89 € en moyenne sur {cc3}, dès 40 € sur {kayh}.', es: 'unas 4 estrellas: 89 € de media en {cc3}, desde 40 € en {kayh}.', mg: 'eo amin’ny 4 kintana: 89 € eo ho eo ao amin’ny {cc3}, manomboka 40 € ao amin’ny {kayh}.' },
         premium: { fr: 'environ 5 étoiles : 104 € en moyenne sur {cc3}, 164 € les samedis sur {kayh}.', es: 'unas 5 estrellas: 104 € de media en {cc3}, 164 € los sábados en {kayh}.', mg: 'eo amin’ny 5 kintana: 104 € eo ho eo ao amin’ny {cc3}, 164 € ny asabotsy ao amin’ny {kayh}.' }
       },
-      others: { fr: '<span class="it">Assurance <b>{a}&nbsp;€</b></span> · <span class="it">Repas <b>{r}&nbsp;€</b> par jour</span> · <span class="it">Transports <b>{t}&nbsp;€</b> par jour</span> · <span class="it">Chauffeur <b>{d}&nbsp;€</b> par jour</span>', es: '<span class="it">Seguro <b>{a}&nbsp;€</b></span> · <span class="it">Comidas <b>{r}&nbsp;€</b> al día</span> · <span class="it">Transporte <b>{t}&nbsp;€</b> al día</span> · <span class="it">Conductor <b>{d}&nbsp;€</b> al día</span>', mg: '<span class="it">Fiantohana <b>{a}&nbsp;€</b></span> · <span class="it">Sakafo <b>{r}&nbsp;€</b> isan’andro</span> · <span class="it">Fitaterana <b>{t}&nbsp;€</b> isan’andro</span> · <span class="it">Mpamily <b>{d}&nbsp;€</b> isan’andro</span>' },
-      othersUnit: { fr: 'estimations, à confirmer sur place', es: 'estimaciones, a confirmar allí', mg: 'tombana, hamarinina eto an-toerana' },
-      note: { fr: 'Niveau {lvl} · relevés d’octobre 2026, à vérifier avant de réserver.', es: 'Nivel {lvl} · datos de octubre de 2026, a comprobar antes de reservar.', mg: 'Ambaratonga {lvl} · angona tamin’ny oktobra 2026, hamarino alohan’ny hamandrihana.' }
+      est: {
+        assurance: { fr: '<b>{x}</b> par personne. Estimation sans source vérifiée : comparez avec votre assurance ou celle de votre carte bancaire.', es: '<b>{x}</b> por persona. Estimación sin fuente verificada: compárala con tu seguro o el de tu tarjeta bancaria.', mg: '<b>{x}</b> isan’olona. Tombana tsy misy loharano voamarina: ampitahao amin’ny fiantohanao na an’ny karatra bankinao.' },
+        repas: { fr: '<b>{x}</b> par personne et par jour (enfant : 60 %). Estimation à confirmer sur place.', es: '<b>{x}</b> por persona y día (niños: 60 %). Estimación a confirmar allí.', mg: '<b>{x}</b> isan’olona isan’andro (ankizy: 60 %). Tombana hamarinina eto an-toerana.' },
+        transport: { fr: '<b>{x}</b> par jour à Tana et <b>{y}</b> de transfert aéroport aller-retour. Estimation à confirmer sur place.', es: '<b>{x}</b> al día en Tana y <b>{y}</b> de traslado al aeropuerto ida y vuelta. Estimación a confirmar allí.', mg: '<b>{x}</b> isan’andro eto Tana ary <b>{y}</b> ho an’ny fitaterana mankany amin’ny seranam-piaramanidina sy miverina. Tombana hamarinina eto an-toerana.' },
+        semaine: { fr: 'Chauffeur <b>{x}</b> par jour, hôtel <b>{y}</b> par chambre et par nuit, parcs et guides <b>{z}</b> par personne. Estimation à confirmer avec un contact local.', es: 'Conductor <b>{x}</b> al día, hotel <b>{y}</b> por habitación y noche, parques y guías <b>{z}</b> por persona. Estimación a confirmar con un contacto local.', mg: 'Mpamily <b>{x}</b> isan’andro, hotely <b>{y}</b> isaky ny efitrano sy alina, valan-javaboahary sy mpitari-dalana <b>{z}</b> isan’olona. Tombana hamarinina amin’ny olona eto an-toerana.' },
+        divers: { fr: '<b>{x}</b> par personne : carte SIM, pourboires, souvenirs. Estimation.', es: '<b>{x}</b> por persona: tarjeta SIM, propinas, recuerdos. Estimación.', mg: '<b>{x}</b> isan’olona: karatra SIM, tip, fahatsiarovana. Tombana.' }
+      },
+      note: { fr: 'Niveau {lvl} · prix indicatifs d’octobre 2026, à vérifier. Hors cadeau aux mariés. Touchez un poste pour voir sa source.', es: 'Nivel {lvl} · precios orientativos de octubre de 2026, a comprobar. Sin el regalo a los novios. Toca una partida para ver su fuente.', mg: 'Ambaratonga {lvl} · vidiny tondro tamin’ny oktobra 2026, hamarino. Tsy tafiditra ny fanomezana ho an’ny mpivady. Tsindrio ny andalana iray hahitana ny loharano.' }
     },
     prof: { label: { fr: 'Votre profil', es: 'Tu perfil', mg: 'Ny momba anao' },
       eu: { fr: 'J’arrive d’Europe', es: 'Llego desde Europa', mg: 'Avy any Eoropa aho' },
@@ -2157,31 +2146,34 @@ mg: {
     document.querySelectorAll('[data-comfort]').forEach(function (btn) { btn.setAttribute('aria-pressed', String(btn.getAttribute('data-comfort') === bud.c)); });
     document.getElementById('b-total').textContent = eur.format(r.total);
     document.getElementById('b-sub').textContent = L(T.budget.sub)(num.format(Math.round(r.total * rate / 1000) * 1000) + ' Ar', eur.format(Math.round(r.total / r.people)));
+    var why = budgetSources(eur);
     document.getElementById('b-lines').innerHTML = Object.keys(r.lines).filter(function (key) { return key !== 'semaine' || bud.w; }).map(function (key) {
-      return '<div><dt>' + L(T.budget.lines[key]) + '</dt><dd>' + eur.format(r.lines[key]) + '</dd></div>';
-    }).join('') + '<div class="sum"><dt>' + L(T.budget.lines.total) + '</dt><dd>' + eur.format(r.total) + '</dd></div>';
-    budgetSources(eur);
+      return '<details class="bl" name="bud-src" data-line="' + key + '"><summary><span class="lbl">' + L(T.budget.lines[key]) + '</span><span class="val">' + eur.format(r.lines[key]) + '</span></summary><div class="why">' + why[key] + '</div></details>';
+    }).join('') + '<div class="bl sum"><span class="lbl">' + L(T.budget.lines.total) + '</span><span class="val">' + eur.format(r.total) + '</span></div>';
   }
-  /* Sources : le prix retenu pour le niveau choisi et le relevé sur lequel il s'appuie */
+  /* Source de chaque poste, pour le niveau choisi : le prix utilisé et le relevé ou l'estimation sur lequel il s'appuie */
   function budgetSources(eur) {
-    var S = T.src, c = bud.c;
+    var S = T.src, c = bud.c, W = BUDGET.semaine;
     function fill(txt, vals) {
       return txt.replace(/\{(\w+)\}/g, function (m, k) {
         if (vals && k in vals) return vals[k];
         var l = S.links[k]; return l ? '<a href="' + l[0] + '" target="_blank" rel="noopener">' + l[1] + '</a>' : m;
       });
     }
-    function row(i, amount, unit, why) {
-      if (amount !== null) document.getElementById('b-src-' + i + 'a').textContent = eur.format(amount);
-      document.getElementById('b-src-' + i + 'u').textContent = L(unit);
-      document.getElementById('b-src-' + i).innerHTML = why;
-    }
-    row(1, BUDGET.vol[c], S.perAdult, fill(L(S.vols[c])));
-    row(2, BUDGET.visa, S.perPerson, fill(L(S.visa)));
-    row(3, BUDGET.hotel[c], S.perRoom, fill(L(S.hotel[c])));
-    row(4, null, S.othersUnit, fill(L(S.others), { a: BUDGET.assurance[c], r: BUDGET.repas[c], t: BUDGET.transport[c], d: BUDGET.semaine.chauffeur[c] }));
+    function sourced(amount, unit, txt) { var t = fill(L(txt)); return '<b>' + eur.format(amount) + '</b> ' + L(unit) + '. ' + t.charAt(0).toUpperCase() + t.slice(1); }
+    function est(key, x, y, z) { return fill(L(S.est[key]), { x: eur.format(x), y: y === undefined ? '' : eur.format(y), z: z === undefined ? '' : eur.format(z) }); }
     var btn = document.querySelector('[data-comfort="' + c + '"]');
-    document.getElementById('b-src-note').textContent = fill(L(S.note), { lvl: btn ? btn.textContent.trim() : c });
+    document.getElementById('b-note').textContent = fill(L(S.note), { lvl: btn ? btn.textContent.trim() : c });
+    return {
+      vols: sourced(BUDGET.vol[c], S.perAdult, S.vols[c]),
+      visa: sourced(BUDGET.visa, S.perPerson, S.visa),
+      assurance: est('assurance', BUDGET.assurance[c]),
+      hotel: sourced(BUDGET.hotel[c], S.perRoom, S.hotel[c]),
+      repas: est('repas', BUDGET.repas[c]),
+      transport: est('transport', BUDGET.transport[c], BUDGET.transfert[c]),
+      semaine: est('semaine', W.chauffeur[c], W.hotel[c], W.parcs[c]),
+      divers: est('divers', BUDGET.divers[c])
+    };
   }
   function budgetRead() {
     bud.a = clampInt(bIn.a.value, 1, 8, bud.a); bud.k = clampInt(bIn.k.value, 0, 6, bud.k);
