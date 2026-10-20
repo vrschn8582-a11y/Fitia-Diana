@@ -387,6 +387,8 @@ html { touch-action: pan-y pinch-zoom; }
 :root { --hero-offset: calc(13.5rem + 1px); }
 @media (min-width: 601px) and (max-width: 959px) { :root { --hero-offset: calc(14.6rem + 1px); } }
 @media (min-width: 960px) { :root { --hero-offset: calc(11.15rem + 1px); } }
+/* Menu de gauche resserré quand l'écran n'est pas très haut (14 rubriques, libellés malgaches longs) */
+@media (min-width: 960px) and (max-height: 820px) { .sidebar .navlink { min-height: 2rem; padding-block: 0.05rem; line-height: 1.3; } .sidebar { gap: 0.6rem; } }
 /* Ordinateurs portables : fenêtre de navigateur peu haute */
 @media (min-width: 960px) and (max-height: 719px) {
   .sidebar { gap: 0.5rem; padding-block: 0.6rem; }
@@ -483,7 +485,22 @@ html { touch-action: pan-y pinch-zoom; }
 .packing { display: grid; gap: 0.8rem; }
 .packing fieldset { border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.1rem; margin: 0; background: var(--surface); min-width: 0; }
 .packing legend { font-weight: 700; padding: 0 0.35rem; }
-.check { display: flex; gap: 0.7rem; align-items: flex-start; padding: 0.3rem 0; line-height: 1.4; cursor: pointer; }
+/* Budget : réponses, total, détail */
+.bud-form { display: grid; gap: 0.7rem; }
+.bud-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr)); gap: 0.6rem 1rem; }
+select { font: inherit; color: var(--ink); background: var(--surface); border: 1.5px solid var(--muted); border-radius: var(--radius); padding: 0.6rem 0.75rem; min-height: 2.75rem; width: 100%; }
+#p-budget .filters.seg { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.4rem; }
+#p-budget .filters.seg button { padding-inline: 0.4rem; }
+.bud-total { display: grid; justify-items: center; gap: 0.1rem; padding: 0.8rem 1rem; text-align: center; background: linear-gradient(180deg, var(--surface), var(--blush)); border: 1px solid var(--gold); border-radius: var(--radius); }
+.bud-total span { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--laterite); }
+.bud-total b { font-family: var(--font-display); font-weight: 500; font-size: 2.2rem; line-height: 1.1; color: var(--forest); font-variant-numeric: lining-nums tabular-nums; }
+.bud-total small { color: var(--muted); font-size: 0.9rem; }
+#b-lines div { grid-template-columns: minmax(0, 1fr) auto; padding-block: 0.3rem; line-height: 1.35; }
+#p-budget .check > span { display: grid; }
+@media (min-width: 960px) { #b-lines { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 2.5rem; } #b-lines .sum { grid-column: 1 / -1; } }
+#b-lines dd { text-align: right; font-variant-numeric: tabular-nums; }
+#b-lines .sum dt, #b-lines .sum dd { font-weight: 700; color: var(--ink); }
+.check { gap: 0.7rem; align-items: flex-start; padding: 0.3rem 0; line-height: 1.4; cursor: pointer; }
 .check input { width: 1.3rem; height: 1.3rem; margin-top: 0.15rem; accent-color: var(--forest); flex: none; }
 .check small { display: block; color: var(--muted); }
 .progress { display: grid; gap: 0.4rem; }
@@ -720,7 +737,7 @@ html:not(.js) .toc-nojs { display: grid; gap: 0.75rem; padding: 1.25rem 0 0.5rem
     </div>
   </header>
 
-  <nav class="sidebar" aria-label="Rubriques" data-i18n-aria="nav.aria" id="sidebar"><div class="navgroup"><p class="navgroup-title">Le mariage</p><a class="navlink" href="#p-accueil" data-nav="accueil">Accueil</a><a class="navlink" href="#p-ceremonie" data-nav="ceremonie">La cérémonie</a><a class="navlink" href="#p-jourj" data-nav="jourj">Programme du jour J</a><a class="navlink" href="#p-rsvp" data-nav="rsvp">Répondre à l’invitation</a></div><div class="navgroup"><p class="navgroup-title">Venir</p><a class="navlink" href="#p-preparatifs" data-nav="preparatifs">Vos préparatifs</a><a class="navlink" href="#p-vols" data-nav="vols">Billet d’avion</a><a class="navlink" href="#p-formalites" data-nav="formalites">Formalités</a><a class="navlink" href="#p-meteo" data-nav="meteo">Météo</a><a class="navlink" href="#p-valise" data-nav="valise">Valise</a></div><div class="navgroup"><p class="navgroup-title">Sur place</p><a class="navlink" href="#p-hebergement" data-nav="hebergement">Hébergement</a><a class="navlink" href="#p-transport" data-nav="transport">Se déplacer à Tana</a><a class="navlink" href="#p-semaine" data-nav="semaine">Semaine de découverte</a><a class="navlink" href="#p-adresses" data-nav="adresses">Bonnes adresses</a></div><p class="nav-profile"><span>Votre profil</span><button type="button" data-open-intro="">J’arrive d’Europe · changer</button></p></nav>
+  <nav class="sidebar" aria-label="Rubriques" data-i18n-aria="nav.aria" id="sidebar"><div class="navgroup"><p class="navgroup-title">Le mariage</p><a class="navlink" href="#p-accueil" data-nav="accueil">Accueil</a><a class="navlink" href="#p-ceremonie" data-nav="ceremonie">La cérémonie</a><a class="navlink" href="#p-jourj" data-nav="jourj">Programme du jour J</a><a class="navlink" href="#p-rsvp" data-nav="rsvp">Répondre à l’invitation</a></div><div class="navgroup"><p class="navgroup-title">Venir</p><a class="navlink" href="#p-preparatifs" data-nav="preparatifs">Vos préparatifs</a><a class="navlink" href="#p-vols" data-nav="vols">Billet d’avion</a><a class="navlink" href="#p-formalites" data-nav="formalites">Formalités</a><a class="navlink" href="#p-meteo" data-nav="meteo">Météo</a><a class="navlink" href="#p-valise" data-nav="valise">Valise</a><a class="navlink" href="#p-budget" data-nav="budget">Budget</a></div><div class="navgroup"><p class="navgroup-title">Sur place</p><a class="navlink" href="#p-hebergement" data-nav="hebergement">Hébergement</a><a class="navlink" href="#p-transport" data-nav="transport">Se déplacer à Tana</a><a class="navlink" href="#p-semaine" data-nav="semaine">Semaine de découverte</a><a class="navlink" href="#p-adresses" data-nav="adresses">Bonnes adresses</a></div><p class="nav-profile"><span>Votre profil</span><button type="button" data-open-intro="">J’arrive d’Europe · changer</button></p></nav>
 
   <main id="contenu" tabindex="-1">
 
@@ -747,7 +764,7 @@ html:not(.js) .toc-nojs { display: grid; gap: 0.75rem; padding: 1.25rem 0 0.5rem
           <a class="btn ghost" href="#p-preparatifs" data-i18n="steps.cta">Vos préparatifs</a>
         </div>
       </div>
-    <nav class="pager" aria-label="Rubrique précédente et suivante"><a class="next" href="#p-ceremonie"><span>Suivant<i aria-hidden="true"> →</i></span><b>La cérémonie</b></a></nav><nav class="toc-nojs" aria-label="Sommaire"><h2>Sommaire</h2><div class="navgroup"><p class="navgroup-title">Le mariage</p><a class="navlink" href="#p-accueil">Accueil</a><a class="navlink" href="#p-ceremonie">La cérémonie</a><a class="navlink" href="#p-jourj">Programme du jour J</a><a class="navlink" href="#p-rsvp">Répondre à l’invitation</a></div><div class="navgroup"><p class="navgroup-title">Venir</p><a class="navlink" href="#p-preparatifs">Vos préparatifs</a><a class="navlink" href="#p-vols">Billet d’avion</a><a class="navlink" href="#p-formalites">Formalités</a><a class="navlink" href="#p-meteo">Météo</a><a class="navlink" href="#p-valise">Valise</a></div><div class="navgroup"><p class="navgroup-title">Sur place</p><a class="navlink" href="#p-hebergement">Hébergement</a><a class="navlink" href="#p-transport">Se déplacer à Tana</a><a class="navlink" href="#p-semaine">Semaine de découverte</a><a class="navlink" href="#p-adresses">Bonnes adresses</a></div><p class="nav-profile"><span>Votre profil</span><button type="button" data-open-intro="">J’arrive d’Europe · changer</button></p></nav></section>
+    <nav class="pager" aria-label="Rubrique précédente et suivante"><a class="next" href="#p-ceremonie"><span>Suivant<i aria-hidden="true"> →</i></span><b>La cérémonie</b></a></nav><nav class="toc-nojs" aria-label="Sommaire"><h2>Sommaire</h2><div class="navgroup"><p class="navgroup-title">Le mariage</p><a class="navlink" href="#p-accueil">Accueil</a><a class="navlink" href="#p-ceremonie">La cérémonie</a><a class="navlink" href="#p-jourj">Programme du jour J</a><a class="navlink" href="#p-rsvp">Répondre à l’invitation</a></div><div class="navgroup"><p class="navgroup-title">Venir</p><a class="navlink" href="#p-preparatifs">Vos préparatifs</a><a class="navlink" href="#p-vols">Billet d’avion</a><a class="navlink" href="#p-formalites">Formalités</a><a class="navlink" href="#p-meteo">Météo</a><a class="navlink" href="#p-valise">Valise</a><a class="navlink" href="#p-budget">Budget</a></div><div class="navgroup"><p class="navgroup-title">Sur place</p><a class="navlink" href="#p-hebergement">Hébergement</a><a class="navlink" href="#p-transport">Se déplacer à Tana</a><a class="navlink" href="#p-semaine">Semaine de découverte</a><a class="navlink" href="#p-adresses">Bonnes adresses</a></div><p class="nav-profile"><span>Votre profil</span><button type="button" data-open-intro="">J’arrive d’Europe · changer</button></p></nav></section>
 
     <!-- ===== CÉRÉMONIE ===== -->
     <section class="page" id="p-ceremonie" data-page="" aria-labelledby="t-ceremonie">
@@ -957,8 +974,8 @@ html:not(.js) .toc-nojs { display: grid; gap: 0.75rem; padding: 1.25rem 0 0.5rem
           <div data-i18n="vols.f4"><dt>Décalage horaire</dt><dd>+1 h par rapport à Paris et Madrid en avril.</dd></div>
         </dl>
         <div class="clock">
-          <div><span data-i18n="clock.tnr">À Tananarive</span><b class="mono" id="clock-tnr">12:05</b></div>
-          <div><span data-i18n="clock.par">À Paris</span><b class="mono" id="clock-par">11:05</b></div>
+          <div><span data-i18n="clock.tnr">À Tananarive</span><b class="mono" id="clock-tnr">14:07</b></div>
+          <div><span data-i18n="clock.par">À Paris</span><b class="mono" id="clock-par">13:07</b></div>
           <p id="clock-diff">Aujourd’hui, Madagascar a 1 h d’avance sur Paris. En avril, l’écart sera de 1 h.</p>
         </div>
       </div>
@@ -1047,7 +1064,46 @@ html:not(.js) .toc-nojs { display: grid; gap: 0.75rem; padding: 1.25rem 0 0.5rem
         <div class="progress-bar" aria-hidden="true"><i id="pack-bar" style="width: 0%;"></i></div>
       </div>
       <div class="packing" id="packing"><div class="subtabs" role="tablist" aria-labelledby="t-valise"><button type="button" role="tab" id="tab-val-0" aria-controls="sp-val-0" aria-selected="true" tabindex="0">Documents</button><button type="button" role="tab" id="tab-val-1" aria-controls="sp-val-1" aria-selected="false" tabindex="-1">Pour la cérémonie</button><button type="button" role="tab" id="tab-val-2" aria-controls="sp-val-2" aria-selected="false" tabindex="-1">Santé</button><button type="button" role="tab" id="tab-val-3" aria-controls="sp-val-3" aria-selected="false" tabindex="-1">Pratique</button></div><div class="subpanel" role="tabpanel" id="sp-val-0" aria-labelledby="tab-val-0" data-title="Documents"><fieldset><legend class="sr-only">Documents</legend><label class="check"><input type="checkbox" id="p-passeport" data-pack="passeport"><span>Passeport<small>Valide 6 mois après le retour</small></span></label><label class="check"><input type="checkbox" id="p-visa" data-pack="visa"><span>E-visa imprimé ou argent pour le visa</span></label><label class="check"><input type="checkbox" id="p-billets" data-pack="billets"><span>Billets d’avion et attestation d’assurance</span></label><label class="check"><input type="checkbox" id="p-copies" data-pack="copies"><span>Copies de vos documents<small>Sur papier et sur votre téléphone</small></span></label><label class="check"><input type="checkbox" id="p-euros" data-pack="euros"><span>Euros en espèces<small>Billets récents et en bon état, pour le change</small></span></label></fieldset></div><div class="subpanel" role="tabpanel" id="sp-val-1" aria-labelledby="tab-val-1" data-title="Pour la cérémonie"><fieldset><legend class="sr-only">Pour la cérémonie</legend><label class="check"><input type="checkbox" id="p-tenue" data-pack="tenue"><span>Votre tenue du jour J</span></label><label class="check"><input type="checkbox" id="p-chale" data-pack="chale"><span>Un châle ou une veste<small>Pour la soirée, fraîche en altitude</small></span></label><label class="check"><input type="checkbox" id="p-chaussures" data-pack="chaussures"><span>Chaussures confortables<small>Le sol peut être inégal</small></span></label><label class="check"><input type="checkbox" id="p-cadeau" data-pack="cadeau"><span>Votre tso-drano pour les mariés<small>Selon la coutume malgache</small></span></label></fieldset></div><div class="subpanel" role="tabpanel" id="sp-val-2" aria-labelledby="tab-val-2" data-title="Santé"><fieldset><legend class="sr-only">Santé</legend><label class="check"><input type="checkbox" id="p-moustique" data-pack="moustique"><span>Anti-moustique pour les tropiques</span></label><label class="check"><input type="checkbox" id="p-solaire" data-pack="solaire"><span>Crème solaire, chapeau et lunettes de soleil<small>La cérémonie a lieu en plein air</small></span></label><label class="check"><input type="checkbox" id="p-trousse" data-pack="trousse"><span>Trousse de pharmacie<small>Antidiarrhéique, pansements, désinfectant</small></span></label><label class="check"><input type="checkbox" id="p-traitements" data-pack="traitements"><span>Vos traitements personnels<small>Avec l’ordonnance</small></span></label></fieldset></div><div class="subpanel" role="tabpanel" id="sp-val-3" aria-labelledby="tab-val-3" data-title="Pratique"><fieldset><legend class="sr-only">Pratique</legend><label class="check"><input type="checkbox" id="p-lampe" data-pack="lampe"><span>Lampe frontale<small>Les coupures de courant sont fréquentes</small></span></label><label class="check"><input type="checkbox" id="p-batterie" data-pack="batterie"><span>Batterie externe</span></label><label class="check"><input type="checkbox" id="p-adaptateur" data-pack="adaptateur"><span>Pas besoin d’adaptateur<small>Les prises sont les mêmes qu’en France et en Espagne</small></span></label><label class="check"><input type="checkbox" id="p-pluie" data-pack="pluie"><span>Un vêtement de pluie léger</span></label><label class="check"><input type="checkbox" id="p-couches" data-pack="couches"><span>Un pull pour les soirées</span></label></fieldset></div></div>
-    <nav class="pager" aria-label="Rubrique précédente et suivante"><a class="prev" href="#p-meteo"><span><i aria-hidden="true">← </i>Précédent</span><b>Météo</b></a><a class="next" href="#p-hebergement"><span>Suivant<i aria-hidden="true"> →</i></span><b>Hébergement</b></a></nav></section>
+    <nav class="pager" aria-label="Rubrique précédente et suivante"><a class="prev" href="#p-meteo"><span><i aria-hidden="true">← </i>Précédent</span><b>Météo</b></a><a class="next" href="#p-budget"><span>Suivant<i aria-hidden="true"> →</i></span><b>Budget</b></a></nav></section>
+
+    <!-- ===== BUDGET (invités venant d'Europe) ===== -->
+    <section class="page" id="p-budget" data-page="" aria-labelledby="t-budget">
+      <div class="page-head">
+        <p class="eyebrow" data-i18n="grp.venir">Venir</p>
+        <h2 id="t-budget" tabindex="-1" data-i18n="bud.title">Estimer son budget</h2>
+        <p class="lead" data-i18n="bud.lead">Six réponses pour estimer votre voyage, vol compris.</p>
+      </div>
+      <div class="subtabs" role="tablist" aria-labelledby="t-budget">
+        <button type="button" role="tab" id="tab-bud-1" aria-controls="sp-bud-1" aria-selected="true" data-i18n="bud.tab1" tabindex="0">Mon voyage</button>
+        <button type="button" role="tab" id="tab-bud-2" aria-controls="sp-bud-2" aria-selected="false" data-i18n="bud.tab2" tabindex="-1">Détail</button>
+      </div>
+      <div class="subpanel" role="tabpanel" id="sp-bud-1" aria-labelledby="tab-bud-1" data-title="Mon voyage">
+        <form class="bud-form" id="budget-form" novalidate="">
+          <div class="bud-grid">
+            <div class="field"><label for="b-adults" data-i18n="bud.adults">Adultes</label><input type="number" id="b-adults" inputmode="numeric" min="1" max="8" value="2"></div>
+            <div class="field"><label for="b-kids" data-i18n="bud.kids">Enfants (2 à 11 ans)</label><input type="number" id="b-kids" inputmode="numeric" min="0" max="6" value="0"></div>
+            <div class="field"><label for="b-from" data-i18n="bud.from">Départ</label>
+              <select id="b-from"><option value="paris" data-i18n="bud.paris">Paris</option><option value="france" data-i18n="bud.france">Autre ville de France</option><option value="espagne" data-i18n="bud.spain">Espagne</option></select></div>
+            <div class="field"><label for="b-nights" data-i18n="bud.nights">Nuits à Tana</label><input type="number" id="b-nights" inputmode="numeric" min="1" max="21" value="4"></div>
+          </div>
+          <div class="filters seg bud-comfort" role="group" aria-label="Niveau de confort" data-i18n-aria="bud.comfort">
+            <button type="button" data-comfort="eco" aria-pressed="false" data-i18n="bud.eco">Économique</button>
+            <button type="button" data-comfort="confort" aria-pressed="true" data-i18n="bud.mid">Confort</button>
+            <button type="button" data-comfort="premium" aria-pressed="false" data-i18n="bud.prem">Premium</button>
+          </div>
+          <label class="check"><input type="checkbox" id="b-week"><span data-i18n="bud.week">Semaine de découverte <small>7 nuits de plus, avec chauffeur</small></span></label>
+        </form>
+        <div class="bud-total" aria-live="polite">
+          <span data-i18n="bud.total">Total estimé</span>
+          <b id="b-total">3 110&nbsp;€</b>
+          <small id="b-sub">soit 15 550 000 Ar · 1 555&nbsp;€ par personne</small>
+        </div>
+      </div>
+      <div class="subpanel" role="tabpanel" id="sp-bud-2" aria-labelledby="tab-bud-2" data-title="Détail">
+        <dl class="facts bud-lines" id="b-lines"><div><dt>Vols aller-retour</dt><dd>2 000&nbsp;€</dd></div><div><dt>E-visa</dt><dd>70&nbsp;€</dd></div><div><dt>Assurance voyage</dt><dd>120&nbsp;€</dd></div><div><dt>Hébergement à Tana</dt><dd>320&nbsp;€</dd></div><div><dt>Repas</dt><dd>200&nbsp;€</dd></div><div><dt>Transports sur place</dt><dd>240&nbsp;€</dd></div><div><dt>Divers (SIM, pourboires, souvenirs)</dt><dd>160&nbsp;€</dd></div><div class="sum"><dt>Total estimé</dt><dd>3 110&nbsp;€</dd></div></dl>
+        <p class="note" data-i18n="bud.note">Prix indicatifs relevés en octobre 2026, à vérifier : ils évoluent. Hors cadeau aux mariés.</p>
+      </div>
+    <nav class="pager" aria-label="Rubrique précédente et suivante"><a class="prev" href="#p-valise"><span><i aria-hidden="true">← </i>Précédent</span><b>Valise</b></a><a class="next" href="#p-hebergement"><span>Suivant<i aria-hidden="true"> →</i></span><b>Hébergement</b></a></nav></section>
 
     <!-- ===== HÉBERGEMENT ===== -->
     <section class="page" id="p-hebergement" data-page="" aria-labelledby="t-hebergement">
@@ -1080,7 +1136,7 @@ html:not(.js) .toc-nojs { display: grid; gap: 0.75rem; padding: 1.25rem 0 0.5rem
           </table>
         </div>
       </div>
-    <nav class="pager" aria-label="Rubrique précédente et suivante"><a class="prev" href="#p-valise"><span><i aria-hidden="true">← </i>Précédent</span><b>Valise</b></a><a class="next" href="#p-transport"><span>Suivant<i aria-hidden="true"> →</i></span><b>Se déplacer à Tana</b></a></nav></section>
+    <nav class="pager" aria-label="Rubrique précédente et suivante"><a class="prev" href="#p-budget"><span><i aria-hidden="true">← </i>Précédent</span><b>Budget</b></a><a class="next" href="#p-transport"><span>Suivant<i aria-hidden="true"> →</i></span><b>Se déplacer à Tana</b></a></nav></section>
 
     <!-- ===== TRANSPORT LOCAL ===== -->
     <section class="page" id="p-transport" data-page="" aria-labelledby="t-transport">
@@ -1235,7 +1291,7 @@ html:not(.js) .toc-nojs { display: grid; gap: 0.75rem; padding: 1.25rem 0 0.5rem
         <h2 id="menu-title" lang="mg">Tonga soa</h2>
         <button class="icon-btn" type="button" id="menu-close" aria-label="Fermer" data-i18n-aria="menu.close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"></path></svg></button>
       </div>
-      <nav aria-label="Toutes les rubriques" data-i18n-aria="tiles.title" id="menu-nav" style="display:grid;gap:1.1rem"><div class="navgroup"><p class="navgroup-title">Le mariage</p><a class="navlink" href="#p-accueil" data-nav="accueil">Accueil</a><a class="navlink" href="#p-ceremonie" data-nav="ceremonie">La cérémonie</a><a class="navlink" href="#p-jourj" data-nav="jourj">Programme du jour J</a><a class="navlink" href="#p-rsvp" data-nav="rsvp">Répondre à l’invitation</a></div><div class="navgroup"><p class="navgroup-title">Venir</p><a class="navlink" href="#p-preparatifs" data-nav="preparatifs">Vos préparatifs</a><a class="navlink" href="#p-vols" data-nav="vols">Billet d’avion</a><a class="navlink" href="#p-formalites" data-nav="formalites">Formalités</a><a class="navlink" href="#p-meteo" data-nav="meteo">Météo</a><a class="navlink" href="#p-valise" data-nav="valise">Valise</a></div><div class="navgroup"><p class="navgroup-title">Sur place</p><a class="navlink" href="#p-hebergement" data-nav="hebergement">Hébergement</a><a class="navlink" href="#p-transport" data-nav="transport">Se déplacer à Tana</a><a class="navlink" href="#p-semaine" data-nav="semaine">Semaine de découverte</a><a class="navlink" href="#p-adresses" data-nav="adresses">Bonnes adresses</a></div><p class="nav-profile"><span>Votre profil</span><button type="button" data-open-intro="">J’arrive d’Europe · changer</button></p></nav>
+      <nav aria-label="Toutes les rubriques" data-i18n-aria="tiles.title" id="menu-nav" style="display:grid;gap:1.1rem"><div class="navgroup"><p class="navgroup-title">Le mariage</p><a class="navlink" href="#p-accueil" data-nav="accueil">Accueil</a><a class="navlink" href="#p-ceremonie" data-nav="ceremonie">La cérémonie</a><a class="navlink" href="#p-jourj" data-nav="jourj">Programme du jour J</a><a class="navlink" href="#p-rsvp" data-nav="rsvp">Répondre à l’invitation</a></div><div class="navgroup"><p class="navgroup-title">Venir</p><a class="navlink" href="#p-preparatifs" data-nav="preparatifs">Vos préparatifs</a><a class="navlink" href="#p-vols" data-nav="vols">Billet d’avion</a><a class="navlink" href="#p-formalites" data-nav="formalites">Formalités</a><a class="navlink" href="#p-meteo" data-nav="meteo">Météo</a><a class="navlink" href="#p-valise" data-nav="valise">Valise</a><a class="navlink" href="#p-budget" data-nav="budget">Budget</a></div><div class="navgroup"><p class="navgroup-title">Sur place</p><a class="navlink" href="#p-hebergement" data-nav="hebergement">Hébergement</a><a class="navlink" href="#p-transport" data-nav="transport">Se déplacer à Tana</a><a class="navlink" href="#p-semaine" data-nav="semaine">Semaine de découverte</a><a class="navlink" href="#p-adresses" data-nav="adresses">Bonnes adresses</a></div><p class="nav-profile"><span>Votre profil</span><button type="button" data-open-intro="">J’arrive d’Europe · changer</button></p></nav>
       <div class="menu-tools">
         <div>
         <p>Langue · Fiteny · Idioma</p>
@@ -1423,6 +1479,12 @@ es: {
   'vtc.tip': `Instálalas antes de salir y crea tu cuenta con el wifi del hotel o una tarjeta SIM local. Comprueba la matrícula y el nombre del conductor antes de subir.`,
   'intro.q': `¿Tu perfil de invitado?`, 'intro.lead': `La web se adapta a tu situación. Podrás cambiarla en cualquier momento.`,
   'intro.eu': `Vuelos, visado, alojamiento y maleta, además de la ceremonia`, 'intro.local': `Lo esencial para la ceremonia y la fiesta`,
+  'bud.title': `Calcula tu presupuesto`, 'bud.lead': `Seis respuestas para estimar tu viaje, vuelo incluido.`,
+  'bud.tab1': `Mi viaje`, 'bud.tab2': `Detalle`, 'bud.adults': `Adultos`, 'bud.kids': `Niños (2 a 11 años)`, 'bud.from': `Salida`,
+  'bud.paris': `París`, 'bud.france': `Otra ciudad de Francia`, 'bud.spain': `España`, 'bud.nights': `Noches en Tana`,
+  'bud.comfort': `Nivel de confort`, 'bud.eco': `Económico`, 'bud.mid': `Confort`, 'bud.prem': `Premium`,
+  'bud.week': `Semana de descubrimiento <small>7 noches más, con conductor</small>`, 'bud.total': `Total estimado`,
+  'bud.note': `Precios orientativos de octubre de 2026, a comprobar: cambian. Sin incluir el regalo a los novios.`,
   'inst.title': `Aplicación`, 'inst.btn': `Instalar en mi teléfono`, 'inst.ios': `En iPhone: toca <b>Compartir</b> y luego «<b>Añadir a pantalla de inicio</b>».`,
   'vtc.a1': `Descargar Piqla en App Store`, 'vtc.a2': `Descargar Piqla en Google Play`, 'vtc.a3': `Descargar inDrive en App Store`, 'vtc.a4': `Descargar inDrive en Google Play`,
   'car.p': `Tarjeta anterior`, 'car.n': `Tarjeta siguiente`,
@@ -1620,6 +1682,12 @@ mg: {
   'vtc.tip': `Apetraho alohan'ny hiaingana ary sokafy ny kaontinao amin'ny Wi-Fi an'ny hotely na karatra SIM malagasy. Hamarino ny laharan'ny fiara sy ny anaran'ny mpamily alohan'ny hiakarana.`,
   'intro.q': `Ny momba anao amin'ny maha-vahiny?`, 'intro.lead': `Mifanaraka amin'ny toe-javatra misy anao ny tranonkala. Azonao ovaina na oviana na oviana izany.`,
   'intro.eu': `Sidina, visa, trano hipetrahana ary valizy, ankoatra ny lanonana`, 'intro.local': `Ny tena ilaina amin'ny lanonana sy ny fety`,
+  'bud.title': `Tombano ny teti-bola`, 'bud.lead': `Valiny enina hanombanana ny dianao, tafiditra ny sidina.`,
+  'bud.tab1': `Ny diako`, 'bud.tab2': `Antsipiriany`, 'bud.adults': `Olon-dehibe`, 'bud.kids': `Ankizy (2–11 taona)`, 'bud.from': `Fiaingana`,
+  'bud.paris': `Paris`, 'bud.france': `Tanàna hafa any Frantsa`, 'bud.spain': `Espaina`, 'bud.nights': `Alina eto Tana`,
+  'bud.comfort': `Fahalalahana`, 'bud.eco': `Mora`, 'bud.mid': `Antonony`, 'bud.prem': `Ambony`,
+  'bud.week': `Herinandro fitsangatsanganana <small>7 alina fanampiny, miaraka amin'ny mpamily</small>`, 'bud.total': `Totaliny tombanana`,
+  'bud.note': `Vidiny tondro tamin'ny oktobra 2026, hamarino fa miova. Tsy tafiditra ny fanomezana ho an'ny mpivady.`,
   'inst.title': `Rindranasa`, 'inst.btn': `Apetraho ao amin'ny findaiko`, 'inst.ios': `Amin'ny iPhone: tsindrio ny <b>Partager</b> dia ny « <b>Sur l'écran d'accueil</b> ».`,
   'vtc.a1': `Misintona Piqla amin'ny App Store`, 'vtc.a2': `Misintona Piqla amin'ny Google Play`, 'vtc.a3': `Misintona inDrive amin'ny App Store`, 'vtc.a4': `Misintona inDrive amin'ny Google Play`,
   'car.p': `Teo aloha`, 'car.n': `Manaraka`,
@@ -1650,6 +1718,20 @@ mg: {
 
   /* Textes générés par le script, dans les trois langues */
   var T = {
+    budget: {
+      sub: { fr: function (ar, pp) { return 'soit ' + ar + ' · ' + pp + ' par personne'; },
+             es: function (ar, pp) { return 'o sea ' + ar + ' · ' + pp + ' por persona'; },
+             mg: function (ar, pp) { return ar + ' · ' + pp + ' isan’olona'; } },
+      lines: {
+        vols: { fr: 'Vols aller-retour', es: 'Vuelos de ida y vuelta', mg: 'Sidina mandroso sy miverina' },
+        visa: { fr: 'E-visa', es: 'E-visado', mg: 'E-visa' },
+        assurance: { fr: 'Assurance voyage', es: 'Seguro de viaje', mg: 'Fiantohana dia' },
+        hotel: { fr: 'Hébergement à Tana', es: 'Alojamiento en Tana', mg: 'Trano hipetrahana eto Tana' },
+        repas: { fr: 'Repas', es: 'Comidas', mg: 'Sakafo' },
+        transport: { fr: 'Transports sur place', es: 'Transporte local', mg: 'Fitaterana eto an-toerana' },
+        semaine: { fr: 'Semaine de découverte', es: 'Semana de descubrimiento', mg: 'Herinandro fitsangatsanganana' },
+        divers: { fr: 'Divers (SIM, pourboires, souvenirs)', es: 'Varios (SIM, propinas, recuerdos)', mg: 'Hafa (SIM, tip, fahatsiarovana)' },
+        total: { fr: 'Total estimé', es: 'Total estimado', mg: 'Totaliny tombanana' } } },
     prof: { label: { fr: 'Votre profil', es: 'Tu perfil', mg: 'Ny momba anao' },
       eu: { fr: 'J’arrive d’Europe', es: 'Llego desde Europa', mg: 'Avy any Eoropa aho' },
       local: { fr: 'Je vis à Madagascar', es: 'Vivo en Madagascar', mg: 'Monina eto Madagasikara aho' },
@@ -1688,7 +1770,8 @@ mg: {
       ['vols', { fr: 'Billet d’avion', es: 'Billete de avión', mg: 'Tapakila fiaramanidina' }],
       ['formalites', { fr: 'Formalités', es: 'Trámites', mg: 'Taratasy ilaina' }],
       ['meteo', { fr: 'Météo', es: 'El tiempo', mg: 'Toetr’andro' }],
-      ['valise', { fr: 'Valise', es: 'Maleta', mg: 'Valizy' }]] },
+      ['valise', { fr: 'Valise', es: 'Maleta', mg: 'Valizy' }],
+      ['budget', { fr: 'Budget', es: 'Presupuesto', mg: 'Teti-bola' }]] },
     { title: { fr: 'Sur place', es: 'Allí', mg: 'Eto an-toerana' }, items: [
       ['hebergement', { fr: 'Hébergement', es: 'Alojamiento', mg: 'Trano hipetrahana' }],
       ['transport', { fr: 'Se déplacer à Tana', es: 'Moverse por Tana', mg: 'Fivezivezena eto Tana' }],
@@ -1720,10 +1803,10 @@ mg: {
   if (/^#p-/.test(location.hash) && ids.indexOf(location.hash.slice(3)) !== -1) history.replaceState(null, '', '#' + location.hash.slice(3));
   var current = 'accueil';
   var menu = document.getElementById('menu');
-  /* Profil d'invité : « je vis à Madagascar » retire billet d'avion, formalités, valise et hébergement */
+  /* Profil d'invité : « je vis à Madagascar » retire billet d'avion, formalités, valise, budget et hébergement */
   /* Clé propre à l'écran d'introduction : un profil enregistré automatiquement par une version précédente ne compte pas comme un choix */
   var PROFILE_KEY = 'wed-guest-type';
-  var profile = 'europe', LOCAL_HIDE = ['vols', 'formalites', 'valise', 'hebergement'];
+  var profile = 'europe', LOCAL_HIDE = ['vols', 'formalites', 'valise', 'budget', 'hebergement'];
   function shown(id) { return profile !== 'local' || LOCAL_HIDE.indexOf(id) === -1; }
   var QUICK = ['accueil', 'jourj', 'ceremonie', 'valise'];
   var ind = document.getElementById('bb-ind');
@@ -1975,6 +2058,67 @@ mg: {
     });
     document.addEventListener('fullscreenchange', fsLabel);
   }
+
+  /* ---------- Budget du voyage (invités venant d'Europe) ----------
+     Prix indicatifs (octobre 2026) : à remplacer ici par les vrais tarifs (groupe, navette, hôtels retenus). */
+  var BUDGET = {
+    vol: { eco: 750, confort: 1000, premium: 1800 },           // aller-retour par adulte depuis Paris
+    volDepart: { paris: 0, france: 100, espagne: 150 },        // supplément selon la ville de départ
+    volEnfant: 0.75,                                            // part du prix adulte
+    visa: 35,                                                   // e-visa 30 jours, par personne
+    assurance: { eco: 40, confort: 60, premium: 90 },           // par personne
+    hotel: { eco: 45, confort: 80, premium: 140 },              // par chambre (2 adultes) et par nuit
+    repas: { eco: 15, confort: 25, premium: 45 }, repasEnfant: 0.6, // par personne et par jour
+    transport: { eco: 10, confort: 50, premium: 70 },           // par groupe et par jour à Tana
+    transfert: { eco: 30, confort: 40, premium: 60 },           // aéroport aller-retour, par groupe
+    semaine: { nuits: 7, chauffeur: { eco: 55, confort: 65, premium: 90 }, hotel: { eco: 35, confort: 60, premium: 110 }, parcs: { eco: 60, confort: 80, premium: 100 } },
+    divers: { eco: 50, confort: 80, premium: 150 }              // SIM, pourboires, souvenirs, par personne
+  };
+  var bud = { a: 2, k: 0, from: 'paris', n: 4, c: 'confort', w: false };
+  var savedBud = store.get('wed-budget');
+  if (savedBud && typeof savedBud === 'object') Object.keys(bud).forEach(function (key) { if (key in savedBud) bud[key] = savedBud[key]; });
+  var bIn = { a: document.getElementById('b-adults'), k: document.getElementById('b-kids'), from: document.getElementById('b-from'), n: document.getElementById('b-nights'), w: document.getElementById('b-week') };
+  function clampInt(v, min, max, dflt) { v = parseInt(v, 10); return isNaN(v) ? dflt : Math.min(max, Math.max(min, v)); }
+  function budgetCompute(b) {
+    var c = b.c, people = b.a + b.k, rooms = Math.ceil(b.a / 2), days = b.n + (b.w ? BUDGET.semaine.nuits : 0);
+    var vol = BUDGET.vol[c] + BUDGET.volDepart[b.from];
+    var lines = {
+      vols: vol * b.a + vol * BUDGET.volEnfant * b.k,
+      visa: BUDGET.visa * people,
+      assurance: BUDGET.assurance[c] * people,
+      hotel: rooms * BUDGET.hotel[c] * b.n,
+      repas: BUDGET.repas[c] * (b.a + BUDGET.repasEnfant * b.k) * days,
+      transport: BUDGET.transport[c] * b.n + BUDGET.transfert[c],
+      semaine: b.w ? BUDGET.semaine.nuits * (BUDGET.semaine.chauffeur[c] + rooms * BUDGET.semaine.hotel[c]) + BUDGET.semaine.parcs[c] * people : 0,
+      divers: BUDGET.divers[c] * people
+    };
+    var total = 0;
+    Object.keys(lines).forEach(function (key) { lines[key] = Math.round(lines[key]); total += lines[key]; });
+    return { lines: lines, total: total, people: people };
+  }
+  function budgetUpdate() {
+    var locale = lang === 'es' ? 'es-ES' : 'fr-FR';
+    var eur = new Intl.NumberFormat(locale, { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
+    var num = new Intl.NumberFormat(locale, { maximumFractionDigits: 0 });
+    var r = budgetCompute(bud), rate = parseFloat(document.getElementById('c-rate').value) || 5000;
+    bIn.a.value = bud.a; bIn.k.value = bud.k; bIn.from.value = bud.from; bIn.n.value = bud.n; bIn.w.checked = bud.w;
+    document.querySelectorAll('[data-comfort]').forEach(function (btn) { btn.setAttribute('aria-pressed', String(btn.getAttribute('data-comfort') === bud.c)); });
+    document.getElementById('b-total').textContent = eur.format(r.total);
+    document.getElementById('b-sub').textContent = L(T.budget.sub)(num.format(Math.round(r.total * rate / 1000) * 1000) + ' Ar', eur.format(Math.round(r.total / r.people)));
+    document.getElementById('b-lines').innerHTML = Object.keys(r.lines).filter(function (key) { return key !== 'semaine' || bud.w; }).map(function (key) {
+      return '<div><dt>' + L(T.budget.lines[key]) + '</dt><dd>' + eur.format(r.lines[key]) + '</dd></div>';
+    }).join('') + '<div class="sum"><dt>' + L(T.budget.lines.total) + '</dt><dd>' + eur.format(r.total) + '</dd></div>';
+  }
+  function budgetRead() {
+    bud.a = clampInt(bIn.a.value, 1, 8, bud.a); bud.k = clampInt(bIn.k.value, 0, 6, bud.k);
+    bud.n = clampInt(bIn.n.value, 1, 21, bud.n); bud.from = bIn.from.value; bud.w = bIn.w.checked;
+    store.set('wed-budget', bud); budgetUpdate();
+  }
+  ['a', 'k', 'n'].forEach(function (key) { bIn[key].addEventListener('change', budgetRead); bIn[key].addEventListener('input', function () { if (bIn[key].value !== '') budgetRead(); }); });
+  bIn.from.addEventListener('change', budgetRead); bIn.w.addEventListener('change', budgetRead);
+  document.querySelectorAll('[data-comfort]').forEach(function (btn) { btn.addEventListener('click', function () { bud.c = btn.getAttribute('data-comfort'); store.set('wed-budget', bud); budgetUpdate(); }); });
+  document.getElementById('budget-form').addEventListener('submit', function (e) { e.preventDefault(); });
+  document.getElementById('c-rate').addEventListener('input', budgetUpdate);
 
   /* ---------- Application installable (écran d'accueil) et consultation hors connexion ---------- */
   if ('serviceWorker' in navigator && window.isSecureContext) navigator.serviceWorker.register('sw.js').catch(function () {});
@@ -2252,7 +2396,7 @@ mg: {
     buildNav(document.getElementById('sidebar'));
     buildNav(document.getElementById('menu-nav'));
     buildPagers();
-    renderWeather(); renderPacking(); packUpdate(); renderFilters(); renderPlaces();
+    renderWeather(); renderPacking(); packUpdate(); renderFilters(); renderPlaces(); budgetUpdate();
     clocks();
     fsLabel();
     navLabel();
