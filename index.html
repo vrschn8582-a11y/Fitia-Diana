@@ -497,6 +497,9 @@ select { font: inherit; color: var(--ink); background: var(--surface); border: 1
 .bud-total small { color: var(--muted); font-size: 0.9rem; }
 #b-lines div { grid-template-columns: minmax(0, 1fr) auto; padding-block: 0.3rem; line-height: 1.35; }
 #p-budget .check > span { display: grid; }
+.bud-src div { grid-template-columns: minmax(6rem, 9rem) minmax(0, 1fr); }
+.bud-src dd { font-size: 0.95rem; line-height: 1.45; }
+@media (max-width: 600px) { .bud-src div { display: block; padding-block: 0.35rem; } .bud-src dt { display: inline; font-size: 0.9rem; font-weight: 700; color: var(--ink); } .bud-src dt::after { content: " · "; font-weight: 400; } .bud-src dd { display: inline; font-size: 0.88rem; } }
 @media (min-width: 960px) { #b-lines { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 2.5rem; } #b-lines .sum { grid-column: 1 / -1; } }
 #b-lines dd { text-align: right; font-variant-numeric: tabular-nums; }
 #b-lines .sum dt, #b-lines .sum dd { font-weight: 700; color: var(--ink); }
@@ -974,8 +977,8 @@ html:not(.js) .toc-nojs { display: grid; gap: 0.75rem; padding: 1.25rem 0 0.5rem
           <div data-i18n="vols.f4"><dt>Décalage horaire</dt><dd>+1 h par rapport à Paris et Madrid en avril.</dd></div>
         </dl>
         <div class="clock">
-          <div><span data-i18n="clock.tnr">À Tananarive</span><b class="mono" id="clock-tnr">14:07</b></div>
-          <div><span data-i18n="clock.par">À Paris</span><b class="mono" id="clock-par">13:07</b></div>
+          <div><span data-i18n="clock.tnr">À Tananarive</span><b class="mono" id="clock-tnr">14:28</b></div>
+          <div><span data-i18n="clock.par">À Paris</span><b class="mono" id="clock-par">13:28</b></div>
           <p id="clock-diff">Aujourd’hui, Madagascar a 1 h d’avance sur Paris. En avril, l’écart sera de 1 h.</p>
         </div>
       </div>
@@ -1076,6 +1079,7 @@ html:not(.js) .toc-nojs { display: grid; gap: 0.75rem; padding: 1.25rem 0 0.5rem
       <div class="subtabs" role="tablist" aria-labelledby="t-budget">
         <button type="button" role="tab" id="tab-bud-1" aria-controls="sp-bud-1" aria-selected="true" data-i18n="bud.tab1" tabindex="0">Mon voyage</button>
         <button type="button" role="tab" id="tab-bud-2" aria-controls="sp-bud-2" aria-selected="false" data-i18n="bud.tab2" tabindex="-1">Détail</button>
+        <button type="button" role="tab" id="tab-bud-3" aria-controls="sp-bud-3" aria-selected="false" data-i18n="bud.tab3" tabindex="-1">Sources</button>
       </div>
       <div class="subpanel" role="tabpanel" id="sp-bud-1" aria-labelledby="tab-bud-1" data-title="Mon voyage">
         <form class="bud-form" id="budget-form" novalidate="">
@@ -1102,6 +1106,15 @@ html:not(.js) .toc-nojs { display: grid; gap: 0.75rem; padding: 1.25rem 0 0.5rem
       <div class="subpanel" role="tabpanel" id="sp-bud-2" aria-labelledby="tab-bud-2" data-title="Détail">
         <dl class="facts bud-lines" id="b-lines"><div><dt>Vols aller-retour</dt><dd>2 000&nbsp;€</dd></div><div><dt>E-visa</dt><dd>70&nbsp;€</dd></div><div><dt>Assurance voyage</dt><dd>120&nbsp;€</dd></div><div><dt>Hébergement à Tana</dt><dd>320&nbsp;€</dd></div><div><dt>Repas</dt><dd>200&nbsp;€</dd></div><div><dt>Transports sur place</dt><dd>240&nbsp;€</dd></div><div><dt>Divers (SIM, pourboires, souvenirs)</dt><dd>160&nbsp;€</dd></div><div class="sum"><dt>Total estimé</dt><dd>3 110&nbsp;€</dd></div></dl>
         <p class="note" data-i18n="bud.note">Prix indicatifs relevés en octobre 2026, à vérifier : ils évoluent. Hors cadeau aux mariés.</p>
+      </div>
+      <div class="subpanel" role="tabpanel" id="sp-bud-3" aria-labelledby="tab-bud-3" data-title="Sources">
+        <dl class="facts bud-src">
+          <div><dt data-i18n="bud.s1t">Vols</dt><dd data-i18n="bud.s1"><a href="https://www.liligo.fr/vols/itineraires/paris/antananarivo" target="_blank" rel="noopener">Liligo</a>, <a href="https://www.partirou.com/vols/itineraire/paris/antananarivo/" target="_blank" rel="noopener">Partirou</a>, <a href="https://www.kayak.fr/vols/Antananarivo-Aeroport-Intl-d-Ivato-Tananarive--TNR/Paris-Orly-ORY" target="_blank" rel="noopener">Kayak</a> : 484 € à 1 060 € l'aller-retour, 770 € en moyenne.</dd></div>
+          <div><dt data-i18n="bud.s2t">E-visa</dt><dd data-i18n="bud.s2"><a href="https://evisamada-mg.com" target="_blank" rel="noopener">evisamada-mg.com</a> (officiel), <a href="https://visasnews.com/madagascar-triple-le-prix-de-son-visa-electronique-de-15-jours/" target="_blank" rel="noopener">VisasNews</a> : 35 € pour 30 jours.</dd></div>
+          <div><dt data-i18n="bud.s3t">Hôtels</dt><dd data-i18n="bud.s3"><a href="https://www.combien-coute.net/hotel3/madagascar/antananarivo/" target="_blank" rel="noopener">combien-coute.net</a>, <a href="https://www.kayak.fr/Antananarivo-Hotels.16091.hotel.ksp" target="_blank" rel="noopener">Kayak</a> : 47 € (3 étoiles) à 89 € (4 étoiles) la nuit.</dd></div>
+          <div><dt data-i18n="bud.s4t">Autres postes</dt><dd data-i18n="bud.s4">Assurance, repas, transports, chauffeur, parcs, divers : estimations à confirmer sur place.</dd></div>
+        </dl>
+        <p class="note" data-i18n="bud.s5">Relevés d'octobre 2026, à vérifier avant de réserver.</p>
       </div>
     <nav class="pager" aria-label="Rubrique précédente et suivante"><a class="prev" href="#p-valise"><span><i aria-hidden="true">← </i>Précédent</span><b>Valise</b></a><a class="next" href="#p-hebergement"><span>Suivant<i aria-hidden="true"> →</i></span><b>Hébergement</b></a></nav></section>
 
@@ -1484,6 +1497,12 @@ es: {
   'bud.paris': `París`, 'bud.france': `Otra ciudad de Francia`, 'bud.spain': `España`, 'bud.nights': `Noches en Tana`,
   'bud.comfort': `Nivel de confort`, 'bud.eco': `Económico`, 'bud.mid': `Confort`, 'bud.prem': `Premium`,
   'bud.week': `Semana de descubrimiento <small>7 noches más, con conductor</small>`, 'bud.total': `Total estimado`,
+  'bud.tab3': `Fuentes`, 'bud.s1t': `Vuelos`, 'bud.s2t': `E-visado`, 'bud.s3t': `Hoteles`, 'bud.s4t': `Otras partidas`,
+  'bud.s1': `<a href="https://www.liligo.fr/vols/itineraires/paris/antananarivo" target="_blank" rel="noopener">Liligo</a>, <a href="https://www.partirou.com/vols/itineraire/paris/antananarivo/" target="_blank" rel="noopener">Partirou</a>, <a href="https://www.kayak.fr/vols/Antananarivo-Aeroport-Intl-d-Ivato-Tananarive--TNR/Paris-Orly-ORY" target="_blank" rel="noopener">Kayak</a>: de 484 € a 1 060 € ida y vuelta, 770 € de media.`,
+  'bud.s2': `<a href="https://evisamada-mg.com" target="_blank" rel="noopener">evisamada-mg.com</a> (oficial), <a href="https://visasnews.com/madagascar-triple-le-prix-de-son-visa-electronique-de-15-jours/" target="_blank" rel="noopener">VisasNews</a>: 35 € por 30 días.`,
+  'bud.s3': `<a href="https://www.combien-coute.net/hotel3/madagascar/antananarivo/" target="_blank" rel="noopener">combien-coute.net</a>, <a href="https://www.kayak.fr/Antananarivo-Hotels.16091.hotel.ksp" target="_blank" rel="noopener">Kayak</a>: de 47 € (3 estrellas) a 89 € (4 estrellas) la noche.`,
+  'bud.s4': `Seguro, comidas, transporte, conductor, parques, varios: estimaciones a confirmar allí.`,
+  'bud.s5': `Datos de octubre de 2026, a comprobar antes de reservar.`,
   'bud.note': `Precios orientativos de octubre de 2026, a comprobar: cambian. Sin incluir el regalo a los novios.`,
   'inst.title': `Aplicación`, 'inst.btn': `Instalar en mi teléfono`, 'inst.ios': `En iPhone: toca <b>Compartir</b> y luego «<b>Añadir a pantalla de inicio</b>».`,
   'vtc.a1': `Descargar Piqla en App Store`, 'vtc.a2': `Descargar Piqla en Google Play`, 'vtc.a3': `Descargar inDrive en App Store`, 'vtc.a4': `Descargar inDrive en Google Play`,
@@ -1687,6 +1706,12 @@ mg: {
   'bud.paris': `Paris`, 'bud.france': `Tanàna hafa any Frantsa`, 'bud.spain': `Espaina`, 'bud.nights': `Alina eto Tana`,
   'bud.comfort': `Fahalalahana`, 'bud.eco': `Mora`, 'bud.mid': `Antonony`, 'bud.prem': `Ambony`,
   'bud.week': `Herinandro fitsangatsanganana <small>7 alina fanampiny, miaraka amin'ny mpamily</small>`, 'bud.total': `Totaliny tombanana`,
+  'bud.tab3': `Loharano`, 'bud.s1t': `Sidina`, 'bud.s2t': `E-visa`, 'bud.s3t': `Hotely`, 'bud.s4t': `Hafa`,
+  'bud.s1': `<a href="https://www.liligo.fr/vols/itineraires/paris/antananarivo" target="_blank" rel="noopener">Liligo</a>, <a href="https://www.partirou.com/vols/itineraire/paris/antananarivo/" target="_blank" rel="noopener">Partirou</a>, <a href="https://www.kayak.fr/vols/Antananarivo-Aeroport-Intl-d-Ivato-Tananarive--TNR/Paris-Orly-ORY" target="_blank" rel="noopener">Kayak</a>: 484 € ka 1 060 € mandroso sy miverina, 770 € eo ho eo.`,
+  'bud.s2': `<a href="https://evisamada-mg.com" target="_blank" rel="noopener">evisamada-mg.com</a> (ofisialy), <a href="https://visasnews.com/madagascar-triple-le-prix-de-son-visa-electronique-de-15-jours/" target="_blank" rel="noopener">VisasNews</a>: 35 € ho an'ny 30 andro.`,
+  'bud.s3': `<a href="https://www.combien-coute.net/hotel3/madagascar/antananarivo/" target="_blank" rel="noopener">combien-coute.net</a>, <a href="https://www.kayak.fr/Antananarivo-Hotels.16091.hotel.ksp" target="_blank" rel="noopener">Kayak</a>: 47 € (3 kintana) ka 89 € (4 kintana) isan'alina.`,
+  'bud.s4': `Fiantohana, sakafo, fitaterana, mpamily, valan-javaboahary, hafa: tombana hamarinina eto an-toerana.`,
+  'bud.s5': `Angona tamin'ny oktobra 2026, hamarino alohan'ny hamandrihana.`,
   'bud.note': `Vidiny tondro tamin'ny oktobra 2026, hamarino fa miova. Tsy tafiditra ny fanomezana ho an'ny mpivady.`,
   'inst.title': `Rindranasa`, 'inst.btn': `Apetraho ao amin'ny findaiko`, 'inst.ios': `Amin'ny iPhone: tsindrio ny <b>Partager</b> dia ny « <b>Sur l'écran d'accueil</b> ».`,
   'vtc.a1': `Misintona Piqla amin'ny App Store`, 'vtc.a2': `Misintona Piqla amin'ny Google Play`, 'vtc.a3': `Misintona inDrive amin'ny App Store`, 'vtc.a4': `Misintona inDrive amin'ny Google Play`,
